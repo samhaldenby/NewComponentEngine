@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entries>
+				<player>player.xml</player>
+				<simpleBullet>simpleBullet.xml</simpleBullet>
+				<coin>coin.xml</coin>
+				<livingQuarters>K240/b_livingQuarters.xml</livingQuarters>
+</Entries>

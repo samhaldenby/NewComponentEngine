@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object>
+				<Name>livingQuarters</Name>
+				<Gfx>true<Sprite>K240/graphics/living_quarters.png</Sprite>
+				</Gfx>
+				<Coords>true
+				<x>50
+				</x>
+								<y>50
+				</y>
+				</Coords>
+				<Health>true<Max>100</Max>
+								<Current>100</Current>
+				</Health>
+				<OnSelect>true
+					<Command>SetFocus</Command>
+				</OnSelect>
+</Object>

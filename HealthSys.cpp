@@ -5,7 +5,7 @@
 template <>
 void System<HealthComp>::update(double elapsed)
 {
-    std::cout << "Updating HealthComp" << std::endl;
+//    std::cout << "Updating HealthComp" << std::endl;
 
     //update all health components
     std::map<ObjectId,HealthComp>::iterator iCom = components_.begin();

@@ -5,7 +5,7 @@
 template <>
 void System<CoordsComp>::update(double elapsed)
 {
-    std::cout << "Updating CoordsComp" << std::endl;
+//    std::cout << "Updating CoordsComp" << std::endl;
 
     //update all coords components
     std::map<ObjectId,CoordsComp>::iterator iCom = components_.begin();

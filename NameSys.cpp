@@ -7,7 +7,7 @@
 template <>
 void System<NameComp>::update(double elapsed)
 {
-    std::cout << "Updating NameComps" << std::endl;
+//    std::cout << "Updating NameComps" << std::endl;
 }
 
 

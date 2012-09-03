@@ -25,21 +25,33 @@ int main()
 //    std::cin >> dump;
     double elapsed;
     bool firstRun = true;
-    int count = 0;
+//    int count = 0;
+//    double totElapsed =0.0;
+  //  clock_t startTime = clock();
     while(firstRun==true)
     {
         //update messageCentre
         core.getMessageCentre()->update(elapsed);
 
+        //deliver messages
+        core.getMoveSub()->deliverAllMessages();
+        core.getHealthSub()->deliverAllMessages();
+        core.getNameSub()->deliverAllMessages();
+        core.getGfxSub()->deliverAllMessages();
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
 //        core.getGfxSub()->update(elapsed);
         core.getHealthSub()->update(elapsed);
         core.getNameSub()->update(elapsed);
+        core.getGfxSub()->update(elapsed);
         firstRun = true;
-        count++;
-        std::cout << count << std::endl;
+//        elapsed=clock() - startTime;
+//        ++count;
+//        totElapsed+=elapsed;
+
+//        count++;
+//        std::cout << count << std::endl;
     }
 
 

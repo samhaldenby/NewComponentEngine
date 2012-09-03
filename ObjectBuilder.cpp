@@ -61,6 +61,7 @@ void ObjectBuilder::createObject(std::string blueprintName)
         GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
         //send message to update graphics
         Parameters changeGfxParams;
+        changeGfxParams.push_back("gfx");
         changeGfxParams.push_back("changeSprite");
         changeGfxParams.push_back(blueprint->get("Object.Gfx.Sprite", ""));
         Message message(gfx->getId(), gfx->getId(), changeGfxParams);

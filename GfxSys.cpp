@@ -2,44 +2,52 @@
 #include "GfxComp.h"
 #include "CoordsComp.h"
 #include "Core.h"
+#include "Ui.h"
 #include <iostream>
 
 template <>
 void System<GfxComp>::update(double elapsed)
 {
-    std::cout << "Updating GfxComps" << std::endl;
+//    std::cout << "Updating GfxComps" << std::endl;
 
     //update all gfx components
+//    std::map<ObjectId,GfxComp>::iterator iCom = components_.begin();
+//    while(iCom!=components_.end())
+//    {
+//        GfxComp* currComp = &iCom->second;
+//
+//        ++iCom;
+//    }
+
+
+
+    //render stuff
     std::map<ObjectId,GfxComp>::iterator iCom = components_.begin();
+
+    //grab ui
+    sf::RenderWindow* window_ = getCore()->getUi()->getWindow();
+
+    //render
+
+    window_->Clear();
     while(iCom!=components_.end())
     {
-        GfxComp* currComp = &iCom->second;
-//        //grab corresponding Coords comp
-//        CoordsComp* coordsComp = core_->getCoordsSub()->getComponent(iCom->second.getId());
-//
-//        //check dist from target
-//        double distFromTarget = sqrt(pow(coordsComp->getCoords().x -currComp->getLocalDestination().x , 2) *
-//                                pow(coordsComp->getCoords().y -currComp->getLocalDestination().y , 2));
-//
-//
-//        if (distFromTarget <= MIN_DIST)
-//        {
-//            currComp->setMove(Vector2d(0,0));
-//        }
-//        else
-//        {
-//            //determine move speeds
-//            double distX = currComp->getLocalDestination().x - coordsComp->getCoords().x;
-//            double distY = currComp->getLocalDestination().y - coordsComp->getCoords().y;
-//
-//            currComp->setMove(Vector2d(distX/distFromTarget, distY/distFromTarget));
-//        }
-//
-//        //now move
-//        coordsComp->setCoords(coordsComp->getCoords() + currComp->getMove());
+//        std::cout << " ->" << iCom->second.getId() << std::endl;
+        //get sprite
+        sf::Sprite* sprite = iCom->second.getSprite();
 
+        //get coordsCom
+        CoordsComp* coordsCom = core_->getCoordsSub()->getComponent(iCom->second.getId());
+
+        Vector2d coords = coordsCom->getCoords();
+//        std::cout << "   -> @ " << coords.x << "," << coords.y << std::endl;
+        sprite->SetX(coords.x);
+        sprite->SetY(coords.y);
+        window_->Draw(*sprite);
         ++iCom;
     }
+    window_->Display();
+
 
 
 }

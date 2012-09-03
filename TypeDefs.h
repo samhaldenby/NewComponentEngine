@@ -19,7 +19,9 @@ namespace cType
     enum{   Health=1,
             Name=2,
             Coords=3,
-            Move=4};
+            Move=4,
+            Gfx=5,
+        };
 }
 
 //@@@Requires updating on addition on new subsystem" when adding new subsystems

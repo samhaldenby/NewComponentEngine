@@ -7,13 +7,11 @@ void System<CoordsComp>::update(double elapsed)
 {
     std::cout << "Updating CoordsComp" << std::endl;
 
-    //update all health components
+    //update all coords components
     std::map<ObjectId,CoordsComp>::iterator iCom = components_.begin();
     while(iCom!=components_.end())
     {
         CoordsComp* currComponent = &iCom->second;
-
-
 
         ++iCom;
     }
@@ -42,11 +40,4 @@ void System<CoordsComp>::deliverMessage_(Message message)
     {
         targetComponent->setCoords(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
     }
-//
-//    else if (mainCmd=="changeCurrBy")
-//    {
-//        targetComponent->setCurrent(targetComponent->getCurrent() + atoi(params[2].c_str()));
-//    }
-
-
 }

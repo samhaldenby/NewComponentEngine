@@ -9,6 +9,7 @@
 #include "NameComp.h"
 #include "CoordsComp.h"
 #include "MoveComp.h"
+#include "GfxComp.h"
 #include "ObjectBuilder.h"
 
 
@@ -38,6 +39,7 @@ class Core
         System<NameComp>*   getNameSub();
         System<CoordsComp>* getCoordsSub();
         System<MoveComp>*   getMoveSub();
+        System<GfxComp>*    getGfxSub();
 
 
 
@@ -46,6 +48,7 @@ class Core
         System<NameComp>*   nameSub_;
         System<CoordsComp>* coordsSub_;
         System<MoveComp>*   moveSub_;
+        System<GfxComp>*    gfxSub_;
 
         Store* store_;
         ObjectBuilder* objectBuilder_;

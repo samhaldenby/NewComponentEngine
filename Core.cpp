@@ -34,6 +34,7 @@ Core::Core(std::string coreConfigFileName)
     nameSub_ = new System<NameComp>(this);
     coordsSub_ = new System<CoordsComp>(this);
     moveSub_ = new System<MoveComp>(this);
+    gfxSub_ = new System<GfxComp>(this);
 
 }
 
@@ -95,4 +96,9 @@ System<CoordsComp>* Core::getCoordsSub()
 System<MoveComp>* Core::getMoveSub()
 {
     return moveSub_;
+}
+
+System<GfxComp>* Core::getGfxSub()
+{
+    return gfxSub_;
 }

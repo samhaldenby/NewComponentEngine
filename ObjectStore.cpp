@@ -46,11 +46,11 @@ void ObjectStore::removeObject(ObjectId id)
             //@ExpandComponent
             switch (x)
             {
-//                case (cFlag::Gfx):
-//                {
-//                    core_->getGfxSub()->removeComponent(id);
-//                    break;
-//                }
+                case (cFlag::Gfx):
+                {
+                    core_->getGfxSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Coords):
                 {
                     core_->getCoordsSub()->removeComponent(id);

@@ -18,21 +18,30 @@ void System<MoveComp>::update(double elapsed)
         CoordsComp* coordsComp = core_->getCoordsSub()->getComponent(iCom->second.getId());
 
         //check dist from target
-        double distFromTarget = sqrt(pow(coordsComp->getCoords().x -currComp->getLocalDestination().x , 2) *
+        double distFromTarget = sqrt(pow(coordsComp->getCoords().x -currComp->getLocalDestination().x , 2) +
                                 pow(coordsComp->getCoords().y -currComp->getLocalDestination().y , 2));
 
 
-        if (distFromTarget <= MIN_DIST)
+
+        if (currComp->getLocalDestination().x==-1) //i.e. no dest MAGIC NUMBER
+        {
+
+        }
+        else if (distFromTarget <= MIN_DIST)
         {
             currComp->setMove(Vector2d(0,0));
+            currComp->setLocalDestination(Vector2d(-1,-1)); //MAGIC NUMBER
         }
         else
         {
             //determine move speeds
+            std::cout << "Determining move speed of Entity" << iCom->first << std::endl;
             double distX = currComp->getLocalDestination().x - coordsComp->getCoords().x;
             double distY = currComp->getLocalDestination().y - coordsComp->getCoords().y;
+            std::cout << distX << "\t" << distY << "\t" << distFromTarget << std::endl;
 
             currComp->setMove(Vector2d(distX/distFromTarget, distY/distFromTarget));
+            std::cout << currComp->getMove() << "\t(" << coordsComp->getCoords() << ")" << std::endl;
         }
 
         //now move

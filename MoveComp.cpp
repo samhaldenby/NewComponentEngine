@@ -6,6 +6,9 @@ Vector2d getMove();
 MoveComp::MoveComp(ObjectId id): Component(id, cType::Move)
 {
     std::cout << "Creating MoveComp" << std::endl;
+
+    //set localDest to None
+    localDestination_ = Vector2d(-1,-1); //MAGIC NUMBER!!
 }
 
 

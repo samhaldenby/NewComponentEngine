@@ -45,7 +45,7 @@
 1346664586 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
 	"Components.h"
 
-1346689289 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
+1346776283 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
 	<iostream>
 	<vector>
 	"Core.h"
@@ -53,6 +53,7 @@
 	"MessageCentre.h"
 	"HealthComp.h"
 	"NameComp.h"
+	"Ui.h"
 
 1346664735 source:/home/sh695/Documents/Programs/NewComponentEngine/NameComp.cpp
 	"NameComp.h"
@@ -147,9 +148,10 @@
 	"ObjectStore.h"
 	"MessageCentre.h"
 
-1346670518 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
+1346774221 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
 	<SFML/Graphics.hpp>
 	"Vector2d.h"
+	"TypeDefs.h"
 
 1346670565 /home/sh695/Documents/Programs/NewComponentEngine/Vector2d.h
 	<iostream>
@@ -167,10 +169,13 @@
 	"MessageCentre.h"
 	"Object.h"
 
-1346670518 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
+1346774637 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 	"Ui.h"
+	"Core.h"
+	"Telegram.h"
+	"MessageCentre.h"
 
 1346670565 source:/home/sh695/Documents/Programs/NewComponentEngine/Vector2d.cpp
 	"Vector2d.h"
@@ -193,10 +198,10 @@
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1346681534 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
+1346775255 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
 	"MoveComp.h"
 
-1346688752 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
+1346775751 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
 	"Systems.h"
 	"MoveComp.h"
 	"CoordsComp.h"

@@ -12,7 +12,7 @@ class ObjectBuilder
 {
     public:
         ObjectBuilder(Core* core);
-        void createObject(std::string blueprintName);
+        ObjectId createObject(std::string blueprintName);
 
     private:
         Core* core_;

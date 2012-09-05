@@ -76,13 +76,40 @@ void Ui::update(double elapsed)
         core_->getMessageCentre()->addTelegram(telegram);
     }
 
-//    if(input_->IsMouseButtonDown(sf::Mouse::Right))
-//    {
-//        //create telegram
+    if(input_->IsMouseButtonDown(sf::Mouse::Right))
+    {
+        //create telegram for shooting a bullet
+        ObjectId bulletId = core_->getObjectBuilder()->createObject("simpleBullet");
+        Parameters changePosParams;
+        changePosParams.push_back("coords");
+        changePosParams.push_back("setCoords");
+        std::stringstream xSS(""), ySS("");
+        CoordsComp* playerCoordsComp = core_->getCoordsSub()->getComponent(playerId_);
+        xSS << playerCoordsComp->getCoords().x;
+        ySS << playerCoordsComp->getCoords().y;
+        changePosParams.push_back(xSS.str());
+        changePosParams.push_back(ySS.str());
+        Message changePosMessage(bulletId, bulletId, changePosParams);
+        Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
+
+        //set move
+        Parameters bulletSpeedParams;
+        bulletSpeedParams.push_back("move");
+        bulletSpeedParams.push_back("setVelocity");
+        bulletSpeedParams.push_back("0");
+        bulletSpeedParams.push_back("-0.1");
+        Message bulletSpeedMessage(bulletId, bulletId, bulletSpeedParams);
+        Telegram bulletSpeedTelegram(bulletId, bulletId, 0.0, bulletSpeedMessage);
+
+        //send messages
+        core_->getMessageCentre()->addTelegram(changePosTelegram);
+        core_->getMessageCentre()->addTelegram(bulletSpeedTelegram);
+
+
 //        Parameters changeGfxParams = core_->getStore()->getMessageParameters("changeSprite");
 //        changeGfxParams.push_back("coin.png");
 //        Message message(iCom->second.getId(), iCom->second.getId(), changeGfxParams);
 //        Telegram telegram(iCom->second.getId(), iCom->second.getId(), 0.0, message);
 //        core_->getMessageCentre()->addTelegram(telegram);
-//    }
+    }
 }

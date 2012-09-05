@@ -39,5 +39,6 @@ void System<CoordsComp>::deliverMessage_(Message message)
     if (mainCmd=="setCoords")
     {
         targetComponent->setCoords(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
+        std::cout << "Set coords of entity " << message.getSourceId() << " to " << targetComponent->getCoords() << std::endl;
     }
 }

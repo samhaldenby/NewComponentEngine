@@ -16,12 +16,12 @@ int main()
 {
     Core core("coreConfig.xml");
 
-    core.getObjectBuilder()->createObject("player");
+    ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
     core.getObjectBuilder()->createObject("coin");
     core.getObjectBuilder()->createObject("livingQuarters");
 
-    core.getUi()->setPlayer(0);
+    core.getUi()->setPlayer(playerId);
 
 
 

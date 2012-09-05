@@ -23,7 +23,7 @@ void System<MoveComp>::update(double elapsed)
 
 
 
-        if (currComp->getLocalDestination().x==-1) //i.e. no dest MAGIC NUMBER
+        if (currComp->getLocalDestination().x==-1 || (currComp->getMove().x==0 && currComp->getMove().y==0)) //i.e. no dest MAGIC NUMBER
         {
 
         }
@@ -46,6 +46,7 @@ void System<MoveComp>::update(double elapsed)
 
         //now move
         coordsComp->setCoords(coordsComp->getCoords() + currComp->getMove());
+//        std::cout << "Moving obj " << iCom->first << " (" << coordsComp->getCoords() << ")" << std::endl;
 
         ++iCom;
     }
@@ -73,6 +74,10 @@ void System<MoveComp>::deliverMessage_(Message message)
     if (mainCmd=="setLocalDest")
     {
         targetComponent->setLocalDestination(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
+    }
+    else if (mainCmd=="setVelocity")
+    {
+        targetComponent->setMove(Vector2d(atof(params[2].c_str()),atof(params[3].c_str())));
     }
 //
 //    else if (mainCmd=="changeCurrBy")

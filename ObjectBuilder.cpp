@@ -15,14 +15,14 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
 
 
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
-void ObjectBuilder::createObject(std::string blueprintName)
+ObjectId ObjectBuilder::createObject(std::string blueprintName)
 {
     //fetch blueprint
     Blueprint* blueprint = core_->getStore()->getBlueprint(blueprintName);
     if(!blueprint)
     {
         std::cout << "Unable to fetch blueprint: " << blueprintName << std::endl;
-        return;
+        return -1;
     }
 
     //grab name
@@ -108,6 +108,9 @@ void ObjectBuilder::createObject(std::string blueprintName)
         MoveComp* move = core_->getMoveSub()->getComponent(objectId);
         move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
     }
+
+
+    return objectId;
 //
 //    if(hasInput)
 //    {

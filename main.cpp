@@ -46,6 +46,7 @@ int main()
         core.getHealthSub()->deliverAllMessages();
         core.getNameSub()->deliverAllMessages();
         core.getGfxSub()->deliverAllMessages();
+        core.getCoordsSub()->deliverAllMessages();
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);

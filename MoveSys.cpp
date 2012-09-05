@@ -23,7 +23,7 @@ void System<MoveComp>::update(double elapsed)
 
 
 
-        if (currComp->getLocalDestination().x==-1 || (currComp->getMove().x==0 && currComp->getMove().y==0)) //i.e. no dest MAGIC NUMBER
+        if (currComp->getLocalDestination().x==-1) //i.e. no dest MAGIC NUMBER
         {
 
         }

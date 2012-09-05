@@ -97,7 +97,7 @@ void Ui::update(double elapsed)
         bulletSpeedParams.push_back("move");
         bulletSpeedParams.push_back("setVelocity");
         bulletSpeedParams.push_back("0");
-        bulletSpeedParams.push_back("-0.1");
+        bulletSpeedParams.push_back("-2");
         Message bulletSpeedMessage(bulletId, bulletId, bulletSpeedParams);
         Telegram bulletSpeedTelegram(bulletId, bulletId, 0.0, bulletSpeedMessage);
 

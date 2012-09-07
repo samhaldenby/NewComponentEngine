@@ -36,6 +36,7 @@ Core::Core(std::string coreConfigFileName)
     moveSub_ = new System<MoveComp>(this);
     gfxSub_ = new System<GfxComp>(this);
     launcherSub_ = new System<LauncherComp>(this);
+    collisionSub_ = new System<CollisionComp>(this);
 
 }
 
@@ -81,18 +82,15 @@ System<HealthComp>* Core::getHealthSub()
     return healthSub_;
 }
 
-
 System<NameComp>* Core::getNameSub()
 {
     return nameSub_;
 }
 
-
 System<CoordsComp>* Core::getCoordsSub()
 {
     return coordsSub_;
 }
-
 
 System<MoveComp>* Core::getMoveSub()
 {
@@ -107,4 +105,9 @@ System<GfxComp>* Core::getGfxSub()
 System<LauncherComp>* Core::getLauncherSub()
 {
     return launcherSub_;
+}
+
+System<CollisionComp>* Core::getCollisionSub()
+{
+    return collisionSub_;
 }

@@ -15,7 +15,7 @@
 	"Message.h"
 	<map>
 
-1346882010 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
+1347018483 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
 	"ObjectStore.h"
 	"Store.h"
 	"Systems.h"
@@ -25,10 +25,11 @@
 	"MoveComp.h"
 	"GfxComp.h"
 	"LauncherComp.h"
+	"CollisionComp.h"
 	"ObjectBuilder.h"
 	<string>
 
-1346880754 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+1347018315 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
 	<boost/property_tree/ptree.hpp>
@@ -231,4 +232,32 @@
 
 1346884106 /home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.h
 	"Components.h"
+
+1346884106 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
+	"LauncherComp.h"
+
+1346884144 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
+	"Systems.h"
+	"LauncherComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+
+1347016632 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+	"CollisionComp.h"
+
+1347016524 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
+	"Components.h"
+	"TypeDefs.h"
+
+1347018330 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
+	"Systems.h"
+	"CollisionComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
 

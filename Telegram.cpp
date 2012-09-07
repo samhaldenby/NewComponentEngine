@@ -59,6 +59,7 @@ void Telegram::sendMessage()
     else if (targetSub=="move") core_->getMoveSub()->addMessage(message_);
     else if (targetSub=="gfx") core_->getGfxSub()->addMessage(message_);
     else if (targetSub=="launcher") core_->getLauncherSub()->addMessage(message_);
+    else if (targetSub=="collision") core_->getCollisionSub()->addMessage(message_);
 //    std::cout << "Sending message from telegram " << this << std::endl;
 //
 //    //select target based on first argument of message
@@ -80,5 +81,5 @@ void Telegram::sendMessage()
 
 bool Telegram::readyForDispatch()
 {
-    return (timeUntilDispatch_ < 0);
+    return (timeUntilDispatch_ <= 0);
 }

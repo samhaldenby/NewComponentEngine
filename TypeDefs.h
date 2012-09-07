@@ -21,7 +21,8 @@ namespace cType
             Coords=3,
             Move=4,
             Gfx=5,
-            Launcher=6
+            Launcher=6,
+            Collision=7
         };
 }
 
@@ -41,7 +42,7 @@ namespace cFlag
             OnSelect=512,
             Name=1024,
             Launcher=2048,
-            MAX=4096,
+            MAX=8192,
         };
 
 

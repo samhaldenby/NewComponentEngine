@@ -45,9 +45,10 @@ int main()
         core.getMoveSub()->deliverAllMessages();
         core.getHealthSub()->deliverAllMessages();
         core.getNameSub()->deliverAllMessages();
-        core.getGfxSub()->deliverAllMessages();
         core.getCoordsSub()->deliverAllMessages();
+        core.getGfxSub()->deliverAllMessages();
         core.getLauncherSub()->deliverAllMessages();
+        core.getCollisionSub()->deliverAllMessages();
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
@@ -56,6 +57,7 @@ int main()
         core.getNameSub()->update(elapsed);
         core.getLauncherSub()->update(elapsed);
         core.getGfxSub()->update(elapsed);
+        core.getCollisionSub()->update(elapsed);
         firstRun = true;
 //        elapsed=clock() - startTime;
         ++count;

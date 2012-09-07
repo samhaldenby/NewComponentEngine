@@ -5,6 +5,7 @@
 #include "MoveComp.h"
 #include "GfxComp.h"
 #include "LauncherComp.h"
+#include "CollisionComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -93,4 +94,5 @@ template class System<CoordsComp>;
 template class System<MoveComp>;
 template class System<GfxComp>;
 template class System<LauncherComp>;
+template class System<CollisionComp>;
 

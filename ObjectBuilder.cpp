@@ -36,6 +36,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     bool hasHealth = blueprint->get("Object.Health", false);
     bool hasMove = blueprint->get("Object.Move", false);
     bool hasLauncher = blueprint->get("Object.Launcher",false);
+    bool hasCollision = blueprint->get("Object.Collision",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -49,6 +50,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::cout << (hasMove ? "has" : "does not have") << " Move " << std::endl;
     std::cout << (hasName ? "has" : "does not have") << " Name " << std::endl;
     std::cout << (hasLauncher ? "has" : "does not have") << " Launcher " << std::endl;
+    std::cout << (hasCollision ? "has" : "does not have") << " Collision " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
 
@@ -118,6 +120,13 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
         launcher->setMaxCooldown(blueprint->get("Object.Launcher.MaxCooldown",0.f));
         launcher->setProjectileBlueprintName(blueprint->get("Object.Launcher.Projectile",""));
+    }
+
+    if(hasCollision)
+    {
+        object->addFlag(cFlag::Collision);
+        core_->getCollisionSub()->addComponent(objectId);
+        CollisionComp* launcher = core_->getCollisionSub()->getComponent(objectId);
     }
 
 

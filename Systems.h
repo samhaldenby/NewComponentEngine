@@ -36,7 +36,7 @@ class System
     private:
         std::vector<Message> messages_;
         Core* core_;
-        std::map<ObjectId, T> components_;
+        std::multimap<ObjectId, T> components_;
         void deliverMessage_(Message message);
 };
 

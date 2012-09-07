@@ -78,32 +78,46 @@ void Ui::update(double elapsed)
 
     if(input_->IsMouseButtonDown(sf::Mouse::Right))
     {
-        //create telegram for shooting a bullet
-        ObjectId bulletId = core_->getObjectBuilder()->createObject("simpleBullet");
-        Parameters changePosParams;
-        changePosParams.push_back("coords");
-        changePosParams.push_back("setCoords");
-        std::stringstream xSS(""), ySS("");
-        CoordsComp* playerCoordsComp = core_->getCoordsSub()->getComponent(playerId_);
-        xSS << playerCoordsComp->getCoords().x;
-        ySS << playerCoordsComp->getCoords().y;
-        changePosParams.push_back(xSS.str());
-        changePosParams.push_back(ySS.str());
-        Message changePosMessage(bulletId, bulletId, changePosParams);
-        Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
+        //get launcher and launch if exists
+        //grab corresponding Coords comp
+        LauncherComp* launcherComp = core_->getLauncherSub()->getComponent(playerId_);
+        if (launcherComp)
+        {
+            Parameters launchParams;
+            launchParams.push_back("launcher");
+            launchParams.push_back("launch");
+            Message launchMessage(playerId_, playerId_, launchParams);
+            Telegram launchTelegram(playerId_, playerId_, 0.0, launchMessage);
+            //send messages
+            core_->getMessageCentre()->addTelegram(launchTelegram);
+        }
 
-        //set move
-        Parameters bulletSpeedParams;
-        bulletSpeedParams.push_back("move");
-        bulletSpeedParams.push_back("setVelocity");
-        bulletSpeedParams.push_back("0");
-        bulletSpeedParams.push_back("-2");
-        Message bulletSpeedMessage(bulletId, bulletId, bulletSpeedParams);
-        Telegram bulletSpeedTelegram(bulletId, bulletId, 0.0, bulletSpeedMessage);
-
-        //send messages
-        core_->getMessageCentre()->addTelegram(changePosTelegram);
-        core_->getMessageCentre()->addTelegram(bulletSpeedTelegram);
+//        //create telegram for shooting a bullet
+//        ObjectId bulletId = core_->getObjectBuilder()->createObject("simpleBullet");
+//        Parameters changePosParams;
+//        changePosParams.push_back("coords");
+//        changePosParams.push_back("setCoords");
+//        std::stringstream xSS(""), ySS("");
+//        CoordsComp* playerCoordsComp = core_->getCoordsSub()->getComponent(playerId_);
+//        xSS << playerCoordsComp->getCoords().x;
+//        ySS << playerCoordsComp->getCoords().y;
+//        changePosParams.push_back(xSS.str());
+//        changePosParams.push_back(ySS.str());
+//        Message changePosMessage(bulletId, bulletId, changePosParams);
+//        Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
+//
+//        //set move
+//        Parameters bulletSpeedParams;
+//        bulletSpeedParams.push_back("move");
+//        bulletSpeedParams.push_back("setVelocity");
+//        bulletSpeedParams.push_back("0");
+//        bulletSpeedParams.push_back("-2");
+//        Message bulletSpeedMessage(bulletId, bulletId, bulletSpeedParams);
+//        Telegram bulletSpeedTelegram(bulletId, bulletId, 0.0, bulletSpeedMessage);
+//
+//        //send messages
+//        core_->getMessageCentre()->addTelegram(changePosTelegram);
+//        core_->getMessageCentre()->addTelegram(bulletSpeedTelegram);
 
 
 //        Parameters changeGfxParams = core_->getStore()->getMessageParameters("changeSprite");

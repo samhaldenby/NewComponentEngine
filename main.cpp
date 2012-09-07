@@ -47,12 +47,14 @@ int main()
         core.getNameSub()->deliverAllMessages();
         core.getGfxSub()->deliverAllMessages();
         core.getCoordsSub()->deliverAllMessages();
+        core.getLauncherSub()->deliverAllMessages();
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
 //        core.getGfxSub()->update(elapsed);
         core.getHealthSub()->update(elapsed);
         core.getNameSub()->update(elapsed);
+        core.getLauncherSub()->update(elapsed);
         core.getGfxSub()->update(elapsed);
         firstRun = true;
 //        elapsed=clock() - startTime;

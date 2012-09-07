@@ -35,6 +35,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
 //    bool hasSfx = blueprint->get("Object.Sfx", false);
     bool hasHealth = blueprint->get("Object.Health", false);
     bool hasMove = blueprint->get("Object.Move", false);
+    bool hasLauncher = blueprint->get("Object.Launcher",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -47,6 +48,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::cout << (hasHealth ? "has" : "does not have") << " Health " << std::endl;
     std::cout << (hasMove ? "has" : "does not have") << " Move " << std::endl;
     std::cout << (hasName ? "has" : "does not have") << " Name " << std::endl;
+    std::cout << (hasLauncher ? "has" : "does not have") << " Launcher " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
 
@@ -107,6 +109,15 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         core_->getMoveSub()->addComponent(objectId);
         MoveComp* move = core_->getMoveSub()->getComponent(objectId);
         move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
+    }
+
+    if(hasLauncher)
+    {
+        object->addFlag(cFlag::Launcher);
+        core_->getLauncherSub()->addComponent(objectId);
+        LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
+        launcher->setMaxCooldown(blueprint->get("Object.Launcher.MaxCooldown",0.f));
+        launcher->setProjectileBlueprintName(blueprint->get("Object.Launcher.Projectile",""));
     }
 
 

@@ -58,6 +58,7 @@ void Telegram::sendMessage()
     else if (targetSub=="coords") core_->getCoordsSub()->addMessage(message_);
     else if (targetSub=="move") core_->getMoveSub()->addMessage(message_);
     else if (targetSub=="gfx") core_->getGfxSub()->addMessage(message_);
+    else if (targetSub=="launcher") core_->getLauncherSub()->addMessage(message_);
 //    std::cout << "Sending message from telegram " << this << std::endl;
 //
 //    //select target based on first argument of message

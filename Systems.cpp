@@ -4,6 +4,7 @@
 #include "CoordsComp.h"
 #include "MoveComp.h"
 #include "GfxComp.h"
+#include "LauncherComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -26,7 +27,7 @@ Core* System<T>::getCore()
 template <class T>
 T* System<T>::getComponent(ObjectId id)
 {
-    typename std::map<ObjectId, T>::iterator iObj = components_.find(id);
+    typename std::multimap<ObjectId, T>::iterator iObj = components_.find(id);
     if(iObj!=components_.end())
     {
         return &(iObj->second);
@@ -41,7 +42,7 @@ T* System<T>::getComponent(ObjectId id)
 template <class T>
 void System<T>::addComponent(ObjectId id)
 {
-    typename std::map<ObjectId, T>::iterator iObj = components_.find(id);
+    typename std::multimap<ObjectId, T>::iterator iObj = components_.find(id);
     if(iObj==components_.end())
     {
         components_.insert(typename std::pair<ObjectId, T>(id, T(id)));
@@ -91,4 +92,5 @@ template class System<NameComp>;
 template class System<CoordsComp>;
 template class System<MoveComp>;
 template class System<GfxComp>;
+template class System<LauncherComp>;
 

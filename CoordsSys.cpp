@@ -41,4 +41,10 @@ void System<CoordsComp>::deliverMessage_(Message message)
         targetComponent->setCoords(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
         std::cout << "Set coords of entity " << message.getSourceId() << " to " << targetComponent->getCoords() << std::endl;
     }
+
+    if (mainCmd=="setDims")
+    {
+        targetComponent->setDimensions(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
+        std::cout << "Set dimensions of entity " << message.getSourceId() << " to " << targetComponent->getCoords() << std::endl;
+    }
 }

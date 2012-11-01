@@ -12,7 +12,7 @@
 
 
 template <class T>
-System<T>::System(Core* core) : core_(core)
+inline System<T>::System(Core* core) : core_(core)
 {
     std::cout << "Creating System<" <<  typeid(T).name() << ">" << std::endl;
 }

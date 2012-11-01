@@ -15,4 +15,5 @@
 				<OnSelect>true
 					<Command>SetFocus</Command>
 				</OnSelect>
+				<Collision>true</Collision>
 </Object>

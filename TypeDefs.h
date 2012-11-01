@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
@@ -12,7 +13,12 @@ typedef unsigned long CompType;
 typedef unsigned short ComponentFlag;
 typedef std::vector<std::string> Parameters;
 
+//collision typedefs
+typedef std::pair<int,int> GridLocation;
+typedef std::multimap<GridLocation,std::vector<ObjectId> > CollisionHash;
+
 const int MIN_DIST = 4;
+const int MAX_OBJECT_DIMENSION = 50;
 
 namespace cType
 {

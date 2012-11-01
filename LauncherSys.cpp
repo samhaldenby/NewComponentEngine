@@ -70,7 +70,7 @@ void System<LauncherComp>::deliverMessage_(Message message)
             changePosParams.push_back("setCoords");
             std::stringstream xSS(""), ySS("");
             CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getSourceId());
-            xSS << launcherCoordsComp->getCoords().x;
+            xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
             ySS << launcherCoordsComp->getCoords().y;
             changePosParams.push_back(xSS.str());
             changePosParams.push_back(ySS.str());

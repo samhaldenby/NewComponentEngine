@@ -35,13 +35,13 @@ void System<MoveComp>::update(double elapsed)
         else
         {
             //determine move speeds
-            std::cout << "Determining move speed of Entity" << iCom->first << std::endl;
+            //std::cout << "Determining move speed of Entity" << iCom->first << std::endl;
             double distX = currComp->getLocalDestination().x - coordsComp->getCoords().x;
             double distY = currComp->getLocalDestination().y - coordsComp->getCoords().y;
-            std::cout << distX << "\t" << distY << "\t" << distFromTarget << std::endl;
+            //std::cout << distX << "\t" << distY << "\t" << distFromTarget << std::endl;
 
             currComp->setMove(Vector2d(distX/distFromTarget, distY/distFromTarget));
-            std::cout << currComp->getMove() << "\t(" << coordsComp->getCoords() << ")" << std::endl;
+            //std::cout << currComp->getMove() << "\t(" << coordsComp->getCoords() << ")" << std::endl;
         }
 
         //now move

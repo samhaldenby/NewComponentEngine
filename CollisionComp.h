@@ -3,15 +3,16 @@
 
 #include "Components.h"
 #include "TypeDefs.h"
+#include <set>
 
 class CollisionComp : public Component
 {
     public:
         CollisionComp(ObjectId id);
-        void setSpatialHash(int hash);
-        int getSpatialHash();
+        void setSpatialHash(std::set<GridLocation> gridLocationSet);
+        std::set<GridLocation>* getSpatialHash();
     private:
-        int spatialHash_;
+        std::set<GridLocation> spatialHash_;
 
 };
 

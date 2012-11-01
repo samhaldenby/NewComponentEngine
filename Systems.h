@@ -12,6 +12,7 @@
 class Core;
 
 
+
 /** Templated base class for all systems
 */
 template <class T>
@@ -34,6 +35,8 @@ class System
 
 
     private:
+        //pointer to any other stuff
+        void* extensions_;
         std::vector<Message> messages_;
         Core* core_;
         std::multimap<ObjectId, T> components_;

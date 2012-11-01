@@ -65,12 +65,15 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
         //send message to update graphics
         Parameters changeGfxParams;
-        changeGfxParams.push_back("gfx");
-        changeGfxParams.push_back("changeSprite");
-        changeGfxParams.push_back(blueprint->get("Object.Gfx.Sprite", ""));
-        Message message(gfx->getId(), gfx->getId(), changeGfxParams);
-        Telegram telegram(gfx->getId(),gfx->getId(), 0.0, message);
-        core_->getMessageCentre()->addTelegram(telegram);
+        std::string imageName = blueprint->get("Object.Gfx.Sprite","");
+        sf::Image* image = core_->getStore()->getImage(imageName);
+        gfx->setSprite(image);
+//        changeGfxParams.push_back("gfx");
+//        changeGfxParams.push_back("changeSprite");
+//        changeGfxParams.push_back(blueprint->get("Object.Gfx.Sprite", ""));
+//        Message message(gfx->getId(), gfx->getId(), changeGfxParams);
+//        Telegram telegram(gfx->getId(),gfx->getId(), 0.0, message);
+//        core_->getMessageCentre()->addTelegram(telegram);
 //        gfx->setSprite(blueprint->get("Object.Gfx.Sprite", ""));
     }
 
@@ -94,6 +97,15 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         core_->getCoordsSub()->addComponent(objectId);
         CoordsComp* coords = core_->getCoordsSub()->getComponent(objectId);
         coords->setCoords(Vector2d(blueprint->get("Object.Coords.x",0.f) , blueprint->get("Object.Coords.y",0.f)));
+        //if it has gfx, set dimensions too
+        GfxComp* gfxComp = core_->getGfxSub()->getComponent(objectId);
+        if (gfxComp)
+        {
+            const sf::Image* image =gfxComp->getSprite()->GetImage();
+
+            coords->setDimensions(Vector2d(gfxComp->getSprite()->GetImage()->GetWidth(), gfxComp->getSprite()->GetImage()->GetWidth()));
+            std::cout << "DIMS: " << coords->getDimensions() << std::endl;
+        }
     }
 
     if(hasHealth)

@@ -15,3 +15,13 @@ Vector2d CoordsComp::getCoords()
 {
     return position_;
 }
+
+void CoordsComp::setDimensions(Vector2d d)
+{
+    dimensions_ = d;
+}
+
+Vector2d CoordsComp::getDimensions()
+{
+    return dimensions_;
+}

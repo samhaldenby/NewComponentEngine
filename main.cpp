@@ -24,6 +24,7 @@ int main()
     core.getUi()->setPlayer(playerId);
 
 
+//    myMap.insert(std::pair<std::pair<int,int>(1,2),1);
 
     int dump;
 //    std::cin >> dump;
@@ -58,6 +59,7 @@ int main()
         core.getLauncherSub()->update(elapsed);
         core.getGfxSub()->update(elapsed);
         core.getCollisionSub()->update(elapsed);
+
         firstRun = true;
 //        elapsed=clock() - startTime;
         ++count;

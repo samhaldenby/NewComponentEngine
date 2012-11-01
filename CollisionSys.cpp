@@ -114,6 +114,7 @@ void System<CollisionComp>::update(double elapsed)
                         //std::cout << "Collision! " << iHash->second[oA] << " and " << iHash->second[oB] << std::endl;
                         //add collision
                         collisions.insert(std::pair<ObjectId,ObjectId>(iHash->second[oA], iHash->second[oB]));
+                        //TODO: Ensure that multiple collisions between same objects does not occur due to entites being present in multiple grid squares, thus being assessed multiple times.
                     }
 
                 }

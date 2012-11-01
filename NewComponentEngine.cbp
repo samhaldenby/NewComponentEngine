@@ -35,7 +35,6 @@
 		<Linker>
 			<Add library="sfml-graphics" />
 			<Add library="sfml-window" />
-			<Add library="sfml-audio" />
 			<Add library="sfml-system" />
 		</Linker>
 		<Unit filename="CollisionComp.cpp" />
@@ -67,6 +66,7 @@
 		<Unit filename="NameComp.cpp" />
 		<Unit filename="NameComp.h" />
 		<Unit filename="NameSys.cpp" />
+		<Unit filename="NotReadyComp.h" />
 		<Unit filename="Object.cpp" />
 		<Unit filename="Object.h" />
 		<Unit filename="ObjectBuilder.cpp" />
@@ -82,6 +82,7 @@
 		<Unit filename="TypeDefs.h" />
 		<Unit filename="Ui.cpp" />
 		<Unit filename="Ui.h" />
+		<Unit filename="UiMain.h" />
 		<Unit filename="Vector2d.cpp" />
 		<Unit filename="Vector2d.h" />
 		<Unit filename="main.cpp" />

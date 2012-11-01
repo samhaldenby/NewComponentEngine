@@ -6,5 +6,6 @@
   <Health>true<Max>10</Max><Current>10</Current></Health>
   <Move>true<x>0.4</x><y>0</y></Move>
   <Input>true</Input>
-  <Launcher>true<MaxCooldown>0.5</MaxCooldown><Projectile>simpleBullet</Projectile></Launcher>
+  <Launcher>true<MaxCooldown>0.1</MaxCooldown><Projectile>simpleBullet</Projectile></Launcher>
+  <Collision>true</Collision>
 </Object>

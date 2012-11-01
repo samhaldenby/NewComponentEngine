@@ -10,10 +10,14 @@
 	<iostream>
 	<typeinfo>
 
+1346989738 
+
 1346879764 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
 	"TypeDefs.h"
 	"Message.h"
 	<map>
+
+1346989738 "
 
 1347018483 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
 	"ObjectStore.h"
@@ -29,17 +33,25 @@
 	"ObjectBuilder.h"
 	<string>
 
+1346989738 
+
 1347018315 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 
+1348088275 perty_tree/xml_parser.hpp>
+
 1346865160 source:/home/sh695/Documents/Programs/NewComponentEngine/Components.cpp
 	"Components.h"
 
+1346989738 s.h"
+
 1346865160 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
 	"TypeDefs.h"
+
+1348084281 h"
 
 1346865160 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
 	"HealthComp.h"
@@ -151,6 +163,8 @@
 	"ObjectStore.h"
 	"MessageCentre.h"
 
+1346989738 ntre.h"
+
 1346865160 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
 	<SFML/Graphics.hpp>
 	"Vector2d.h"
@@ -186,6 +200,8 @@
 1346865160 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.cpp
 	"CoordsComp.h"
 
+1347213553 p.h"
+
 1346865160 /home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.h
 	"Components.h"
 	"Vector2d.h"
@@ -217,6 +233,8 @@
 	"TypeDefs.h"
 	<SFML/Graphics.hpp>
 
+1346989738 hics.hpp>
+
 1346865160 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxComp.cpp
 	"GfxComp.h"
 	"Store.h"
@@ -236,6 +254,8 @@
 1346884106 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
 	"LauncherComp.h"
 
+1346989738 omp.h"
+
 1346884144 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
 	"Systems.h"
 	"LauncherComp.h"
@@ -247,6 +267,8 @@
 
 1347016632 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
 	"CollisionComp.h"
+
+1348088409 Comp.h"
 
 1347016524 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
 	"Components.h"
@@ -260,4 +282,287 @@
 	"Telegram.h"
 	"Message.h"
 	"MessageCentre.h"
+
+1348088409 source:c:\documents and settings\me\my documents\programs\newcomponentengine\collisioncomp.cpp
+	"CollisionComp.h"
+
+1348088409 c:\documents and settings\me\my documents\programs\newcomponentengine\collisioncomp.h
+	"Components.h"
+	"TypeDefs.h"
+	<set>
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\components.h
+	"TypeDefs.h"
+
+1348088275 c:\documents and settings\me\my documents\programs\newcomponentengine\typedefs.h
+	<vector>
+	<string>
+	<map>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+
+1348093037 source:c:\documents and settings\me\my documents\programs\newcomponentengine\collisionsys.cpp
+	"Systems.h"
+	"CollisionComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+
+1347700495 c:\documents and settings\me\my documents\programs\newcomponentengine\systems.h
+	"TypeDefs.h"
+	"Message.h"
+	<map>
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\message.h
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\core.h
+	"ObjectStore.h"
+	"Store.h"
+	"Systems.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"CoordsComp.h"
+	"MoveComp.h"
+	"GfxComp.h"
+	"LauncherComp.h"
+	"CollisionComp.h"
+	"ObjectBuilder.h"
+	<string>
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\objectstore.h
+	<map>
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\store.h
+	<map>
+	<string>
+	<SFML/Graphics.hpp>
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\healthcomp.h
+	"Components.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\namecomp.h
+	"Components.h"
+	<string>
+
+1347213986 c:\documents and settings\me\my documents\programs\newcomponentengine\coordscomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\vector2d.h
+	<iostream>
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\movecomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\gfxcomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+	<SFML/Graphics.hpp>
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\launchercomp.h
+	"Components.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\objectbuilder.h
+	<string>
+	"TypeDefs.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\telegram.h
+	"TypeDefs.h"
+	"Message.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\messagecentre.h
+	<list>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\components.cpp
+	"Components.h"
+
+1347213553 source:c:\documents and settings\me\my documents\programs\newcomponentengine\coordscomp.cpp
+	"CoordsComp.h"
+
+1347213986 source:c:\documents and settings\me\my documents\programs\newcomponentengine\coordssys.cpp
+	"Systems.h"
+	"CoordsComp.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\core.cpp
+	<iostream>
+	<fstream>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"Ui.h"
+	"Core.h"
+	"Store.h"
+	"ObjectBuilder.h"
+	"ObjectStore.h"
+	"MessageCentre.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\ui.h
+	<SFML/Graphics.hpp>
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\gfxcomp.cpp
+	"GfxComp.h"
+	"Store.h"
+	<SFML/Graphics.hpp>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\gfxsys.cpp
+	"Systems.h"
+	"GfxComp.h"
+	"CoordsComp.h"
+	"Core.h"
+	"Ui.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\healthcomp.cpp
+	"HealthComp.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\healthsys.cpp
+	"Systems.h"
+	"HealthComp.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\launchercomp.cpp
+	"LauncherComp.h"
+
+1347214109 source:c:\documents and settings\me\my documents\programs\newcomponentengine\launchersys.cpp
+	"Systems.h"
+	"LauncherComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\message.cpp
+	"Message.h"
+	"Core.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\messagecentre.cpp
+	"MessageCentre.h"
+	"Message.h"
+	"Telegram.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\movecomp.cpp
+	"MoveComp.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\movesys.cpp
+	"Systems.h"
+	"MoveComp.h"
+	"CoordsComp.h"
+	"Core.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\namecomp.cpp
+	"NameComp.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\namesys.cpp
+	"Systems.h"
+	"NameComp.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\object.cpp
+	<iostream>
+	"Object.h"
+	"Core.h"
+	"Message.h"
+
+1346989738 c:\documents and settings\me\my documents\programs\newcomponentengine\object.h
+	"TypeDefs.h"
+
+1347215005 source:c:\documents and settings\me\my documents\programs\newcomponentengine\objectbuilder.cpp
+	"ObjectBuilder.h"
+	"ObjectStore.h"
+	"Core.h"
+	"Store.h"
+	"Telegram.h"
+	"MessageCentre.h"
+	"Object.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\objectstore.cpp
+	"ObjectStore.h"
+	"Object.h"
+	"Core.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\store.cpp
+	<iostream>
+	<fstream>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	<boost/foreach.hpp>
+	"Core.h"
+	"Store.h"
+
+1347700494 source:c:\documents and settings\me\my documents\programs\newcomponentengine\systems.cpp
+	"Systems.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"CoordsComp.h"
+	"MoveComp.h"
+	"GfxComp.h"
+	"LauncherComp.h"
+	"CollisionComp.h"
+	<iostream>
+	<typeinfo>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\telegram.cpp
+	"Telegram.h"
+	"Message.h"
+	"Object.h"
+	"Core.h"
+	"ObjectStore.h"
+	"Systems.h"
+	<iostream>
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\ui.cpp
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"Ui.h"
+	"Core.h"
+	"Telegram.h"
+	"MessageCentre.h"
+
+1346989738 source:c:\documents and settings\me\my documents\programs\newcomponentengine\vector2d.cpp
+	"Vector2d.h"
+
+1348084281 source:c:\documents and settings\me\my documents\programs\newcomponentengine\main.cpp
+	<iostream>
+	<vector>
+	"Core.h"
+	"Systems.h"
+	"MessageCentre.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"Ui.h"
+
+1351773921 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+	"CollisionComp.h"
+
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
+	"Components.h"
+	"TypeDefs.h"
+	<set>
+
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
+	"TypeDefs.h"
+
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+	<vector>
+	<string>
+	<map>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
 

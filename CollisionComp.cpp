@@ -4,16 +4,17 @@
 CollisionComp::CollisionComp(ObjectId id): Component(id, cType::Collision)
 {
     std::cout << "Creating CollisionComp" << std::endl;
+    spatialHash_ = std::set<GridLocation>();
 }
 
 
-void CollisionComp::setSpatialHash(int hash)
+void CollisionComp::setSpatialHash(std::set<GridLocation> gridLocationSet)
 {
-    spatialHash_ = hash;
+    spatialHash_ = gridLocationSet;
 }
 
 
-int CollisionComp::getSpatialHash()
+std::set<GridLocation>* CollisionComp::getSpatialHash()
 {
-    return spatialHash_;
+    return &spatialHash_;
 }

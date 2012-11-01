@@ -32,6 +32,58 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add library="sfml-graphics" />
+			<Add library="sfml-window" />
+			<Add library="sfml-audio" />
+			<Add library="sfml-system" />
+		</Linker>
+		<Unit filename="CollisionComp.cpp" />
+		<Unit filename="CollisionComp.h" />
+		<Unit filename="CollisionSys.cpp" />
+		<Unit filename="Components.cpp" />
+		<Unit filename="Components.h" />
+		<Unit filename="CoordsComp.cpp" />
+		<Unit filename="CoordsComp.h" />
+		<Unit filename="CoordsSys.cpp" />
+		<Unit filename="Core.cpp" />
+		<Unit filename="Core.h" />
+		<Unit filename="GfxComp.cpp" />
+		<Unit filename="GfxComp.h" />
+		<Unit filename="GfxSys.cpp" />
+		<Unit filename="HealthComp.cpp" />
+		<Unit filename="HealthComp.h" />
+		<Unit filename="HealthSys.cpp" />
+		<Unit filename="LauncherComp.cpp" />
+		<Unit filename="LauncherComp.h" />
+		<Unit filename="LauncherSys.cpp" />
+		<Unit filename="Message.cpp" />
+		<Unit filename="Message.h" />
+		<Unit filename="MessageCentre.cpp" />
+		<Unit filename="MessageCentre.h" />
+		<Unit filename="MoveComp.cpp" />
+		<Unit filename="MoveComp.h" />
+		<Unit filename="MoveSys.cpp" />
+		<Unit filename="NameComp.cpp" />
+		<Unit filename="NameComp.h" />
+		<Unit filename="NameSys.cpp" />
+		<Unit filename="Object.cpp" />
+		<Unit filename="Object.h" />
+		<Unit filename="ObjectBuilder.cpp" />
+		<Unit filename="ObjectBuilder.h" />
+		<Unit filename="ObjectStore.cpp" />
+		<Unit filename="ObjectStore.h" />
+		<Unit filename="Store.cpp" />
+		<Unit filename="Store.h" />
+		<Unit filename="Systems.cpp" />
+		<Unit filename="Systems.h" />
+		<Unit filename="Telegram.cpp" />
+		<Unit filename="Telegram.h" />
+		<Unit filename="TypeDefs.h" />
+		<Unit filename="Ui.cpp" />
+		<Unit filename="Ui.h" />
+		<Unit filename="Vector2d.cpp" />
+		<Unit filename="Vector2d.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -67,6 +67,10 @@ void System<CollisionComp>::update(double elapsed)
             {
                 std::vector<ObjectId> vec;
                 vec.push_back(objId);
+<<<<<<< HEAD
+=======
+//                hash->insert(std::make_pair<GridLocation,std::vector<ObjectId> >(*iLocs,vec));
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
                 hash->insert(std::pair<GridLocation,std::vector<ObjectId> >(*iLocs,vec));
             }
             else
@@ -81,6 +85,7 @@ void System<CollisionComp>::update(double elapsed)
         ++iCom;
     }
 
+<<<<<<< HEAD
     //analyse hash and look for collisions
     std::set<std::pair<ObjectId, ObjectId> > collisions;
 
@@ -132,6 +137,27 @@ void System<CollisionComp>::update(double elapsed)
         ++iCol;
     }
 
+=======
+    //analyse hash and look for collisions
+
+    //debug: print out grid
+    CollisionHash::iterator iHash = hash->begin();
+    while(iHash!=hash->end())
+    {
+        if (iHash->second.size()>1)
+        {
+            std::cout << "POTENTIAL COLLISSION: " << iHash->first.first << "," << iHash->first.second << std::endl;
+            for (int x=0; x< iHash->second.size(); ++x)
+            {
+                std::cout << iHash->second[x] << ",";
+                std::cout << core_->getCoordsSub()->getComponent(iHash->second[x])->getCoords() << std::endl;
+            }
+//            std::cout << std::endl;
+        }
+//        std::cout << (*iHash).first.first << "," << (*iHash).first.second << "\t" << iHash->second.size() << std::endl;// << (*iHash).second << std::endl;
+        ++iHash;
+    }
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
 }
 
 

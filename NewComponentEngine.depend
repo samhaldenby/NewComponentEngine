@@ -10,7 +10,11 @@
 	<iostream>
 	<typeinfo>
 
+<<<<<<< HEAD
 1346989738 
+=======
+1346989738 
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
 
 1346879764 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
 	"TypeDefs.h"
@@ -33,6 +37,11 @@
 	"ObjectBuilder.h"
 	<string>
 
+<<<<<<< HEAD
+=======
+1346989738 
+
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
 1347018315 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
@@ -546,6 +555,7 @@
 	"NameComp.h"
 	"Ui.h"
 
+<<<<<<< HEAD
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
 	"CollisionComp.h"
 
@@ -597,8 +607,17 @@
 
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.h
 	<map>
-	"TypeDefs.h"
+=======
+1351773921 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+	"CollisionComp.h"
 
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
+	"Components.h"
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
+	"TypeDefs.h"
+	<set>
+
+<<<<<<< HEAD
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Store.h
 	<map>
 	<string>
@@ -810,4 +829,15 @@
 	"HealthComp.h"
 	"NameComp.h"
 	"Ui.h"
+=======
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
+	"TypeDefs.h"
+
+1351773921 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+	<vector>
+	<string>
+	<map>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+>>>>>>> 97dbc2c4d1105c85f5ec3b86a0006c89552b5268
 

@@ -604,8 +604,10 @@
 	"ObjectBuilder.h"
 	<string>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.h
+1351861320 /home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.h
 	<map>
+	"TypeDefs.h"
+	"Message.h"
 
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Store.h
 	<map>
@@ -728,7 +730,7 @@
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
 	"MoveComp.h"
 
-1351783174 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
+1351859080 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
 	"Systems.h"
 	"MoveComp.h"
 	"CoordsComp.h"
@@ -739,7 +741,7 @@
 	"NameComp.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
+1351859080 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
 	"Systems.h"
 	"NameComp.h"
 	<iostream>
@@ -762,7 +764,7 @@
 	"MessageCentre.h"
 	"Object.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.cpp
+1351861392 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.cpp
 	"ObjectStore.h"
 	"Object.h"
 	"Core.h"
@@ -789,7 +791,7 @@
 	<iostream>
 	<typeinfo>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Telegram.cpp
+1351860914 source:/home/sh695/Documents/Programs/NewComponentEngine/Telegram.cpp
 	"Telegram.h"
 	"Message.h"
 	"Object.h"
@@ -809,7 +811,7 @@
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Vector2d.cpp
 	"Vector2d.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
+1351861320 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
 	<iostream>
 	<vector>
 	"Core.h"

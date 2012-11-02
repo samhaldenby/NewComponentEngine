@@ -81,11 +81,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getHealthSub()->removeComponent(id);
                     break;
                 }
-//                case (cFlag::Collision):
-//                {
-//                    core_->getCollisionSub()->removeComponent(id);
-//                    break;
-//                }
+                case (cFlag::Collision):
+                {
+                    core_->getCollisionSub()->removeComponent(id);
+                    break;
+                }
 //                case (cFlag::OnSelect):
 //                {
 //                    core_->getOnSelectSub()->removeComponent(id);
@@ -172,6 +172,43 @@ Object* ObjectStore::getObject(ObjectId id)
     }
 
     return &(iObject->second);
+}
+
+void ObjectStore::addMessage(Message message)
+{
+    messages_.push_back(message);
+}
+
+
+void ObjectStore::deliverAllMessages()
+{
+    //read messages
+    std::vector<Message>::iterator iMessage = messages_.begin();
+    while(iMessage!=messages_.end())
+    {
+        deliverMessage_(*iMessage);
+        ++iMessage;
+    }
+    //clear messages
+    messages_.clear();
+}
+
+
+void ObjectStore::deliverMessage_(Message message)
+{
+    std::cout << "Delivering message to ObjectStore" << std::endl;
+    //check if target entity is registered with this subsystem
+
+
+    Parameters params = message.getParameters();
+
+    //read message!
+    std::string mainCmd = params[1];
+
+    if (mainCmd=="destroy")
+    {
+        removeObject(message.getTargetId());
+    }
 }
 
 

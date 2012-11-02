@@ -71,7 +71,7 @@ void System<LauncherComp>::deliverMessage_(Message message)
             std::stringstream xSS(""), ySS("");
             CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
             xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
-            ySS << launcherCoordsComp->getCoords().y;
+            ySS << launcherCoordsComp->getCoords().y-10;
             changePosParams.push_back(xSS.str());
             changePosParams.push_back(ySS.str());
             Message changePosMessage(bulletId, bulletId, changePosParams);

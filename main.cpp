@@ -50,6 +50,7 @@ int main()
         core.getGfxSub()->deliverAllMessages();
         core.getLauncherSub()->deliverAllMessages();
         core.getCollisionSub()->deliverAllMessages();
+        core.getObjectStore()->deliverAllMessages();
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);

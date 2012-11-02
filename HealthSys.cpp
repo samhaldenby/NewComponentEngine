@@ -1,5 +1,9 @@
 #include "Systems.h"
 #include "HealthComp.h"
+#include "Telegram.h"
+#include "Message.h"
+#include "MessageCentre.h"
+#include "Core.h"
 #include <iostream>
 
 template <>
@@ -21,7 +25,15 @@ void System<HealthComp>::update(double elapsed)
 
         if(currComponent->getCurrent() <= 0)
         {
-            //send an onZeroHealth message
+            //grab on zero health messages
+            std::vector<Parameters> zeroMessages = currComponent->getOnZeroHealthMessages();
+            for (int x=0; x< zeroMessages.size();++x)
+            {
+
+                Message msg(currComponent->getId(),currComponent->getId(), zeroMessages[x]);
+                Telegram telegram(currComponent->getId(), currComponent->getId(), 0.0, msg);
+                core_->getMessageCentre()->addTelegram(telegram);
+            }
         }
 
         ++iCom;

@@ -115,6 +115,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         HealthComp* health = core_->getHealthSub()->getComponent(objectId);
         health->setMax(blueprint->get("Object.Health.Max", 0));
         health->setCurrent(blueprint->get("Object.Health.Current", 0));
+        health->addOnZeroHealthMessages(blueprint->get("Object.Health.onZeroHealth",""));
     }
 
     if(hasMove)

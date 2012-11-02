@@ -1,4 +1,5 @@
 #include "HealthComp.h"
+#include "Utils.h"
 #include <iostream>
 
 HealthComp::HealthComp(ObjectId id) : Component(id, cType::Health)
@@ -24,4 +25,26 @@ int HealthComp::getMax()
 int HealthComp::getCurrent()
 {
     return current_;
+}
+
+
+void HealthComp::addOnZeroHealthMessages(std::string str)
+{
+     //break string into messages
+    StrTokens messages = tokenise(str,';');
+    StrTokens::iterator iMessage = messages.begin();
+    //add to message list
+    while(iMessage!=messages.end())
+    {
+        //split message into words
+        Parameters params = tokenise(*iMessage,' '); //NB: Parameters === StrTokens
+        onZeroHealthMessages_.push_back(params);
+        ++iMessage;
+    }
+}
+
+std::vector<Parameters> HealthComp::getOnZeroHealthMessages()
+{
+
+    return onZeroHealthMessages_;
 }

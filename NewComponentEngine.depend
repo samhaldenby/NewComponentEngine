@@ -573,7 +573,7 @@
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 
-1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
+1351863500 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -615,7 +615,7 @@
 	<SFML/Graphics.hpp>
 	"TypeDefs.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
+1351863050 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
 	"Components.h"
 
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/NameComp.h
@@ -696,19 +696,24 @@
 	"Ui.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
+1351865334 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
 	"HealthComp.h"
+	"Utils.h"
 	<iostream>
 
-1351858841 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1351865183 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+	"Core.h"
 	<iostream>
 
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
 	"LauncherComp.h"
 
-1351859037 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
+1351861479 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
 	"Systems.h"
 	"LauncherComp.h"
 	<iostream>
@@ -755,7 +760,7 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Object.h
 	"TypeDefs.h"
 
-1351852531 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
+1351862980 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"

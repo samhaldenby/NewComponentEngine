@@ -92,9 +92,9 @@ void System<CollisionComp>::update(double elapsed)
         if (iHash->second.size()>1)
         {
             //check all combinations of possible collisions between objects, e.g. A, B, C, D => AB, AC, AD, BC, BD, CD and, by nature, their reverses BA, CA, DA, CB, DB, DC
-            for (int oA = 0; oA < iHash->second.size(); ++oA)
+            for (unsigned int oA = 0; oA < iHash->second.size(); ++oA)
             {
-                for (int oB = oA+1; oB < iHash->second.size(); ++oB) // oB = oA+1 so that it automatically prevents cases of AA checks or BB checks. i.e. if checking oB vs oA, that would be A vs A, whereas oB(oA+1) vs oA would be  B vs A
+                for (unsigned int oB = oA+1; oB < iHash->second.size(); ++oB) // oB = oA+1 so that it automatically prevents cases of AA checks or BB checks. i.e. if checking oB vs oA, that would be A vs A, whereas oB(oA+1) vs oA would be  B vs A
                 {
                     //std::cout << "Checking collision between Objects " << iHash->second[oA] << " and " << iHash->second[oB] << std::endl;
                     //do radial check for collision on coords of objects

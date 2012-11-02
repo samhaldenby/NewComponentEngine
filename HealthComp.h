@@ -8,6 +8,7 @@ class HealthComp : public Component
     private:
         int max_;
         int current_;
+        std::vector<Parameters> onZeroHealthMessages_;
     public:
 
         HealthComp(ObjectId id);
@@ -19,6 +20,10 @@ class HealthComp : public Component
         int getMax();
 
         int getCurrent();
+
+        void addOnZeroHealthMessages(std::string str);
+
+        std::vector<Parameters> getOnZeroHealthMessages();
 
 };
 

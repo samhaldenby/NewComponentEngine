@@ -11,8 +11,11 @@ class CollisionComp : public Component
         CollisionComp(ObjectId id);
         void setSpatialHash(std::set<GridLocation> gridLocationSet);
         std::set<GridLocation>* getSpatialHash();
+        void addOnCollisionMessages(std::string str);
+        std::vector<Parameters> getOnCollisionMessages();
     private:
         std::set<GridLocation> spatialHash_;
+        std::vector<Parameters> onCollisionMessages_;
 
 };
 

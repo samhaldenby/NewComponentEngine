@@ -60,7 +60,7 @@ void System<MoveComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to MoveComps" << std::endl;
     //check if target entity is registered with this subsystem
-    MoveComp* targetComponent = getComponent(message.getSourceId());
+    MoveComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;

@@ -58,7 +58,7 @@ void System<GfxComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to GfxComps" << std::endl;
     //check if target entity is registered with this subsystem
-    GfxComp* targetComponent = getComponent(message.getSourceId());
+    GfxComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;

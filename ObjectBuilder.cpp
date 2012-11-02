@@ -138,7 +138,8 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     {
         object->addFlag(cFlag::Collision);
         core_->getCollisionSub()->addComponent(objectId);
-        CollisionComp* launcher = core_->getCollisionSub()->getComponent(objectId);
+        CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
+        collision->addOnCollisionMessages(blueprint->get("Object.Collision.onCollision",""));
     }
 
 

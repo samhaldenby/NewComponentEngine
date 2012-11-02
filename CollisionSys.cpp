@@ -125,17 +125,89 @@ void System<CollisionComp>::update(double elapsed)
         ++iHash;
     }
 
+    //Send collision messages
     std::set<std::pair<ObjectId,ObjectId> >::iterator iCol = collisions.begin();
-    int count = 0;
     while(iCol!=collisions.end())
     {
-        count++;
-        std::cout << count << "\t" << iCol->first << "\t" << iCol->second << std::endl;
+        //grab messages for object A and B
+        std::vector<Parameters> aMessages = getComponent(iCol->first)->getOnCollisionMessages();
+        std::vector<Parameters> bMessages = getComponent(iCol->second)->getOnCollisionMessages();
+        //send a message for each onCollisionMessage that the collision components have
+        //aObject messages
+        std::vector<Parameters>::iterator iMessage;
+        iMessage = aMessages.begin();
+        while(iMessage!= aMessages.end())
+        {
+            //calculate target
+            ObjectId targetObject;
+            if((*iMessage)[0]=="self")
+            {
+                targetObject = iCol->first;
+            }
+            else if ((*iMessage)[0]=="target")
+            {
+                targetObject = iCol->second;
+            }
+            else
+            {
+                std::cout << "ERROR: Incorrect parameter for onCollisionMessage in object (i.e. not 'self' or 'target': " << ((*iMessage)[0]) << std::endl;
+                exit(EXIT_FAILURE);
+            }
+
+
+            //grab all params except first one from onCollisionMessage (first one is whether target is self or other)
+            Parameters params(iMessage->begin()+1, iMessage->end());
+            //build message and dispatch
+            Message msg(iCol->first, targetObject, params);
+            Telegram telegram(iCol->first, targetObject, 0.0, msg);
+            core_->getMessageCentre()->addTelegram(telegram);
+
+            ++iMessage;
+        }
+
+        //bObject messages
+        iMessage = bMessages.begin();
+        while(iMessage!= bMessages.end())
+        {
+            //calculate target
+            ObjectId targetObject;
+            if((*iMessage)[0]=="self")
+            {
+                targetObject = iCol->second;    //not iCol->first, as we're now dealing with how B deals with A, not A deals with B.
+            }
+            else if ((*iMessage)[0]=="target")
+            {
+                targetObject = iCol->first;
+            }
+            else
+            {
+                std::cout << "ERROR: Incorrect parameter for onCollisionMessage in object (i.e. not 'self' or 'target': " << ((*iMessage)[0]) << std::endl;
+                exit(EXIT_FAILURE);
+            }
+
+             //grab all params except first one from onCollisionMessage (first one is whether target is self or other)
+            Parameters params(iMessage->begin()+1, iMessage->end());
+            //build message and dispatch
+            Message msg(iCol->second, targetObject, params);
+            Telegram telegram(iCol->second, targetObject, 0.0, msg);
+            core_->getMessageCentre()->addTelegram(telegram);
+            ++iMessage;
+        }
+//        Parameters launchParams;
+//
+//        launchParams.push_back("launcher");
+//        launchParams.push_back("launch");
+//        Message launchMessage(playerId_, playerId_, launchParams);
+//        Telegram launchTelegram(playerId_, playerId_, 0.0, launchMessage);
+//            //send messages
+//        core_->getMessageCentre()->addTelegram(launchTelegram);
+//        count++;
+
         ++iCol;
     }
 
 
-    //analyse hash and look for collisions
+
 
 
 }
@@ -146,7 +218,7 @@ void System<CollisionComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to LauncherComps" << std::endl;
     //check if target entity is registered with this subsystem
-    CollisionComp* targetComponent = getComponent(message.getSourceId());
+    CollisionComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;

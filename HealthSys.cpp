@@ -34,7 +34,7 @@ void System<HealthComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to HealthComps" << std::endl;
     //check if target entity is registered with this subsystem
-    HealthComp* targetComponent = getComponent(message.getSourceId());
+    HealthComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;
@@ -53,6 +53,10 @@ void System<HealthComp>::deliverMessage_(Message message)
     else if (mainCmd=="changeCurrBy")
     {
         targetComponent->setCurrent(targetComponent->getCurrent() + atoi(params[2].c_str()));
+        std::cout << "Health is now " << targetComponent->getCurrent() << " / " << targetComponent->getMax() << std::endl;
+        int dump;
+        std::cin >> dump;
+
     }
 
     else if (mainCmd=="changeMaxTo")

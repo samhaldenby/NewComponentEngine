@@ -25,7 +25,7 @@ void System<CoordsComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to CoordsComps" << std::endl;
     //check if target entity is registered with this subsystem
-    CoordsComp* targetComponent = getComponent(message.getSourceId());
+    CoordsComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;
@@ -39,12 +39,12 @@ void System<CoordsComp>::deliverMessage_(Message message)
     if (mainCmd=="setCoords")
     {
         targetComponent->setCoords(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
-        std::cout << "Set coords of entity " << message.getSourceId() << " to " << targetComponent->getCoords() << std::endl;
+        std::cout << "Set coords of entity " << message.getTargetId() << " to " << targetComponent->getCoords() << std::endl;
     }
 
     if (mainCmd=="setDims")
     {
         targetComponent->setDimensions(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
-        std::cout << "Set dimensions of entity " << message.getSourceId() << " to " << targetComponent->getCoords() << std::endl;
+        std::cout << "Set dimensions of entity " << message.getTargetId() << " to " << targetComponent->getCoords() << std::endl;
     }
 }

@@ -554,10 +554,11 @@
 	"NameComp.h"
 	"Ui.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+1351855864 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
 	"CollisionComp.h"
+	"Utils.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
+1351855884 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
 	"Components.h"
 	"TypeDefs.h"
 	<set>
@@ -572,7 +573,7 @@
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 
-1351782416 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
+1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -658,7 +659,7 @@
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.cpp
 	"CoordsComp.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
+1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
 	"Systems.h"
 	"CoordsComp.h"
 	<iostream>
@@ -685,7 +686,7 @@
 	"Store.h"
 	<SFML/Graphics.hpp>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
+1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
 	"Systems.h"
 	"GfxComp.h"
 	"CoordsComp.h"
@@ -697,7 +698,7 @@
 	"HealthComp.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1351858841 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
 	<iostream>
@@ -705,7 +706,7 @@
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
 	"LauncherComp.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
+1351859037 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
 	"Systems.h"
 	"LauncherComp.h"
 	<iostream>
@@ -752,7 +753,7 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Object.h
 	"TypeDefs.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
+1351852531 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"
@@ -819,4 +820,13 @@
 	"Ui.h"
 
 1351776429 h"
+
+1351853417 /home/sh695/Documents/Programs/NewComponentEngine/Utils.h
+	<vector>
+	<string>
+
+1351858464 source:/home/sh695/Documents/Programs/NewComponentEngine/Utils.cpp
+	"Utils.h"
+	<sstream>
+	<iostream>
 

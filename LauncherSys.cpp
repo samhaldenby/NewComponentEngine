@@ -43,7 +43,7 @@ void System<LauncherComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to LauncherComps" << std::endl;
     //check if target entity is registered with this subsystem
-    LauncherComp* targetComponent = getComponent(message.getSourceId());
+    LauncherComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;
@@ -69,7 +69,7 @@ void System<LauncherComp>::deliverMessage_(Message message)
             changePosParams.push_back("coords");
             changePosParams.push_back("setCoords");
             std::stringstream xSS(""), ySS("");
-            CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getSourceId());
+            CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
             xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
             ySS << launcherCoordsComp->getCoords().y;
             changePosParams.push_back(xSS.str());

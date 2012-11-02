@@ -16,7 +16,7 @@ void System<NameComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to NameComps" << std::endl;
     //check if target entity is registered with this subsystem
-    NameComp* targetComponent = getComponent(message.getSourceId());
+    NameComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {
         return;

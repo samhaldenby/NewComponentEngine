@@ -38,33 +38,4 @@ bool Object::hasFlag(ComponentFlag flag)
 
 
 
-//void Object::receiveMessage(Message* message)
-//{
-//    ComponentFlag componentType = message->getTargetComponentType();
-//    //is the message meant for a component or the object itself?
-//    if(componentType==cFlag::Obj)
-//    {
-//        //process here
-//        return;
-//    }
-//
-//    //Otherwise check if component exists
-//    void* voidComponent = NULL;
-//    switch(componentType)
-//    {
-//        //@ExpandComponent
-//        case (cFlag::Gfx):
-//        {
-//            core_->getGfxSub()->removeComponent(id);
-//            voidComponent = core_->getGfxSub()->getComponent
-//            break;
-//        }
-//        case (cFlag::Coords):
-//        {
-//            core_->getCoordsSub()->removeComponent(id);
-//            break;
-//        }
-//    }
-//
-//
-//}
+

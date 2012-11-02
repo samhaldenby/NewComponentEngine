@@ -1,11 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Object>
   <Name>player</Name>
-  <Gfx>true<Sprite>spaceship.png</Sprite></Gfx>
-  <Coords>true<x>20</x><y>50</y></Coords>
-  <Health>true<Max>10</Max><Current>10</Current></Health>
-  <Move>true<x>0.4</x><y>0</y></Move>
+  
+  <Gfx>true
+    <Sprite>spaceship.png</Sprite>
+  </Gfx>
+  
+  <Coords>true
+    <x>20</x>
+    <y>50</y>
+  </Coords>
+  
+  <Health>true
+    <Max>100</Max>
+    <Current>100</Current>
+    <onZeroHealth>object destroy</onZeroHealth>
+  </Health>
+  
+  <Move>true
+    <x>0.4</x>
+    <y>0</y>
+  </Move>
+  
   <Input>true</Input>
-  <Launcher>true<MaxCooldown>0.1</MaxCooldown><Projectile>simpleBullet</Projectile></Launcher>
+  
+  <Launcher>true
+    <MaxCooldown>0.1</MaxCooldown>
+    <Projectile>simpleBullet</Projectile>
+  </Launcher>
+  
   <Collision>true</Collision>
+  
 </Object>
+
+

@@ -24,10 +24,6 @@ int main()
     core.getUi()->setPlayer(playerId);
 
 
-//    myMap.insert(std::pair<std::pair<int,int>(1,2),1);
-
-    int dump;
-//    std::cin >> dump;
     double elapsed;
     bool firstRun = true;
     int count = 0;

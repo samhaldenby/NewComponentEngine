@@ -696,12 +696,12 @@
 	"Ui.h"
 	<iostream>
 
-1351865334 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
+1351865720 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
 	"HealthComp.h"
 	"Utils.h"
 	<iostream>
 
-1351865183 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1351865720 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"Telegram.h"
@@ -751,7 +751,7 @@
 	"NameComp.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Object.cpp
+1351867548 source:/home/sh695/Documents/Programs/NewComponentEngine/Object.cpp
 	<iostream>
 	"Object.h"
 	"Core.h"
@@ -816,7 +816,7 @@
 1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Vector2d.cpp
 	"Vector2d.h"
 
-1351861320 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
+1351866971 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
 	<iostream>
 	<vector>
 	"Core.h"

@@ -66,9 +66,6 @@ void System<HealthComp>::deliverMessage_(Message message)
     {
         targetComponent->setCurrent(targetComponent->getCurrent() + atoi(params[2].c_str()));
         std::cout << "Health is now " << targetComponent->getCurrent() << " / " << targetComponent->getMax() << std::endl;
-        int dump;
-        std::cin >> dump;
-
     }
 
     else if (mainCmd=="changeMaxTo")

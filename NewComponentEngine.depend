@@ -566,7 +566,7 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
 	"TypeDefs.h"
 
-1352126927 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+1352130498 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
 	<map>
@@ -703,7 +703,7 @@
 	"Utils.h"
 	<iostream>
 
-1351865720 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1352130294 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"Telegram.h"
@@ -762,7 +762,7 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Object.h
 	"TypeDefs.h"
 
-1352127955 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
+1352130093 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"
@@ -845,15 +845,24 @@
 	"AudioComp.h"
 	"Store.h"
 
-1352127164 /home/sh695/Documents/Programs/NewComponentEngine/AudioComp.h
+1352132759 /home/sh695/Documents/Programs/NewComponentEngine/AudioComp.h
 	"Components.h"
 	"TypeDefs.h"
 	<SFML/Audio.hpp>
 
-1352129056 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
+1352133639 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
 	"Systems.h"
 	"Core.h"
 	"AudioComp.h"
 	"Ui.h"
+	"SoundManager.h"
 	<iostream>
+
+1352133639 /home/sh695/Documents/Programs/NewComponentEngine/SoundManager.h
+	<SFML/Audio.hpp>
+
+1352133452 source:/home/sh695/Documents/Programs/NewComponentEngine/SoundManager.cpp
+	<iostream>
+	"TypeDefs.h"
+	"SoundManager.h"
 

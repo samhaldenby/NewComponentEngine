@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "AudioComp.h"
 #include "Ui.h"
+#include "SoundManager.h"
 #include <iostream>
 
 
@@ -11,6 +12,12 @@ void System<AudioComp>::update(double elapsed)
 
     std::map<ObjectId,AudioComp>::iterator iCom = components_.begin();
 
+    //ensure there are initialised audios available
+    if (this->extensions_==NULL)
+    {
+        std::cout << "No audios initialised. Will create now" << std::endl;
+        extensions_ = new SoundManager();
+    }
 
 
 }
@@ -32,6 +39,15 @@ void System<AudioComp>::deliverMessage_(Message message)
 
     //read message!
     std::string mainCmd = params[1];
+
+    if (mainCmd=="play")
+    {
+        //get sound corresponding to key
+        std::string key = params[2];
+        SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
+        soundManager->playSound(targetComponent->getSound(key));
+        std::cout << "PLAYING A SOUND!" << std::endl;
+    }
 
 //    if (mainCmd=="changeSprite")
 //    {

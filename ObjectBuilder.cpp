@@ -67,7 +67,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         object->addFlag(cFlag::Gfx);
         core_->getGfxSub()->addComponent(objectId);
         GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
-        //send message to update graphics
+        //update graphics
         Parameters changeGfxParams;
         std::string imageName = blueprint->get("Object.Gfx.Sprite","");
         sf::Image* image = core_->getStore()->getImage(imageName);
@@ -86,7 +86,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         object->addFlag(cFlag::Audio);
         core_->getAudioSub()->addComponent(objectId);
         AudioComp* audio = core_->getAudioSub()->getComponent(objectId);
-        //send messages to add audio
+        //add audio
         std::string soundNames = blueprint->get("Object.Audio.Sounds","");
         StrTokens tokens = tokenise(soundNames, ';');
         StrTokens::iterator iToken=tokens.begin();

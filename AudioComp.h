@@ -13,9 +13,9 @@ class AudioComp : public Component
         void removeSound(std::string key);
         sf::SoundBuffer* getSound(std::string key);
 
-
     private:
         std::map<std::string, sf::SoundBuffer*> soundMap_;
+
 };
 
 

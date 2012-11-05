@@ -77,6 +77,8 @@
 		<Unit filename="ObjectBuilder.h" />
 		<Unit filename="ObjectStore.cpp" />
 		<Unit filename="ObjectStore.h" />
+		<Unit filename="SoundManager.cpp" />
+		<Unit filename="SoundManager.h" />
 		<Unit filename="Store.cpp" />
 		<Unit filename="Store.h" />
 		<Unit filename="Systems.cpp" />

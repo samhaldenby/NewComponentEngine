@@ -4,6 +4,7 @@
 #include "CoordsComp.h"
 #include "MoveComp.h"
 #include "GfxComp.h"
+#include "AudioComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
 #include <iostream>
@@ -93,6 +94,7 @@ template class System<NameComp>;
 template class System<CoordsComp>;
 template class System<MoveComp>;
 template class System<GfxComp>;
+template class System<AudioComp>;
 template class System<LauncherComp>;
 template class System<CollisionComp>;
 

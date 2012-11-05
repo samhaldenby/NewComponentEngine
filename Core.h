@@ -5,6 +5,7 @@
 #include "Store.h"
 
 #include "Systems.h"
+#include "AudioComp.h"
 #include "HealthComp.h"
 #include "NameComp.h"
 #include "CoordsComp.h"
@@ -42,6 +43,7 @@ class Core
         System<CoordsComp>* getCoordsSub();
         System<MoveComp>*   getMoveSub();
         System<GfxComp>*    getGfxSub();
+        System<AudioComp>*  getAudioSub();
         System<LauncherComp>* getLauncherSub();
         System<CollisionComp>* getCollisionSub();
 
@@ -53,6 +55,7 @@ class Core
         System<CoordsComp>* coordsSub_;
         System<MoveComp>*   moveSub_;
         System<GfxComp>*    gfxSub_;
+        System<AudioComp>*  audioSub_;
         System<LauncherComp>* launcherSub_;
         System<CollisionComp>* collisionSub_;
 

@@ -6,6 +6,11 @@
     <Sprite>simpleBullet.png</Sprite>
   </Gfx>
   
+  <Audio>
+    true
+    <Sounds>onHit explosion.wav;onCreate pew.wav</Sounds>
+  </Audio>
+  
   <Coords>
     true
     <x>200</x>

@@ -5,6 +5,8 @@
 #include "Telegram.h"
 #include "MessageCentre.h"
 
+#include "Utils.h"
+
 
 #include "Object.h"
 
@@ -30,6 +32,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::string name = blueprint->get("Object.Name","NO NAME");
     //check for gfx
     bool hasGfx = blueprint->get("Object.Gfx",false);
+    bool hasAudio = blueprint->get("Object.Audio",false);
 //    bool hasCollision = blueprint->get("Object.Collision",false);
     bool hasCoords = blueprint->get("Object.Coords",false);
 //    bool hasSfx = blueprint->get("Object.Sfx", false);
@@ -43,6 +46,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::cout << "_______________________________________________" << std::endl;
     std::cout << "Creating object instance of " << name << std::endl;
     std::cout << (hasGfx ? "has" : "does not have") << " Gfx" << std::endl;
+    std::cout << (hasAudio ? "has" : "does not have") << " Audio" << std::endl;
 //    std::cout << (hasCoords ? "has" : "does not have") << " Coords" << std::endl;
 //    std::cout << (hasCollision ? "has" : "does not have") << " Collision" << std::endl;
 //    std::cout << (hasSfx ? "has" : "does not have") << " Sfx" << std::endl;
@@ -76,6 +80,31 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
 //        core_->getMessageCentre()->addTelegram(telegram);
 //        gfx->setSprite(blueprint->get("Object.Gfx.Sprite", ""));
     }
+
+    if(hasAudio)
+    {
+        object->addFlag(cFlag::Audio);
+        core_->getAudioSub()->addComponent(objectId);
+        AudioComp* audio = core_->getAudioSub()->getComponent(objectId);
+        //send messages to add audio
+        std::string soundNames = blueprint->get("Object.Audio.Sounds","");
+        StrTokens tokens = tokenise(soundNames, ';');
+        StrTokens::iterator iToken=tokens.begin();
+        while(iToken!=tokens.end())
+        {
+            StrTokens splitToken = tokenise(*iToken, ' ');
+            if (splitToken.size()==2)
+            {
+                std::string key = splitToken[0];
+                std::string soundBufferName = splitToken[1];
+                std::cout << "Attempting to add sound to object as " << key << " x " << soundBufferName << std::endl;
+                audio->addSound(key, core_->getStore()->getSoundBuffer(soundBufferName));
+            }
+
+            ++iToken;
+        }
+    }
+
 
 //    if(hasCollision)
 //    {

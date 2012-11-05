@@ -35,6 +35,7 @@ Core::Core(std::string coreConfigFileName)
     coordsSub_ = new System<CoordsComp>(this);
     moveSub_ = new System<MoveComp>(this);
     gfxSub_ = new System<GfxComp>(this);
+    audioSub_ = new System<AudioComp>(this);
     launcherSub_ = new System<LauncherComp>(this);
     collisionSub_ = new System<CollisionComp>(this);
 
@@ -100,6 +101,11 @@ System<MoveComp>* Core::getMoveSub()
 System<GfxComp>* Core::getGfxSub()
 {
     return gfxSub_;
+}
+
+System<AudioComp>* Core::getAudioSub()
+{
+    return audioSub_;
 }
 
 System<LauncherComp>* Core::getLauncherSub()

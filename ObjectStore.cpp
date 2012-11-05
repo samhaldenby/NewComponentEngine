@@ -56,11 +56,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getCoordsSub()->removeComponent(id);
                     break;
                 }
-//                case (cFlag::Audio):
-//                {
-//                    core_->getAudioSub()->removeComponent(id);
-//                    break;
-//                }
+                case (cFlag::Audio):
+                {
+                    core_->getAudioSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Name):
                 {
                     core_->getNameSub()->removeComponent(id);

@@ -27,28 +27,29 @@ namespace cType
             Coords=3,
             Move=4,
             Gfx=5,
-            Launcher=6,
-            Collision=7
+            Audio=6,
+            Launcher=7,
+            Collision=8
         };
 }
 
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
 namespace cFlag
 {
-    enum{   Obj=0,
-            Gfx=1,
-            Coords=2,
-            Audio=4,
-            Move=8,
-            Input=16,
-            Brain=32,
-            Stats=64,
-            Collision=128,
-            Health=256,
-            OnSelect=512,
-            Name=1024,
-            Launcher=2048,
-            MAX=8192,
+    enum{   Obj     =0x0,//0,
+            Gfx     =0x1,//1,
+            Coords  =0x2,//2,
+            Audio   =0x4,//4,
+            Move    =0x8,//8,
+            Input   =0x10,//16,
+            Brain   =0x20,//=32,
+            Stats   =0x40,//=64,
+            Collision=0x80,//=128,
+            Health  =0x100,//256,
+            OnSelect=0x200,//512,
+            Name    =0x400,//1024,
+            Launcher=0x800,//2048,
+            MAX     =0x2000,//8192,
         };
 
 

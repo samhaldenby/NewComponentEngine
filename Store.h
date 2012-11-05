@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "TypeDefs.h"
 
@@ -16,6 +17,7 @@ class Store
         Store(Core* core, std::string coreConfigFileName);
 
         sf::Image* getImage(std::string);
+        sf::SoundBuffer* getSoundBuffer(std::string);
         Blueprint* getBlueprint(std::string);
         Parameters getMessageParameters(std::string);
 
@@ -23,11 +25,13 @@ class Store
         Core* core_;
 
         std::map<std::string , sf::Image> images_;
+        std::map<std::string , sf::SoundBuffer> sounds_;
         std::map<std::string , Blueprint> blueprints_;
         std::map<std::string , Parameters> messageParams_;
 
         void loadAllData_(std::string coreConfigFileName);
         void loadImages_(std::string fileName);
+        void loadAudio_(std::string fileName);
         void loadBlueprints_(std::string fileName);
         void loadMessageParams_(std::string fileName);
 };

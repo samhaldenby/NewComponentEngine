@@ -20,14 +20,17 @@ void Store::loadAllData_(std::string storeConfigFileName)
     boost::property_tree::ptree tree;
     read_xml(storeConfigFileName, tree);
     std::string graphicsFileName = tree.get<std::string>("Store.Graphics");
+    std::string audioFileName = tree.get<std::string>("Store.Audio");
     std::string blueprintsFileName = tree.get<std::string>("Store.Blueprints");
     std::string messageParamsFileName = tree.get<std::string>("Store.MessageParams");
     std::cout << "gfx: " << graphicsFileName << std::endl;
+    std::cout << "audio: " << audioFileName << std::endl;
     std::cout << "blueprints: " << blueprintsFileName << std::endl;
     std::cout << "params: " << messageParamsFileName << std::endl;
 
     //load all data
     loadImages_(graphicsFileName);
+    loadAudio_(audioFileName);
     loadBlueprints_(blueprintsFileName);
     loadMessageParams_(messageParamsFileName);
 }
@@ -105,6 +108,28 @@ void Store::loadImages_(std::string graphicsFileName)
 
 
 
+void Store::loadAudio_(std::string audioFileName)
+{
+    boost::property_tree::ptree tree;
+    read_xml(audioFileName, tree);
+
+
+    //TODO: The loading of audio is not optimal - loads into one variable, passes by value to map. Wasteful! Load directly into map
+    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
+              tree.get_child("Entries"))
+    {
+        std::string soundBufferFileName = v.second.data();
+        sf::SoundBuffer soundBuffer;
+        soundBuffer.LoadFromFile(soundBufferFileName);
+        sounds_.insert(std::pair<std::string,sf::SoundBuffer>(soundBufferFileName, soundBuffer));
+        std::cout << v.second.data() << std::endl;
+    }
+
+    std::cout << "Loaded SoundBuffers: " << sounds_.size() << std::endl;
+}
+
+
+
 sf::Image* Store::getImage(std::string imageName)
 {
     std::map<std::string,sf::Image>::iterator iImage = images_.find(imageName);
@@ -114,6 +139,19 @@ sf::Image* Store::getImage(std::string imageName)
     }
 
     return &iImage->second;
+}
+
+
+
+sf::SoundBuffer* Store::getSoundBuffer(std::string soundName)
+{
+    std::map<std::string,sf::SoundBuffer>::iterator iSound = sounds_.find(soundName);
+    if(iSound == sounds_.end())
+    {
+        return NULL;
+    }
+
+    return &iSound->second;
 }
 
 

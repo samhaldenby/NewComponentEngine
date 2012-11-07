@@ -61,6 +61,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getAudioSub()->removeComponent(id);
                     break;
                 }
+                case (cFlag::Ai):
+                {
+                    core_->getAiSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Name):
                 {
                     core_->getNameSub()->removeComponent(id);

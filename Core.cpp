@@ -38,6 +38,8 @@ Core::Core(std::string coreConfigFileName)
     audioSub_ = new System<AudioComp>(this);
     launcherSub_ = new System<LauncherComp>(this);
     collisionSub_ = new System<CollisionComp>(this);
+    aiSub_ = new System<AiComp>(this);
+
 
 }
 
@@ -101,6 +103,12 @@ System<MoveComp>* Core::getMoveSub()
 System<GfxComp>* Core::getGfxSub()
 {
     return gfxSub_;
+}
+
+
+System<AiComp>* Core::getAiSub()
+{
+    return aiSub_;
 }
 
 System<AudioComp>* Core::getAudioSub()

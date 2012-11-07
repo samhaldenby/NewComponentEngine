@@ -38,6 +38,9 @@
 			<Add library="sfml-system" />
 			<Add library="sfml-audio" />
 		</Linker>
+		<Unit filename="AiComp.cpp" />
+		<Unit filename="AiComp.h" />
+		<Unit filename="AiSys.cpp" />
 		<Unit filename="AudioComp.cpp" />
 		<Unit filename="AudioComp.h" />
 		<Unit filename="AudioSys.cpp" />

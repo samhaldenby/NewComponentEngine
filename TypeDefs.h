@@ -30,7 +30,8 @@ namespace cType
             Gfx=5,
             Audio=6,
             Launcher=7,
-            Collision=8
+            Collision=8,
+            Ai=9
         };
 }
 
@@ -50,7 +51,8 @@ namespace cFlag
             OnSelect=0x200,//512,
             Name    =0x400,//1024,
             Launcher=0x800,//2048,
-            MAX     =0x2000,//8192,
+            Ai      =0x1000,//4096
+            MAX     =0x2000//8192,
         };
 
 

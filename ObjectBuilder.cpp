@@ -33,6 +33,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     //check for gfx
     bool hasGfx = blueprint->get("Object.Gfx",false);
     bool hasAudio = blueprint->get("Object.Audio",false);
+    bool hasAi = blueprint->get("Object.Ai",false);
 //    bool hasCollision = blueprint->get("Object.Collision",false);
     bool hasCoords = blueprint->get("Object.Coords",false);
 //    bool hasSfx = blueprint->get("Object.Sfx", false);
@@ -47,6 +48,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::cout << "Creating object instance of " << name << std::endl;
     std::cout << (hasGfx ? "has" : "does not have") << " Gfx" << std::endl;
     std::cout << (hasAudio ? "has" : "does not have") << " Audio" << std::endl;
+    std::cout << (hasAi ? "has" : "does not have") << " Ai" << std::endl;
 //    std::cout << (hasCoords ? "has" : "does not have") << " Coords" << std::endl;
 //    std::cout << (hasCollision ? "has" : "does not have") << " Collision" << std::endl;
 //    std::cout << (hasSfx ? "has" : "does not have") << " Sfx" << std::endl;
@@ -109,6 +111,15 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
 
             ++iToken;
         }
+    }
+
+
+    if(hasAi)
+    {
+        object->addFlag(cFlag::Ai);
+        core_->getAiSub()->addComponent(objectId);
+        AiComp* ai = core_->getAiSub()->getComponent(objectId);
+
     }
 
 

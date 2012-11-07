@@ -566,7 +566,7 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
 	"TypeDefs.h"
 
-1352130498 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+1352285151 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
 	<map>
@@ -590,10 +590,11 @@
 1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Message.h
 	"TypeDefs.h"
 
-1352127189 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
+1352285163 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
 	"ObjectStore.h"
 	"Store.h"
 	"Systems.h"
+	"AiComp.h"
 	"AudioComp.h"
 	"HealthComp.h"
 	"NameComp.h"
@@ -850,7 +851,7 @@
 	"TypeDefs.h"
 	<SFML/Audio.hpp>
 
-1352283106 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
+1352283263 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
 	"Systems.h"
 	"Core.h"
 	"AudioComp.h"
@@ -865,4 +866,12 @@
 	<iostream>
 	"TypeDefs.h"
 	"SoundManager.h"
+
+1352284739 source:/home/sh695/Documents/Programs/NewComponentEngine/AiComp.cpp
+	"AiComp.h"
+	"Store.h"
+
+1352285151 /home/sh695/Documents/Programs/NewComponentEngine/AiComp.h
+	"Components.h"
+	"TypeDefs.h"
 

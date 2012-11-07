@@ -59,6 +59,7 @@ void Telegram::sendMessage()
     else if (targetSub=="coords") core_->getCoordsSub()->addMessage(message_);
     else if (targetSub=="move") core_->getMoveSub()->addMessage(message_);
     else if (targetSub=="gfx") core_->getGfxSub()->addMessage(message_);
+    else if (targetSub=="ai") core_->getAiSub()->addMessage(message_);
     else if (targetSub=="audio") core_->getAudioSub()->addMessage(message_);
     else if (targetSub=="launcher") core_->getLauncherSub()->addMessage(message_);
     else if (targetSub=="collision") core_->getCollisionSub()->addMessage(message_);

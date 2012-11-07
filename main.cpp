@@ -45,6 +45,7 @@ int main()
         core.getCoordsSub()->deliverAllMessages();
         core.getGfxSub()->deliverAllMessages();
         core.getAudioSub()->deliverAllMessages();
+        core.getAiSub()->deliverAllMessages();
         core.getLauncherSub()->deliverAllMessages();
         core.getCollisionSub()->deliverAllMessages();
         core.getObjectStore()->deliverAllMessages();
@@ -57,6 +58,7 @@ int main()
         core.getLauncherSub()->update(elapsed);
         core.getGfxSub()->update(elapsed);
         core.getAudioSub()->update(elapsed);
+        core.getAiSub()->update(elapsed);
         core.getCollisionSub()->update(elapsed);
 
         firstRun = true;

@@ -20,7 +20,10 @@ SoundManager::SoundManager()
     std::cout << "Created with " << soundInstances_.size() + protectedSoundInstances_.size() << " max concurrent sounds" << std::endl;
 }
 
-
+int SoundManager::getNextPlayerNum()
+{
+    return nextPlayer_;
+}
 
 void SoundManager::playSound(sf::SoundBuffer* soundBuffer, bool isProtected)
 {
@@ -47,6 +50,7 @@ void SoundManager::playSound(sf::SoundBuffer* soundBuffer, bool isProtected)
     }
     else if (!isProtected)
     {
+        std::cout << "NextPlayer = " << nextPlayer_ << " vs size of playerVector: " << soundInstances_.size() << std::endl;
         soundInstances_[nextPlayer_].SetBuffer(*soundBuffer);
         soundInstances_[nextPlayer_].Play();
 

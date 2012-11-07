@@ -98,7 +98,13 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
                 std::string key = splitToken[0];
                 std::string soundBufferName = splitToken[1];
                 std::cout << "Attempting to add sound to object as " << key << " x " << soundBufferName << std::endl;
-                audio->addSound(key, core_->getStore()->getSoundBuffer(soundBufferName));
+                sf::SoundBuffer* buffer = core_->getStore()->getSoundBuffer(soundBufferName);
+                std::cout << "Sound buffer address: " << buffer << std::endl;
+                sf::Sound sound;
+                sound.SetBuffer(*buffer);
+                sound.Play();
+                audio->addSound(key, buffer);
+//                audio->addSound(key, core_->getStore()->getSoundBuffer(soundBufferName));
             }
 
             ++iToken;

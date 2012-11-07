@@ -9,6 +9,7 @@ class SoundManager
         SoundManager();
         void playSound(sf::SoundBuffer* soundBuffer, bool isProtected=false);
 
+        int getNextPlayerNum();
     private:
         std::vector<sf::Sound> soundInstances_;
         std::vector<sf::Sound> protectedSoundInstances_;

@@ -17,6 +17,7 @@ void System<AudioComp>::update(double elapsed)
     {
         std::cout << "No audios initialised. Will create now" << std::endl;
         extensions_ = new SoundManager();
+        SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
     }
 
 

@@ -2,7 +2,7 @@
 #include "Core.h"
 #include "AiComp.h"
 #include <iostream>
-
+#include "Goal.h"
 
 template <>
 void System<AiComp>::update(double elapsed)

@@ -15,6 +15,7 @@ struct Vector2d
 
     //functions
     void zero();
+    double getDistance(Vector2d b);
 
     //operators
     void operator+=(const Vector2d& v);

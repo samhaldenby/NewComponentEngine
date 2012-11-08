@@ -16,6 +16,11 @@ void Message::setCore(Core* core)
 }
 
 
+Core* Message::getCore()
+{
+    return core_;
+}
+
 
 ObjectId Message::getSourceId()
 {

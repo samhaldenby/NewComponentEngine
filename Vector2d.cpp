@@ -1,4 +1,5 @@
 #include "Vector2d.h"
+#include <math.h>
 
 //constructors
 Vector2d::Vector2d() : x(0.0) , y(0.0) {};
@@ -18,6 +19,10 @@ void Vector2d::zero()
     y = 0.0;
 }
 
+double Vector2d::getDistance(Vector2d b)
+{
+    return sqrt(pow(x-b.x,2)+pow(y-b.y,2));
+}
 //operators
 void Vector2d::operator+=(const Vector2d& v)
 {

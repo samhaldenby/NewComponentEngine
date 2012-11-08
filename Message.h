@@ -18,6 +18,7 @@ class Message
         Parameters getParameters();
 
         static void setCore(Core* core_);
+        static Core* getCore();
     private:
         ObjectId sourceId_;
         ObjectId targetId_;

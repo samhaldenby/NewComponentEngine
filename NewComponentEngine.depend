@@ -554,26 +554,26 @@
 	"NameComp.h"
 	"Ui.h"
 
-1351855864 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
 	"CollisionComp.h"
 	"Utils.h"
 
-1351855884 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.h
 	"Components.h"
 	"TypeDefs.h"
 	<set>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Components.h
 	"TypeDefs.h"
 
-1352285151 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/TypeDefs.h
 	<vector>
 	<string>
 	<map>
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 
-1351870499 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -582,15 +582,15 @@
 	"Message.h"
 	"MessageCentre.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
 	"TypeDefs.h"
 	"Message.h"
 	<map>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Message.h
+1352394149 /home/sh695/Documents/Programs/NewComponentEngine/Message.h
 	"TypeDefs.h"
 
-1352285163 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Core.h
 	"ObjectStore.h"
 	"Store.h"
 	"Systems.h"
@@ -606,70 +606,70 @@
 	"ObjectBuilder.h"
 	<string>
 
-1351861320 /home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.h
 	<map>
 	"TypeDefs.h"
 	"Message.h"
 
-1352125215 /home/sh695/Documents/Programs/NewComponentEngine/Store.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Store.h
 	<map>
 	<string>
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"TypeDefs.h"
 
-1351863050 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
 	"Components.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/NameComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/NameComp.h
 	"Components.h"
 	<string>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.h
 	"Components.h"
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Vector2d.h
+1352394317 /home/sh695/Documents/Programs/NewComponentEngine/Vector2d.h
 	<iostream>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/MoveComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/MoveComp.h
 	"Components.h"
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/GfxComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/GfxComp.h
 	"Components.h"
 	"Vector2d.h"
 	"TypeDefs.h"
 	<SFML/Graphics.hpp>
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.h
 	"Components.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.h
 	<string>
 	"TypeDefs.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Telegram.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Telegram.h
 	"TypeDefs.h"
 	"Message.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/MessageCentre.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/MessageCentre.h
 	<list>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Components.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Components.cpp
 	"Components.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsComp.cpp
 	"CoordsComp.h"
 
-1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
 	"Systems.h"
 	"CoordsComp.h"
 	<iostream>
 
-1352127208 source:/home/sh695/Documents/Programs/NewComponentEngine/Core.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Core.cpp
 	<iostream>
 	<fstream>
 	<boost/property_tree/ptree.hpp>
@@ -681,17 +681,17 @@
 	"ObjectStore.h"
 	"MessageCentre.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
 	<SFML/Graphics.hpp>
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxComp.cpp
 	"GfxComp.h"
 	"Store.h"
 	<SFML/Graphics.hpp>
 
-1351858979 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
 	"Systems.h"
 	"GfxComp.h"
 	"CoordsComp.h"
@@ -699,12 +699,12 @@
 	"Ui.h"
 	<iostream>
 
-1351865720 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthComp.cpp
 	"HealthComp.h"
 	"Utils.h"
 	<iostream>
 
-1352130294 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"Telegram.h"
@@ -713,10 +713,10 @@
 	"Core.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
 	"LauncherComp.h"
 
-1351861479 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
 	"Systems.h"
 	"LauncherComp.h"
 	<iostream>
@@ -725,45 +725,45 @@
 	"Message.h"
 	"MessageCentre.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Message.cpp
+1352394149 source:/home/sh695/Documents/Programs/NewComponentEngine/Message.cpp
 	"Message.h"
 	"Core.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/MessageCentre.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/MessageCentre.cpp
 	"MessageCentre.h"
 	"Message.h"
 	"Telegram.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
 	"MoveComp.h"
 
-1351859080 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
 	"Systems.h"
 	"MoveComp.h"
 	"CoordsComp.h"
 	"Core.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/NameComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/NameComp.cpp
 	"NameComp.h"
 	<iostream>
 
-1351859080 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
 	"Systems.h"
 	"NameComp.h"
 	<iostream>
 
-1351867548 source:/home/sh695/Documents/Programs/NewComponentEngine/Object.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Object.cpp
 	<iostream>
 	"Object.h"
 	"Core.h"
 	"Message.h"
 
-1351776429 /home/sh695/Documents/Programs/NewComponentEngine/Object.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Object.h
 	"TypeDefs.h"
 
-1352282765 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"
@@ -773,13 +773,13 @@
 	"Utils.h"
 	"Object.h"
 
-1352127820 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectStore.cpp
 	"ObjectStore.h"
 	"Object.h"
 	"Core.h"
 	<iostream>
 
-1352125337 source:/home/sh695/Documents/Programs/NewComponentEngine/Store.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Store.cpp
 	<iostream>
 	<fstream>
 	<boost/property_tree/ptree.hpp>
@@ -788,7 +788,7 @@
 	"Core.h"
 	"Store.h"
 
-1352283192 source:/home/sh695/Documents/Programs/NewComponentEngine/Systems.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Systems.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"NameComp.h"
@@ -796,12 +796,13 @@
 	"MoveComp.h"
 	"GfxComp.h"
 	"AudioComp.h"
+	"AiComp.h"
 	"LauncherComp.h"
 	"CollisionComp.h"
 	<iostream>
 	<typeinfo>
 
-1352127931 source:/home/sh695/Documents/Programs/NewComponentEngine/Telegram.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Telegram.cpp
 	"Telegram.h"
 	"Message.h"
 	"Object.h"
@@ -810,7 +811,7 @@
 	"Systems.h"
 	<iostream>
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 	"Ui.h"
@@ -818,10 +819,11 @@
 	"Telegram.h"
 	"MessageCentre.h"
 
-1351776429 source:/home/sh695/Documents/Programs/NewComponentEngine/Vector2d.cpp
+1352394405 source:/home/sh695/Documents/Programs/NewComponentEngine/Vector2d.cpp
 	"Vector2d.h"
+	<math.h>
 
-1352127931 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
 	<iostream>
 	<vector>
 	"Core.h"
@@ -833,25 +835,25 @@
 
 1351776429 h"
 
-1351853417 /home/sh695/Documents/Programs/NewComponentEngine/Utils.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Utils.h
 	<vector>
 	<string>
 
-1351858464 source:/home/sh695/Documents/Programs/NewComponentEngine/Utils.cpp
+1352392786 source:/home/sh695/Documents/Programs/NewComponentEngine/Utils.cpp
 	"Utils.h"
 	<sstream>
 	<iostream>
 
-1352127171 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioComp.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioComp.cpp
 	"AudioComp.h"
 	"Store.h"
 
-1352132759 /home/sh695/Documents/Programs/NewComponentEngine/AudioComp.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/AudioComp.h
 	"Components.h"
 	"TypeDefs.h"
 	<SFML/Audio.hpp>
 
-1352283263 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
 	"Systems.h"
 	"Core.h"
 	"AudioComp.h"
@@ -859,19 +861,50 @@
 	"SoundManager.h"
 	<iostream>
 
-1352283094 /home/sh695/Documents/Programs/NewComponentEngine/SoundManager.h
+1352392790 /home/sh695/Documents/Programs/NewComponentEngine/SoundManager.h
 	<SFML/Audio.hpp>
 
-1352283094 source:/home/sh695/Documents/Programs/NewComponentEngine/SoundManager.cpp
+1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/SoundManager.cpp
 	<iostream>
 	"TypeDefs.h"
 	"SoundManager.h"
 
-1352284739 source:/home/sh695/Documents/Programs/NewComponentEngine/AiComp.cpp
+1352395934 source:/home/sh695/Documents/Programs/NewComponentEngine/AiComp.cpp
 	"AiComp.h"
 	"Store.h"
 
-1352285151 /home/sh695/Documents/Programs/NewComponentEngine/AiComp.h
+1352395749 /home/sh695/Documents/Programs/NewComponentEngine/AiComp.h
+	<queue>
 	"Components.h"
 	"TypeDefs.h"
+
+1352393432 source:/home/sh695/Documents/Programs/NewComponentEngine/AiSys.cpp
+	"Systems.h"
+	"Core.h"
+	"AiComp.h"
+	<iostream>
+	"Goal.h"
+
+1352391760 source:/home/sh695/Documents/Programs/NewComponentEngine/Goals/Goal.cpp
+	"/home/sh695/Documents/Programs/NewComponentEngine/Goals/Goal.h"
+	"../Core.h"
+
+1352391812 /home/sh695/Documents/Programs/NewComponentEngine/Goals/Goal.h
+	"../TypeDefs.h"
+
+1352391671 source:/home/sh695/Documents/Programs/NewComponentEngine/Goals/ApproachGoal.cpp
+	"ApproachGoal.h"
+
+1352391683 /home/sh695/Documents/Programs/NewComponentEngine/Goals/ApproachGoal.h
+	"Goal.h"
+
+1352394423 /home/sh695/Documents/Programs/NewComponentEngine/Goal.h
+	"Message.h"
+
+1352394647 source:/home/sh695/Documents/Programs/NewComponentEngine/Goal.cpp
+	"Goal.h"
+	"Vector2d.h"
+	"Core.h"
+	"Telegram.h"
+	"MessageCentre.h"
 

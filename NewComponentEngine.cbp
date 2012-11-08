@@ -57,6 +57,8 @@
 		<Unit filename="GfxComp.cpp" />
 		<Unit filename="GfxComp.h" />
 		<Unit filename="GfxSys.cpp" />
+		<Unit filename="Goal.cpp" />
+		<Unit filename="Goal.h" />
 		<Unit filename="HealthComp.cpp" />
 		<Unit filename="HealthComp.h" />
 		<Unit filename="HealthSys.cpp" />

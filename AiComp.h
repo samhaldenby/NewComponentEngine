@@ -1,7 +1,6 @@
 #ifndef AICOMP_H_INCLUDED
 #define AICOMP_H_INCLUDED
 
-#include <queue>
 #include "Components.h"
 #include "TypeDefs.h"
 
@@ -11,13 +10,13 @@ class AiComp : public Component
 {
     public:
         AiComp(ObjectId id);
-        void addGoal(Goal* goal);
-        void nextGoal();
-        void clearGoals();
-        Goal* getCurrentGoal();
+        ~AiComp(); //TODO: CHECK DESTRUCTOR WORKS!
+        void setGoal(Goal* goal);
+        void clearGoal();
+        Goal* getGoal();
     private:
 
-        std::queue<Goal*> goals_;
+        Goal* goal_;
 
 
 };

@@ -6,6 +6,11 @@ Component::Component(ObjectId id, CompType compType)
     type_=compType;
 }
 
+Component::~Component()
+{
+    std::cout << "Deleting component" << std::endl;
+}
+
 ObjectId Component::getId()
 {
     return id_;

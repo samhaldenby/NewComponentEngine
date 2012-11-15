@@ -14,6 +14,7 @@ class Component
         Component(ObjectId id, CompType compType);
         ObjectId getId();
         CompType getType();
+        virtual ~Component();
 };
 
 #endif // COMPONENTS_H_INCLUDED

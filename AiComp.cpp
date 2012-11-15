@@ -1,5 +1,6 @@
 #include "AiComp.h"
 #include "Store.h"
+#include "Goal.h"
 
 
 AiComp::AiComp(ObjectId id) : Component(id, cType::Ai)
@@ -7,29 +8,27 @@ AiComp::AiComp(ObjectId id) : Component(id, cType::Ai)
     std::cout << "Creating AiComp" << std::endl;
 }
 
-
-void AiComp::addGoal(Goal* goal)
+AiComp::~AiComp()
 {
-    goals_.push(goal);
+    clearGoal();
 }
 
 
-void AiComp::nextGoal()
+void AiComp::setGoal(Goal* goal)
 {
-    goals_.pop();
+    goal_ = goal;
 }
 
 
-
-void AiComp::clearGoals()
+void AiComp::clearGoal()
 {
-    std::queue<Goal*> emptyQ;
-    goals_ = emptyQ;
+    goal_->del();
+    delete(goal_);
+    goal_ = NULL;
 }
 
 
-
-Goal* AiComp::getCurrentGoal()
+Goal* AiComp::getGoal()
 {
-    return goals_.front();
+    return goal_;
 }

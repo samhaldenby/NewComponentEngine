@@ -10,7 +10,9 @@
     <x>50</x>
     <y>50</y>
   </Coords>
-  
+
+  <Audio>
+    <
   <Health>true
     <Max>100</Max>
     <Current>100</Current>

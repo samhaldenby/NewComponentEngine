@@ -38,7 +38,7 @@ void SoundManager::playSound(sf::SoundBuffer* soundBuffer, bool isProtected)
         std::vector<sf::Sound>::iterator iSound = protectedSoundInstances_.begin();
         while(iSound!=protectedSoundInstances_.end())
         {
-            if(iSound->GetStatus()==sf::Sound::Status::Stopped)
+            if(iSound->GetStatus()==sf::Sound::Stopped)
             {
                 iSound->SetBuffer(*soundBuffer);
                 iSound->Play();

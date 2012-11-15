@@ -31,7 +31,8 @@ namespace cType
             Audio=6,
             Launcher=7,
             Collision=8,
-            Ai=9
+            Ai=9,
+            Event=10
         };
 }
 
@@ -52,7 +53,8 @@ namespace cFlag
             Name    =0x400,//1024,
             Launcher=0x800,//2048,
             Ai      =0x1000,//4096
-            MAX     =0x2000//8192,
+            Event   =0x2000,//8192
+            MAX     =0x2000//16384,
         };
 
 

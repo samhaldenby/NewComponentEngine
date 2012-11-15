@@ -21,6 +21,7 @@ Core::Core(std::string coreConfigFileName)
     std::string storeConfigFileName = tree.get<std::string>("File.Store");
     std::string uiConfigFileName = tree.get<std::string>("File.Ui");
 
+
     //create bolt-ins
     store_ = new Store(this, storeConfigFileName);
     objectBuilder_ = new ObjectBuilder(this);
@@ -39,6 +40,7 @@ Core::Core(std::string coreConfigFileName)
     launcherSub_ = new System<LauncherComp>(this);
     collisionSub_ = new System<CollisionComp>(this);
     aiSub_ = new System<AiComp>(this);
+    eventSub_ = new System<EventComp>(this);
 
 
 }
@@ -109,6 +111,12 @@ System<GfxComp>* Core::getGfxSub()
 System<AiComp>* Core::getAiSub()
 {
     return aiSub_;
+}
+
+
+System<EventComp>* Core::getEventSub()
+{
+    return eventSub_;
 }
 
 System<AudioComp>* Core::getAudioSub()

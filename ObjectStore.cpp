@@ -66,6 +66,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getAiSub()->removeComponent(id);
                     break;
                 }
+                case (cFlag::Event):
+                {
+                    core_->getEventSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Name):
                 {
                     core_->getNameSub()->removeComponent(id);
@@ -103,67 +108,8 @@ void ObjectStore::removeObject(ObjectId id)
     }
 
     objects_.erase(id);
+    std::cout << "Object deleted" << std::endl;
 }
-
-//void ObjectStore::displayObjectStats(ObjectId id)
-//{
-//    std::map<ObjectId,Object>::iterator iObj = objects_.find(id);
-//
-//    if(iObj==objects_.end())
-//    {
-//        std::cout << "This object does not exist" << std::endl;
-//        return;
-//    }
-//
-//    Object* object = &iObj->second;
-//
-//    //See which components this object has and display info on them
-//    for(ComponentFlag x=1; x!=cFlag::MAX; x*=2)
-//    {
-//        if(object->hasFlag(x))
-//        {
-//            switch (x)
-//            {
-//                case (cFlag::Gfx):
-//                {
-//                    core_->getGfxSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Coords):
-//                {
-//                    core_->getCoordsSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Audio):
-//                {
-//                    core_->getAudioSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Move):
-//                {
-//                    core_->getMoveSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Input):
-//                {
-//                    core_->getInputSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Health):
-//                {
-//                    core_->getHealthSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::Collision):
-//                {
-//                    core_->getCollisionSub()->displayStats(id);
-//                    break;
-//                }
-//                case (cFlag::OnSelect):
-//                {
-//                    core_->getOnSelectSub()->displayStats(id);
-//                    break;
-//                }
 
 
 

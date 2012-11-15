@@ -41,6 +41,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     bool hasMove = blueprint->get("Object.Move", false);
     bool hasLauncher = blueprint->get("Object.Launcher",false);
     bool hasCollision = blueprint->get("Object.Collision",false);
+    bool hasEvent = blueprint->get("Object.Event",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -49,6 +50,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     std::cout << (hasGfx ? "has" : "does not have") << " Gfx" << std::endl;
     std::cout << (hasAudio ? "has" : "does not have") << " Audio" << std::endl;
     std::cout << (hasAi ? "has" : "does not have") << " Ai" << std::endl;
+    std::cout << (hasEvent ? "has" : "does not have") << " Event" << std::endl;
 //    std::cout << (hasCoords ? "has" : "does not have") << " Coords" << std::endl;
 //    std::cout << (hasCollision ? "has" : "does not have") << " Collision" << std::endl;
 //    std::cout << (hasSfx ? "has" : "does not have") << " Sfx" << std::endl;
@@ -130,6 +132,26 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
 //        CollisionComponent* collision = core_->getCollisionSub()->getComponent(objectId);
 //    }
 //
+    if(hasEvent)
+    {
+        object->addFlag(cFlag::Event);
+        core_->getEventSub()->addComponent(objectId);
+        EventComp* event = core_->getEventSub()->getComponent(objectId);
+        std::string eventStr = blueprint->get("Object.Events.Messages","");
+        //split by /
+        StrTokens events = tokenise(eventStr,'/');
+        StrTokens::iterator iEvent = events.begin();
+        while(iEvent!=events.end())
+        {
+            //split by =
+            StrTokens scSplit = tokenise(*iEvent,'=');
+            std::string key = scSplit[0];
+            std::string msgs = scSplit[1];
+            event->addEvents(key,msgs);
+            ++iEvent;
+        }
+
+    }
     if(hasName)
     {
         object->addFlag(cFlag::Name);

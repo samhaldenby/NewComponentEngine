@@ -8,6 +8,7 @@
 #include "HealthComp.h"
 #include "NameComp.h"
 #include "Ui.h"
+#include "Telegram.h"
 
 
 
@@ -15,7 +16,6 @@
 int main()
 {
     Core core("coreConfig.xml");
-
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
     core.getObjectBuilder()->createObject("coin");
@@ -46,9 +46,11 @@ int main()
         core.getGfxSub()->deliverAllMessages();
         core.getAudioSub()->deliverAllMessages();
         core.getAiSub()->deliverAllMessages();
+        core.getEventSub()->deliverAllMessages();
         core.getLauncherSub()->deliverAllMessages();
         core.getCollisionSub()->deliverAllMessages();
         core.getObjectStore()->deliverAllMessages();
+
         //update subsystems
 //        core.getInputSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
@@ -59,6 +61,7 @@ int main()
         core.getGfxSub()->update(elapsed);
         core.getAudioSub()->update(elapsed);
         core.getAiSub()->update(elapsed);
+        core.getEventSub()->update(elapsed);
         core.getCollisionSub()->update(elapsed);
 
         firstRun = true;
@@ -72,6 +75,20 @@ int main()
         core.getUi()->update(elapsed);
         if (totElapsed > 1.0)
         {
+//            ObjectId newObjId = core.getObjectBuilder()->createObject("livingQuarters");
+            {
+//                Parameters changePosParams;
+//                changePosParams.push_back("coords");
+//                changePosParams.push_back("setCoords");
+//                std::stringstream xSS(""), ySS("");
+//                xSS << rand()%800;
+//                ySS << rand()%600;
+//                changePosParams.push_back(xSS.str());
+//                changePosParams.push_back(ySS.str());
+//                Message changePosMessage(newObjId, newObjId, changePosParams);
+//                Telegram changePosTelegram(newObjId, newObjId, 0.0, changePosMessage);
+//                core.getMessageCentre()->addTelegram(changePosTelegram);
+            }
             std::cout << "Count: " << count << std::endl;
             totElapsed-=1.0;
             count = 0;

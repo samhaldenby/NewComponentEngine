@@ -28,6 +28,7 @@ void Store::loadAllData_(std::string storeConfigFileName)
     std::cout << "blueprints: " << blueprintsFileName << std::endl;
     std::cout << "params: " << messageParamsFileName << std::endl;
 
+
     //load all data
     loadImages_(graphicsFileName);
     loadAudio_(audioFileName);

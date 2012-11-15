@@ -616,3 +616,378 @@
 	<string>
 	<map>
 
+1352547950 source:c:\documents and settings\me\my documents\github\newcomponentengine\aicomp.cpp
+	"AiComp.h"
+	"Store.h"
+	"Goal.h"
+
+1352548191 c:\documents and settings\me\my documents\github\newcomponentengine\aicomp.h
+	"Components.h"
+	"TypeDefs.h"
+
+1352548036 c:\documents and settings\me\my documents\github\newcomponentengine\components.h
+	"TypeDefs.h"
+
+1353001462 c:\documents and settings\me\my documents\github\newcomponentengine\typedefs.h
+	<vector>
+	<string>
+	<map>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\store.h
+	<map>
+	<string>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"TypeDefs.h"
+
+1352547806 c:\documents and settings\me\my documents\github\newcomponentengine\goal.h
+	<list>
+
+1352545826 source:c:\documents and settings\me\my documents\github\newcomponentengine\aimanager.cpp
+	"AiManager.h"
+	"GoalBuilders.h"
+	"Utils.h"
+	<map>
+
+1352545509 c:\documents and settings\me\my documents\github\newcomponentengine\aimanager.h
+	"Goal.h"
+	"Typedefs.h"
+	<string>
+	<map>
+
+1352545748 c:\documents and settings\me\my documents\github\newcomponentengine\goalbuilders.h
+	"TypeDefs.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\utils.h
+	<vector>
+	<string>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\aisys.cpp
+	"Systems.h"
+	"Core.h"
+	"AiComp.h"
+	<iostream>
+	"Goal.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\systems.h
+	"TypeDefs.h"
+	"Message.h"
+	<map>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\message.h
+	"TypeDefs.h"
+
+1353001462 c:\documents and settings\me\my documents\github\newcomponentengine\core.h
+	"ObjectStore.h"
+	"Store.h"
+	"Systems.h"
+	"AiComp.h"
+	"AudioComp.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"CoordsComp.h"
+	"MoveComp.h"
+	"EventComp.h"
+	"GfxComp.h"
+	"LauncherComp.h"
+	"CollisionComp.h"
+	"ObjectBuilder.h"
+	<string>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\objectstore.h
+	<map>
+	"TypeDefs.h"
+	"Message.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\audiocomp.h
+	"Components.h"
+	"TypeDefs.h"
+	<SFML/Audio.hpp>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\healthcomp.h
+	"Components.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\namecomp.h
+	"Components.h"
+	<string>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\coordscomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\vector2d.h
+	<iostream>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\movecomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\gfxcomp.h
+	"Components.h"
+	"Vector2d.h"
+	"TypeDefs.h"
+	<SFML/Graphics.hpp>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\launchercomp.h
+	"Components.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\collisioncomp.h
+	"Components.h"
+	"TypeDefs.h"
+	<set>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\objectbuilder.h
+	<string>
+	"TypeDefs.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\audiocomp.cpp
+	"AudioComp.h"
+	"Store.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\audiosys.cpp
+	"Systems.h"
+	"Core.h"
+	"AudioComp.h"
+	"Ui.h"
+	"SoundManager.h"
+	<iostream>
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\ui.h
+	<SFML/Graphics.hpp>
+	"Vector2d.h"
+	"TypeDefs.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\soundmanager.h
+	<SFML/Audio.hpp>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\collisioncomp.cpp
+	"CollisionComp.h"
+	"Utils.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\collisionsys.cpp
+	"Systems.h"
+	"CollisionComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\telegram.h
+	"TypeDefs.h"
+	"Message.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\messagecentre.h
+	<list>
+
+1352548243 source:c:\documents and settings\me\my documents\github\newcomponentengine\components.cpp
+	"Components.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\coordscomp.cpp
+	"CoordsComp.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\coordssys.cpp
+	"Systems.h"
+	"CoordsComp.h"
+	<iostream>
+
+1353001462 source:c:\documents and settings\me\my documents\github\newcomponentengine\core.cpp
+	<iostream>
+	<fstream>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"Ui.h"
+	"Core.h"
+	"Store.h"
+	"ObjectBuilder.h"
+	"ObjectStore.h"
+	"MessageCentre.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\gfxcomp.cpp
+	"GfxComp.h"
+	"Store.h"
+	<SFML/Graphics.hpp>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\gfxsys.cpp
+	"Systems.h"
+	"GfxComp.h"
+	"CoordsComp.h"
+	"Core.h"
+	"Ui.h"
+	<iostream>
+
+1352547830 source:c:\documents and settings\me\my documents\github\newcomponentengine\goal.cpp
+	"Goal.h"
+	<iostream>
+
+1352545748 source:c:\documents and settings\me\my documents\github\newcomponentengine\goalbuilders.cpp
+	"GoalBuilders.h"
+	"Goal.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\healthcomp.cpp
+	"HealthComp.h"
+	"Utils.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\healthsys.cpp
+	"Systems.h"
+	"HealthComp.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+	"Core.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\launchercomp.cpp
+	"LauncherComp.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\launchersys.cpp
+	"Systems.h"
+	"LauncherComp.h"
+	<iostream>
+	"Core.h"
+	"Telegram.h"
+	"Message.h"
+	"MessageCentre.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\message.cpp
+	"Message.h"
+	"Core.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\messagecentre.cpp
+	"MessageCentre.h"
+	"Message.h"
+	"Telegram.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\movecomp.cpp
+	"MoveComp.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\movesys.cpp
+	"Systems.h"
+	"MoveComp.h"
+	"CoordsComp.h"
+	"Core.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\namecomp.cpp
+	"NameComp.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\namesys.cpp
+	"Systems.h"
+	"NameComp.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\object.cpp
+	<iostream>
+	"Object.h"
+	"Core.h"
+	"Message.h"
+
+1352367754 c:\documents and settings\me\my documents\github\newcomponentengine\object.h
+	"TypeDefs.h"
+
+1353002004 source:c:\documents and settings\me\my documents\github\newcomponentengine\objectbuilder.cpp
+	"ObjectBuilder.h"
+	"ObjectStore.h"
+	"Core.h"
+	"Store.h"
+	"Telegram.h"
+	"MessageCentre.h"
+	"Utils.h"
+	"Object.h"
+
+1353001462 source:c:\documents and settings\me\my documents\github\newcomponentengine\objectstore.cpp
+	"ObjectStore.h"
+	"Object.h"
+	"Core.h"
+	<iostream>
+
+1352543221 source:c:\documents and settings\me\my documents\github\newcomponentengine\soundmanager.cpp
+	<iostream>
+	"TypeDefs.h"
+	"SoundManager.h"
+
+1352983664 source:c:\documents and settings\me\my documents\github\newcomponentengine\store.cpp
+	<iostream>
+	<fstream>
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	<boost/foreach.hpp>
+	"Core.h"
+	"Store.h"
+
+1353001462 source:c:\documents and settings\me\my documents\github\newcomponentengine\systems.cpp
+	"Systems.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"CoordsComp.h"
+	"MoveComp.h"
+	"GfxComp.h"
+	"AudioComp.h"
+	"AiComp.h"
+	"LauncherComp.h"
+	"CollisionComp.h"
+	"EventComp.h"
+	<iostream>
+	<typeinfo>
+
+1353001462 source:c:\documents and settings\me\my documents\github\newcomponentengine\telegram.cpp
+	"Telegram.h"
+	"Message.h"
+	"Object.h"
+	"Core.h"
+	"ObjectStore.h"
+	"Systems.h"
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\ui.cpp
+	<boost/property_tree/ptree.hpp>
+	<boost/property_tree/xml_parser.hpp>
+	"Ui.h"
+	"Core.h"
+	"Telegram.h"
+	"MessageCentre.h"
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\utils.cpp
+	"Utils.h"
+	<sstream>
+	<iostream>
+
+1352367754 source:c:\documents and settings\me\my documents\github\newcomponentengine\vector2d.cpp
+	"Vector2d.h"
+	<math.h>
+
+1353000848 source:c:\documents and settings\me\my documents\github\newcomponentengine\main.cpp
+	<iostream>
+	<vector>
+	"Core.h"
+	"Systems.h"
+	"MessageCentre.h"
+	"HealthComp.h"
+	"NameComp.h"
+	"Ui.h"
+	"Telegram.h"
+
+1353001487 source:c:\documents and settings\me\my documents\github\newcomponentengine\eventsys.cpp
+	"Systems.h"
+	"Core.h"
+	"EventComp.h"
+	"Telegram.h"
+	"MessageCentre.h"
+	<iostream>
+
+1353000999 c:\documents and settings\me\my documents\github\newcomponentengine\eventcomp.h
+	"Components.h"
+	"TypeDefs.h"
+
+1353001054 source:c:\documents and settings\me\my documents\github\newcomponentengine\eventcomp.cpp
+	"EventComp.h"
+	"Utils.h"
+	"Store.h"
+

@@ -8,6 +8,7 @@
 #include "AiComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
+#include "EventComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -101,4 +102,5 @@ template class System<AudioComp>;
 template class System<AiComp>;
 template class System<LauncherComp>;
 template class System<CollisionComp>;
+template class System<EventComp>;
 

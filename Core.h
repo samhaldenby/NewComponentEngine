@@ -11,6 +11,7 @@
 #include "NameComp.h"
 #include "CoordsComp.h"
 #include "MoveComp.h"
+#include "EventComp.h"
 #include "GfxComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
@@ -48,6 +49,7 @@ class Core
         System<AudioComp>*  getAudioSub();
         System<LauncherComp>* getLauncherSub();
         System<CollisionComp>* getCollisionSub();
+        System<EventComp>* getEventSub();
 
 
 
@@ -61,6 +63,7 @@ class Core
         System<AudioComp>*  audioSub_;
         System<LauncherComp>* launcherSub_;
         System<CollisionComp>* collisionSub_;
+        System<EventComp>* eventSub_;
 
         Store* store_;
         ObjectBuilder* objectBuilder_;

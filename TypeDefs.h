@@ -12,6 +12,7 @@ typedef unsigned long ObjectId;
 typedef unsigned long CompType;
 typedef unsigned short ComponentFlag;
 typedef std::vector<std::string> Parameters;
+typedef std::map<std::string, std::string> NamedParams;
 
 //collision typedefs
 typedef std::pair<int,int> GridLocation;

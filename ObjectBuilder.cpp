@@ -17,7 +17,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
 
 
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
-ObjectId ObjectBuilder::createObject(std::string blueprintName)
+ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams additionalVars)
 {
     //fetch blueprint
     Blueprint* blueprint = core_->getStore()->getBlueprint(blueprintName);
@@ -27,6 +27,22 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         return -1;
     }
 
+
+
+    //If there are changes the original blueprint, make them but back up original values
+    NamedParams backupParams;
+    NamedParams::iterator iVar = additionalVars.begin();
+    while (iVar!=additionalVars.end())
+    {
+        backupParams[iVar->first] = blueprint->get(iVar->first,"");
+
+        std::cout << "Changing: " << iVar->first << " from " << backupParams[iVar->first] << " to " << iVar->second << std::endl;
+        blueprint->put(iVar->first, iVar->second);
+        ++iVar;
+    }
+
+
+    std::cout << "BLUEPRINT: " << blueprint << std::endl;
     //grab name
     bool hasName = blueprint->get("Object.Name",false);
     std::string name = blueprint->get("Object.Name","NO NAME");
@@ -191,8 +207,12 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         object->addFlag(cFlag::Move);
         core_->getMoveSub()->addComponent(objectId);
         MoveComp* move = core_->getMoveSub()->getComponent(objectId);
+//        blueprint->find("Object.Move.x");
+//        blueprint->insert(blueprint->find("Object.Move.x"),10.f)
+//        blueprint->put("Object.Move.x","1");
         move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
     }
+
 
     if(hasLauncher)
     {
@@ -211,7 +231,17 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
         collision->addOnCollisionMessages(blueprint->get("Object.Collision.onCollision",""));
     }
 
+    //revert any changes
+    iVar = backupParams.begin();
+    while (iVar!=backupParams.end())
+    {
+//        backupParams[iVar->first] = blueprint->get(iVar->first,"");
 
+//        std::cout << "Changing: " << iVar->first << " from " << backupParams[iVar->first] << " to " << iVar->second << std::endl;
+        blueprint->put(iVar->first, iVar->second);
+        ++iVar;
+//        int dump; std::cin >> dump;
+    }
     return objectId;
 //
 //    if(hasInput)

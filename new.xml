@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object>
+	
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+	<Name>simpleBullet</Name>
+	<Gfx>
+		
+    true
+    
+  
+		<Sprite>simpleBullet.png</Sprite>
+	</Gfx>
+	<Audio>
+		
+    true
+    
+  
+		<Sounds>onHit audio/laser.wav;onCreate audio/laser.wav</Sounds>
+	</Audio>
+	<Events>
+		
+    true
+    
+  
+		<Messages>onCreate=audio play onCreate;/onDestroy=object destroy</Messages>
+	</Events>
+	<Coords>
+		
+    true
+    
+    
+  
+		<x>82.8947</x>
+		<y>185.847</y>
+	</Coords>
+	<Move>
+		
+    true
+    
+    
+  
+		<x>0</x>
+		<y>-5</y>
+	</Move>
+	<Collision>
+		
+    true
+    
+  
+		<onCollision>target health changeCurrBy -5;self event execute onDestroy;self audio play onHit</onCollision>
+	</Collision>
+</Object>

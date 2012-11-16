@@ -21,7 +21,7 @@ void EventComp::addEvents(std::string key, std::string eventMsg)
         Parameters params = tokenise(msgStr[x],' ');
         msgs.push_back(params);
         std::cout << ">> " << key << " : " << msgStr[x] << std::endl;
-        int dump; std::cin >> dump;
+//        int dump; std::cin >> dump;
     }
 
 

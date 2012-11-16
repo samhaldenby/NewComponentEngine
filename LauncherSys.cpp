@@ -64,21 +64,30 @@ void System<LauncherComp>::deliverMessage_(Message message)
         {
             //launch
             //create telegram for shooting a bullet
-            ObjectId bulletId = core_->getObjectBuilder()->createObject(targetComponent->getProjectileBlueprintName());
-            Parameters changePosParams;
-            changePosParams.push_back("coords");
-            changePosParams.push_back("setCoords");
+            NamedParams kwargs;
             std::stringstream xSS(""), ySS("");
             CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
             xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
             ySS << launcherCoordsComp->getCoords().y-10;
-            changePosParams.push_back(xSS.str());
-            changePosParams.push_back(ySS.str());
-            Message changePosMessage(bulletId, bulletId, changePosParams);
-            Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
+            kwargs["Object.Coords.x"] = xSS.str();
+            kwargs["Object.Coords.y"] = ySS.str();
+
+            core_->getObjectBuilder()->createObject(targetComponent->getProjectileBlueprintName(),kwargs);
+
+//            Parameters changePosParams;
+//            changePosParams.push_back("coords");
+//            changePosParams.push_back("setCoords");
+//            std::stringstream xSS(""), ySS("");
+//            CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
+//            xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
+//            ySS << launcherCoordsComp->getCoords().y-10;
+//            changePosParams.push_back(xSS.str());
+//            changePosParams.push_back(ySS.str());
+//            Message changePosMessage(bulletId, bulletId, changePosParams);
+//            Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
 
             //send messages
-            core_->getMessageCentre()->addTelegram(changePosTelegram);
+//            core_->getMessageCentre()->addTelegram(changePosTelegram);
 
             //put on cooldown
             targetComponent->setOnCooldown(true);

@@ -242,6 +242,19 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
         ++iVar;
 //        int dump; std::cin >> dump;
     }
+
+    //run any onCreate events
+    if (hasEvent)
+    {
+        Parameters onCreateParams;
+        onCreateParams.push_back("event");
+        onCreateParams.push_back("execute");
+        onCreateParams.push_back("onCreate");
+
+        Message onCreateMsg(objectId, objectId, onCreateParams);
+        Telegram onCreateTelegram(objectId, objectId, 0.0, onCreateMsg);
+        core_->getMessageCentre()->addTelegram(onCreateTelegram);
+    }
     return objectId;
 //
 //    if(hasInput)

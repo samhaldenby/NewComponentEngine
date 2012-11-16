@@ -48,23 +48,27 @@ void System<EventComp>::deliverMessage_(Message message)
         //get key
         std::string key = params[2];
         std::vector<Parameters>* message = targetComponent->getEvents(key);
-        for (int x=0; x< message->size(); ++x)
+        if (message!=NULL)
         {
-            //send message
-//            ObjectId bulletId = core_->getObjectBuilder()->createObject(targetComponent->getProjectileBlueprintName());
-//            Parameters changePosParams;
-//            changePosParams.push_back("coords");
-//            changePosParams.push_back("setCoords");
-//            std::stringstream xSS(""), ySS("");
-//            CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
-//            xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
-//            ySS << launcherCoordsComp->getCoords().y-10;
-//            changePosParams.push_back(xSS.str());
-//            changePosParams.push_back(ySS.str());
-            Message msg(targetComponent->getId(), targetComponent->getId(), (*message)[x]);
-            Telegram tel(targetComponent->getId(), targetComponent->getId(), 0.0, msg);
-            core_->getMessageCentre()->addTelegram(tel);
+            for (int x=0; x< message->size(); ++x)
+            {
+                //send message
+    //            ObjectId bulletId = core_->getObjectBuilder()->createObject(targetComponent->getProjectileBlueprintName());
+    //            Parameters changePosParams;
+    //            changePosParams.push_back("coords");
+    //            changePosParams.push_back("setCoords");
+    //            std::stringstream xSS(""), ySS("");
+    //            CoordsComp* launcherCoordsComp = core_->getCoordsSub()->getComponent(message.getTargetId());
+    //            xSS << launcherCoordsComp->getCoords().x + launcherCoordsComp->getDimensions().x/2 ;
+    //            ySS << launcherCoordsComp->getCoords().y-10;
+    //            changePosParams.push_back(xSS.str());
+    //            changePosParams.push_back(ySS.str());
+                Message msg(targetComponent->getId(), targetComponent->getId(), (*message)[x]);
+                Telegram tel(targetComponent->getId(), targetComponent->getId(), 0.0, msg);
+                core_->getMessageCentre()->addTelegram(tel);
+            }
         }
+
     }
 //    if (mainCmd=="play")
 //    {

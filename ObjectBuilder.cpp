@@ -41,7 +41,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName)
     bool hasMove = blueprint->get("Object.Move", false);
     bool hasLauncher = blueprint->get("Object.Launcher",false);
     bool hasCollision = blueprint->get("Object.Collision",false);
-    bool hasEvent = blueprint->get("Object.Event",false);
+    bool hasEvent = blueprint->get("Object.Events",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 

@@ -8,9 +8,14 @@
   
   <Audio>
     true
-    <Sounds>onHit audio/explosion1.wav;onCreate audio/laser.wav</Sounds>
+    <Sounds>onHit audio/laser.wav;onCreate audio/laser.wav</Sounds>
   </Audio>
   
+  <Events>
+    true
+    <Messages>onCreate=audio play onCreate;/onDestroy=object destroy</Messages>
+  </Events>
+
   <Coords>
     true
     <x>200</x>
@@ -25,7 +30,7 @@
   
   <Collision>
     true
-    <onCollision>target health changeCurrBy -5;self object destroy;self audio play onHit</onCollision>
+    <onCollision>target health changeCurrBy -5;self event execute onDestroy;self audio play onHit</onCollision>
   </Collision>
   
 </Object>

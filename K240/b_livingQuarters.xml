@@ -5,7 +5,17 @@
   <Gfx>true
     <Sprite>K240/graphics/living_quarters.png</Sprite>
   </Gfx>
-  
+
+    <Audio>
+    true
+    <Sounds>onDestroy audio/explosion1.wav</Sounds>
+  </Audio>
+
+  <Events>
+    true
+    <Messages>onDestroy=audio play onDestroy;object destroy</Messages>
+  </Events>
+
   <Coords>true
     <x>50</x>
     <y>50</y>
@@ -14,7 +24,7 @@
   <Health>true
     <Max>100</Max>
     <Current>100</Current>
-    <onZeroHealth>object destroy</onZeroHealth>
+    <onZeroHealth>event execute onDestroy</onZeroHealth>
   </Health>
 				
   <OnSelect>true

@@ -31,7 +31,7 @@
   
   <Launcher>true
     <MaxCooldown>0.15</MaxCooldown>
-    <Projectile>laserBullet</Projectile>
+    <Projectile>angleBullet</Projectile>
   </Launcher>
   
   <Collision>true</Collision>

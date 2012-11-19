@@ -2,6 +2,7 @@
 <Entries>
 				<player>player.xml</player>
 				<simpleBullet>simpleBullet.xml</simpleBullet>
+				<angleBullet>angleBullet.xml</angleBullet>
 				<coin>coin.xml</coin>
 				<livingQuarters>K240/b_livingQuarters.xml</livingQuarters>
 </Entries>

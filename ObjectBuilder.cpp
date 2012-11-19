@@ -114,8 +114,9 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
         CompMakerFnMap::iterator iCompMakerFn = compMakerFnMap_.find(componentName);
         if(iCompMakerFn!=compMakerFnMap_.end())
         {
-//            (this->*(compMakerFnMap_[componentName]))(objectId,object,(Blueprint*)(&v.second));
-              (this->*(compMakerFnMap_[componentName]))(objectId,object,blueprint);
+            //pass sub-tree to function
+            (this->*(compMakerFnMap_[componentName]))(objectId,object,(Blueprint*)(&v.second));
+//              (this->*(compMakerFnMap_[componentName]))(objectId,object,blueprint);
         }
 
 
@@ -159,7 +160,7 @@ bool ObjectBuilder::addGfxComp_(ObjectId objectId, Object* object, Blueprint* bl
         GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
         //update graphics
         Parameters changeGfxParams;
-        std::string imageName = blueprint->get("Object.Gfx.Sprite","");
+        std::string imageName = blueprint->get("Sprite","");
         sf::Image* image = core_->getStore()->getImage(imageName);
         gfx->setSprite(image);
 
@@ -174,7 +175,7 @@ bool ObjectBuilder::addAudioComp_(ObjectId objectId, Object* object, Blueprint* 
     core_->getAudioSub()->addComponent(objectId);
     AudioComp* audio = core_->getAudioSub()->getComponent(objectId);
     //add audio
-    std::string soundNames = blueprint->get("Object.Audio.Sounds","");
+    std::string soundNames = blueprint->get("Sounds","");
     StrTokens tokens = tokenise(soundNames, ';');
     StrTokens::iterator iToken=tokens.begin();
     while(iToken!=tokens.end())
@@ -217,7 +218,7 @@ bool ObjectBuilder::addEventComp_(ObjectId objectId, Object* object, Blueprint* 
     object->addFlag(cFlag::Event);
     core_->getEventSub()->addComponent(objectId);
     EventComp* event = core_->getEventSub()->getComponent(objectId);
-    std::string eventStr = blueprint->get("Object.Events.Messages","");
+    std::string eventStr = blueprint->get("Messages","");
     //split by /
     StrTokens events = tokenise(eventStr,'/');
     StrTokens::iterator iEvent = events.begin();
@@ -241,7 +242,7 @@ bool ObjectBuilder::addNameComp_(ObjectId objectId, Object* object, Blueprint* b
     object->addFlag(cFlag::Name);
     core_->getNameSub()->addComponent(objectId);
     NameComp* name = core_->getNameSub()->getComponent(objectId);
-    name->setName(blueprint->get("Object.Name","NO NAME"));
+    name->setName(blueprint->get("Name","NO NAME"));
 
     return true;
 }
@@ -252,7 +253,7 @@ bool ObjectBuilder::addCoordsComp_(ObjectId objectId, Object* object, Blueprint*
     object->addFlag(cFlag::Coords);
     core_->getCoordsSub()->addComponent(objectId);
     CoordsComp* coords = core_->getCoordsSub()->getComponent(objectId);
-    coords->setCoords(Vector2d(blueprint->get("Object.Coords.x",0.f) , blueprint->get("Object.Coords.y",0.f)));
+    coords->setCoords(Vector2d(blueprint->get("x",0.f) , blueprint->get("y",0.f)));
     //if it has gfx, set dimensions too
     GfxComp* gfxComp = core_->getGfxSub()->getComponent(objectId);
     if (gfxComp)
@@ -272,9 +273,9 @@ bool ObjectBuilder::addHealthComp_(ObjectId objectId, Object* object, Blueprint*
     object->addFlag(cFlag::Health);
     core_->getHealthSub()->addComponent(objectId);
     HealthComp* health = core_->getHealthSub()->getComponent(objectId);
-    health->setMax(blueprint->get("Object.Health.Max", 0));
-    health->setCurrent(blueprint->get("Object.Health.Current", 0));
-    health->addOnZeroHealthMessages(blueprint->get("Object.Health.onZeroHealth",""));
+    health->setMax(blueprint->get("Max", 0));
+    health->setCurrent(blueprint->get("Current", 0));
+    health->addOnZeroHealthMessages(blueprint->get("onZeroHealth",""));
 
     return true;
 }
@@ -288,7 +289,7 @@ bool ObjectBuilder::addMoveComp_(ObjectId objectId, Object* object, Blueprint* b
 //        blueprint->find("Object.Move.x");
 //        blueprint->insert(blueprint->find("Object.Move.x"),10.f)
 //        blueprint->put("Object.Move.x","1");
-    move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
+    move->setMove(Vector2d(blueprint->get("x",0.f), blueprint->get("y",0.f)));
 
     return true;
 }
@@ -299,8 +300,8 @@ bool ObjectBuilder::addLauncherComp_(ObjectId objectId, Object* object, Blueprin
     object->addFlag(cFlag::Launcher);
     core_->getLauncherSub()->addComponent(objectId);
     LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
-    launcher->setMaxCooldown(blueprint->get("Object.Launcher.MaxCooldown",0.f));
-    launcher->setProjectileBlueprintName(blueprint->get("Object.Launcher.Projectile",""));
+    launcher->setMaxCooldown(blueprint->get("MaxCooldown",0.f));
+    launcher->setProjectileBlueprintName(blueprint->get("Projectile",""));
 
     return true;
 }
@@ -311,7 +312,7 @@ bool ObjectBuilder::addCollisionComp_(ObjectId objectId, Object* object, Bluepri
     object->addFlag(cFlag::Collision);
     core_->getCollisionSub()->addComponent(objectId);
     CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
-    collision->addOnCollisionMessages(blueprint->get("Object.Collision.onCollision",""));
+    collision->addOnCollisionMessages(blueprint->get("onCollision",""));
 
     return true;
 }

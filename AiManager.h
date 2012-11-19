@@ -2,7 +2,7 @@
 #define AIMANAGER_H_INCLUDED
 
 #include "Goal.h"
-#include "Typedefs.h"
+#include "TypeDefs.h"
 #include <string>
 #include <map>
 

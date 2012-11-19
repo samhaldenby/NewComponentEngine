@@ -82,154 +82,13 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     int objectId = core_->getObjectStore()->addObject();
     Object* object = core_->getObjectStore()->getObject(objectId);
     //build modules
-    if(hasGfx)
-    {
-        object->addFlag(cFlag::Gfx);
-        core_->getGfxSub()->addComponent(objectId);
-        GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
-        //update graphics
-        Parameters changeGfxParams;
-        std::string imageName = blueprint->get("Object.Gfx.Sprite","");
-        sf::Image* image = core_->getStore()->getImage(imageName);
-        gfx->setSprite(image);
-//        changeGfxParams.push_back("gfx");
-//        changeGfxParams.push_back("changeSprite");
-//        changeGfxParams.push_back(blueprint->get("Object.Gfx.Sprite", ""));
-//        Message message(gfx->getId(), gfx->getId(), changeGfxParams);
-//        Telegram telegram(gfx->getId(),gfx->getId(), 0.0, message);
-//        core_->getMessageCentre()->addTelegram(telegram);
-//        gfx->setSprite(blueprint->get("Object.Gfx.Sprite", ""));
-    }
+
 
     if(hasAudio)
     {
-        object->addFlag(cFlag::Audio);
-        core_->getAudioSub()->addComponent(objectId);
-        AudioComp* audio = core_->getAudioSub()->getComponent(objectId);
-        //add audio
-        std::string soundNames = blueprint->get("Object.Audio.Sounds","");
-        StrTokens tokens = tokenise(soundNames, ';');
-        StrTokens::iterator iToken=tokens.begin();
-        while(iToken!=tokens.end())
-        {
-            StrTokens splitToken = tokenise(*iToken, ' ');
-            if (splitToken.size()==2)
-            {
-                std::string key = splitToken[0];
-                std::string soundBufferName = splitToken[1];
-                std::cout << "Attempting to add sound to object as " << key << " x " << soundBufferName << std::endl;
-                sf::SoundBuffer* buffer = core_->getStore()->getSoundBuffer(soundBufferName);
-                std::cout << "Sound buffer address: " << buffer << std::endl;
-                sf::Sound sound;
-                sound.SetBuffer(*buffer);
-                sound.Play();
-                audio->addSound(key, buffer);
-//                audio->addSound(key, core_->getStore()->getSoundBuffer(soundBufferName));
-            }
-
-            ++iToken;
-        }
-    }
-
-
-    if(hasAi)
-    {
-        object->addFlag(cFlag::Ai);
-        core_->getAiSub()->addComponent(objectId);
-        AiComp* ai = core_->getAiSub()->getComponent(objectId);
 
     }
 
-
-//    if(hasCollision)
-//    {
-//        object->addFlag(cFlag::Collision);
-//        core_->getCollisionSub()->addComponent(objectId);
-//        CollisionComponent* collision = core_->getCollisionSub()->getComponent(objectId);
-//    }
-//
-    if(hasEvent)
-    {
-        object->addFlag(cFlag::Event);
-        core_->getEventSub()->addComponent(objectId);
-        EventComp* event = core_->getEventSub()->getComponent(objectId);
-        std::string eventStr = blueprint->get("Object.Events.Messages","");
-        //split by /
-        StrTokens events = tokenise(eventStr,'/');
-        StrTokens::iterator iEvent = events.begin();
-        while(iEvent!=events.end())
-        {
-            //split by =
-            StrTokens scSplit = tokenise(*iEvent,'=');
-            std::string key = scSplit[0];
-            std::string msgs = scSplit[1];
-            event->addEvents(key,msgs);
-            ++iEvent;
-        }
-
-    }
-    if(hasName)
-    {
-        object->addFlag(cFlag::Name);
-        core_->getNameSub()->addComponent(objectId);
-        NameComp* name = core_->getNameSub()->getComponent(objectId);
-        name->setName(blueprint->get("Object.Name","NO NAME"));
-    }
-    if(hasCoords)
-    {
-        object->addFlag(cFlag::Coords);
-        core_->getCoordsSub()->addComponent(objectId);
-        CoordsComp* coords = core_->getCoordsSub()->getComponent(objectId);
-        coords->setCoords(Vector2d(blueprint->get("Object.Coords.x",0.f) , blueprint->get("Object.Coords.y",0.f)));
-        //if it has gfx, set dimensions too
-        GfxComp* gfxComp = core_->getGfxSub()->getComponent(objectId);
-        if (gfxComp)
-        {
-            const sf::Image* image =gfxComp->getSprite()->GetImage();
-
-            coords->setDimensions(Vector2d(gfxComp->getSprite()->GetImage()->GetWidth(), gfxComp->getSprite()->GetImage()->GetWidth()));
-            std::cout << "DIMS: " << coords->getDimensions() << std::endl;
-        }
-    }
-
-    if(hasHealth)
-    {
-        object->addFlag(cFlag::Health);
-        core_->getHealthSub()->addComponent(objectId);
-        HealthComp* health = core_->getHealthSub()->getComponent(objectId);
-        health->setMax(blueprint->get("Object.Health.Max", 0));
-        health->setCurrent(blueprint->get("Object.Health.Current", 0));
-        health->addOnZeroHealthMessages(blueprint->get("Object.Health.onZeroHealth",""));
-    }
-
-    if(hasMove)
-    {
-        object->addFlag(cFlag::Move);
-        core_->getMoveSub()->addComponent(objectId);
-        MoveComp* move = core_->getMoveSub()->getComponent(objectId);
-//        blueprint->find("Object.Move.x");
-//        blueprint->insert(blueprint->find("Object.Move.x"),10.f)
-//        blueprint->put("Object.Move.x","1");
-        move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
-    }
-
-
-    if(hasLauncher)
-    {
-        object->addFlag(cFlag::Launcher);
-        core_->getLauncherSub()->addComponent(objectId);
-        LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
-        launcher->setMaxCooldown(blueprint->get("Object.Launcher.MaxCooldown",0.f));
-        launcher->setProjectileBlueprintName(blueprint->get("Object.Launcher.Projectile",""));
-    }
-
-    if(hasCollision)
-    {
-        object->addFlag(cFlag::Collision);
-        core_->getCollisionSub()->addComponent(objectId);
-        CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
-        collision->addOnCollisionMessages(blueprint->get("Object.Collision.onCollision",""));
-    }
 
     //revert any changes
     iVar = backupParams.begin();
@@ -256,22 +115,172 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
         core_->getMessageCentre()->addTelegram(onCreateTelegram);
     }
     return objectId;
-//
-//    if(hasInput)
-//    {
-//        object->addFlag(cFlag::Input);
-//        core_->getInputSub()->addComponent(objectId);
-//        InputComponent* input = core_->getInputSub()->getComponent(objectId);
-//    }
-//
-//    if(hasOnSelect)
-//    {
-//        object->addFlag(cFlag::OnSelect);
-//        core_->getOnSelectSub()->addComponent(objectId);
-//        OnSelectComponent* onSelect = core_->getOnSelectSub()->getComponent(objectId);
-//        onSelect->setCommand(blueprint->get("Object.OnSelect.Command",""));
-//    }
-//
-//
-//    std::cout << object->hasFlag(cFlag::Gfx) << "\t" << object->hasFlag(cFlag::Coords) << "\t" << object->hasFlag(cFlag::Stats) << std::endl;
+
 }
+
+
+bool ObjectBuilder::addGfxComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+        object->addFlag(cFlag::Gfx);
+        core_->getGfxSub()->addComponent(objectId);
+        GfxComp* gfx = core_->getGfxSub()->getComponent(objectId);
+        //update graphics
+        Parameters changeGfxParams;
+        std::string imageName = blueprint->get("Object.Gfx.Sprite","");
+        sf::Image* image = core_->getStore()->getImage(imageName);
+        gfx->setSprite(image);
+
+        return true;
+}
+
+
+
+bool ObjectBuilder::addAudioComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Audio);
+    core_->getAudioSub()->addComponent(objectId);
+    AudioComp* audio = core_->getAudioSub()->getComponent(objectId);
+    //add audio
+    std::string soundNames = blueprint->get("Object.Audio.Sounds","");
+    StrTokens tokens = tokenise(soundNames, ';');
+    StrTokens::iterator iToken=tokens.begin();
+    while(iToken!=tokens.end())
+    {
+        StrTokens splitToken = tokenise(*iToken, ' ');
+        if (splitToken.size()==2)
+        {
+            std::string key = splitToken[0];
+            std::string soundBufferName = splitToken[1];
+            std::cout << "Attempting to add sound to object as " << key << " x " << soundBufferName << std::endl;
+            sf::SoundBuffer* buffer = core_->getStore()->getSoundBuffer(soundBufferName);
+            std::cout << "Sound buffer address: " << buffer << std::endl;
+            sf::Sound sound;
+            sound.SetBuffer(*buffer);
+            sound.Play();
+            audio->addSound(key, buffer);
+//                audio->addSound(key, core_->getStore()->getSoundBuffer(soundBufferName));
+        }
+
+        ++iToken;
+    }
+
+    return true;
+}
+
+
+bool ObjectBuilder::addAiComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Ai);
+    core_->getAiSub()->addComponent(objectId);
+    AiComp* ai = core_->getAiSub()->getComponent(objectId);
+
+    return true;
+}
+
+
+
+bool ObjectBuilder::addEventComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Event);
+    core_->getEventSub()->addComponent(objectId);
+    EventComp* event = core_->getEventSub()->getComponent(objectId);
+    std::string eventStr = blueprint->get("Object.Events.Messages","");
+    //split by /
+    StrTokens events = tokenise(eventStr,'/');
+    StrTokens::iterator iEvent = events.begin();
+    while(iEvent!=events.end())
+    {
+        //split by =
+        StrTokens scSplit = tokenise(*iEvent,'=');
+        std::string key = scSplit[0];
+        std::string msgs = scSplit[1];
+        event->addEvents(key,msgs);
+        ++iEvent;
+    }
+
+    return true;
+}
+
+
+
+bool ObjectBuilder::addNameComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Name);
+    core_->getNameSub()->addComponent(objectId);
+    NameComp* name = core_->getNameSub()->getComponent(objectId);
+    name->setName(blueprint->get("Object.Name","NO NAME"));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addCoordsComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Coords);
+    core_->getCoordsSub()->addComponent(objectId);
+    CoordsComp* coords = core_->getCoordsSub()->getComponent(objectId);
+    coords->setCoords(Vector2d(blueprint->get("Object.Coords.x",0.f) , blueprint->get("Object.Coords.y",0.f)));
+    //if it has gfx, set dimensions too
+    GfxComp* gfxComp = core_->getGfxSub()->getComponent(objectId);
+    if (gfxComp)
+    {
+        const sf::Image* image =gfxComp->getSprite()->GetImage();
+
+        coords->setDimensions(Vector2d(gfxComp->getSprite()->GetImage()->GetWidth(), gfxComp->getSprite()->GetImage()->GetWidth()));
+        std::cout << "DIMS: " << coords->getDimensions() << std::endl;
+    }
+
+    return true;
+}
+
+
+bool ObjectBuilder::addHealthComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Health);
+    core_->getHealthSub()->addComponent(objectId);
+    HealthComp* health = core_->getHealthSub()->getComponent(objectId);
+    health->setMax(blueprint->get("Object.Health.Max", 0));
+    health->setCurrent(blueprint->get("Object.Health.Current", 0));
+    health->addOnZeroHealthMessages(blueprint->get("Object.Health.onZeroHealth",""));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addMoveComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Move);
+    core_->getMoveSub()->addComponent(objectId);
+    MoveComp* move = core_->getMoveSub()->getComponent(objectId);
+//        blueprint->find("Object.Move.x");
+//        blueprint->insert(blueprint->find("Object.Move.x"),10.f)
+//        blueprint->put("Object.Move.x","1");
+    move->setMove(Vector2d(blueprint->get("Object.Move.x",0.f), blueprint->get("Object.Move.y",0.f)));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addLauncherComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Launcher);
+    core_->getLauncherSub()->addComponent(objectId);
+    LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
+    launcher->setMaxCooldown(blueprint->get("Object.Launcher.MaxCooldown",0.f));
+    launcher->setProjectileBlueprintName(blueprint->get("Object.Launcher.Projectile",""));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addCollisionComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Collision);
+    core_->getCollisionSub()->addComponent(objectId);
+    CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
+    collision->addOnCollisionMessages(blueprint->get("Object.Collision.onCollision",""));
+
+    return true;
+}
+
+

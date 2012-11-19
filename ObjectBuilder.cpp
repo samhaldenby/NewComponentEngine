@@ -3,6 +3,10 @@
 #include "Core.h"
 #include "Store.h"
 #include "Telegram.h"
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+#include <boost/foreach.hpp>
+
 #include "MessageCentre.h"
 
 #include "Utils.h"
@@ -10,9 +14,23 @@
 
 #include "Object.h"
 
+//@@@Update this function on adding new component types
 ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
 {
     Object::setCore(core);
+
+    //initialise component maker function map
+    compMakerFnMap_["Name"]=&ObjectBuilder::addNameComp_;
+    compMakerFnMap_["Gfx"]=&ObjectBuilder::addGfxComp_;
+    compMakerFnMap_["Audio"]=&ObjectBuilder::addAudioComp_;
+    compMakerFnMap_["Ai"]=&ObjectBuilder::addAiComp_;
+    compMakerFnMap_["Coords"]=&ObjectBuilder::addCoordsComp_;
+    compMakerFnMap_["Health"]=&ObjectBuilder::addHealthComp_;
+    compMakerFnMap_["Move"]=&ObjectBuilder::addMoveComp_;
+    compMakerFnMap_["Launcher"]=&ObjectBuilder::addLauncherComp_;
+    compMakerFnMap_["Collision"]=&ObjectBuilder::addCollisionComp_;
+    compMakerFnMap_["Events"]=&ObjectBuilder::addEventComp_;
+
 }
 
 
@@ -81,13 +99,28 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     //create object
     int objectId = core_->getObjectStore()->addObject();
     Object* object = core_->getObjectStore()->getObject(objectId);
-    //build modules
 
 
-    if(hasAudio)
+
+
+    //iterate over ptree and build modules
+    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
+                  blueprint->get_child("Object"))
     {
+        std::string componentName = v.first.data();
+//        std::string blueprintFileName = v.second.data();
+        std::cout << "bp: " << componentName << std::endl;//"\t" << blueprintFileName << std::endl;
+        //add component
+        CompMakerFnMap::iterator iCompMakerFn = compMakerFnMap_.find(componentName);
+        if(iCompMakerFn!=compMakerFnMap_.end())
+        {
+//            (this->*(compMakerFnMap_[componentName]))(objectId,object,(Blueprint*)(&v.second));
+              (this->*(compMakerFnMap_[componentName]))(objectId,object,blueprint);
+        }
+
 
     }
+
 
 
     //revert any changes

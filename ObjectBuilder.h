@@ -5,10 +5,16 @@
 
 #include "TypeDefs.h"
 
+
+
+
 //forward declarations
 //@@@Update this when adding new component
 class Core;
 class Object;
+class ObjectBuilder;
+typedef bool (ObjectBuilder::*CompMakerFn)(ObjectId objectId, Object* object, Blueprint* blueprint);
+typedef std::map<std::string,CompMakerFn> CompMakerFnMap;
 
 class ObjectBuilder
 {
@@ -18,7 +24,10 @@ class ObjectBuilder
 
     private:
         Core* core_;
-        ObjectId idTracker;
+//        ObjectId idTracker;
+
+        CompMakerFnMap compMakerFnMap_;
+
         bool addGfxComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addAudioComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addAiComp_(ObjectId objectId, Object* object, Blueprint* blueprint);

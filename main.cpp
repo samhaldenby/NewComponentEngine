@@ -15,7 +15,7 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    std::cout.setstate(std::ios::failbit);
+//    std::cout.setstate(std::ios::failbit);
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");

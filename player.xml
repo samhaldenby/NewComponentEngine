@@ -29,6 +29,11 @@
     <Projectile>simpleBullet</Projectile>
   </Launcher>
   
+  <Launcher>true
+    <MaxCooldown>0.15</MaxCooldown>
+    <Projectile>laserBullet</Projectile>
+  </Launcher>
+  
   <Collision>true</Collision>
   
 </Object>

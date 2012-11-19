@@ -32,6 +32,8 @@ void System<EventComp>::deliverMessage_(Message message)
 {
     std::cout << "Delivering message to EventComps" << std::endl;
     //check if target entity is registered with this subsystem
+    std::cout << "Now searching for component target " << message.getTargetId() << std::endl;
+    std::cout << "Now searching for component source " << message.getSourceId() << std::endl;
     EventComp* targetComponent = getComponent(message.getTargetId());
     if(targetComponent==NULL)
     {

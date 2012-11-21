@@ -5,16 +5,16 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="AiSys.cpp" open="1" top="0" tabpos="46">
-		<Cursor position="227" topLine="24" />
+		<Cursor position="227" topLine="2" />
 	</File>
 	<File name="AudioComp.cpp" open="1" top="0" tabpos="25">
-		<Cursor position="1219" topLine="29" />
+		<Cursor position="1219" topLine="7" />
 	</File>
 	<File name="AudioComp.h" open="1" top="0" tabpos="44">
 		<Cursor position="62" topLine="0" />
 	</File>
 	<File name="AudioSys.cpp" open="1" top="0" tabpos="26">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="1007" topLine="0" />
 	</File>
 	<File name="CollisionComp.cpp" open="1" top="0" tabpos="19">
 		<Cursor position="206" topLine="0" />
@@ -38,25 +38,25 @@
 		<Cursor position="428" topLine="0" />
 	</File>
 	<File name="CoordsSys.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="819" topLine="25" />
+		<Cursor position="819" topLine="5" />
 	</File>
 	<File name="Core.cpp" open="1" top="0" tabpos="18">
-		<Cursor position="2136" topLine="105" />
+		<Cursor position="2136" topLine="90" />
 	</File>
 	<File name="Core.h" open="1" top="0" tabpos="12">
 		<Cursor position="1709" topLine="0" />
 	</File>
 	<File name="EventComp.cpp" open="1" top="0" tabpos="45">
-		<Cursor position="926" topLine="24" />
+		<Cursor position="926" topLine="18" />
 	</File>
 	<File name="EventComp.h" open="1" top="0" tabpos="48">
 		<Cursor position="334" topLine="0" />
 	</File>
 	<File name="EventSys.cpp" open="1" top="0" tabpos="47">
-		<Cursor position="2251" topLine="54" />
+		<Cursor position="2251" topLine="38" />
 	</File>
 	<File name="GfxComp.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="304" topLine="0" />
+		<Cursor position="194" topLine="0" />
 	</File>
 	<File name="GfxComp.h" open="1" top="0" tabpos="15">
 		<Cursor position="0" topLine="0" />
@@ -103,8 +103,8 @@
 	<File name="Object.cpp" open="1" top="0" tabpos="37">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="ObjectBuilder.cpp" open="1" top="1" tabpos="8">
-		<Cursor position="6153" topLine="137" />
+	<File name="ObjectBuilder.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="8013" topLine="176" />
 	</File>
 	<File name="ObjectBuilder.h" open="1" top="0" tabpos="7">
 		<Cursor position="374" topLine="0" />
@@ -112,23 +112,26 @@
 	<File name="ObjectStore.cpp" open="1" top="0" tabpos="38">
 		<Cursor position="1158" topLine="56" />
 	</File>
-	<File name="SoundManager.cpp" open="1" top="0" tabpos="23">
-		<Cursor position="1240" topLine="29" />
+	<File name="SoundManager.cpp" open="1" top="1" tabpos="23">
+		<Cursor position="5359" topLine="183" />
+	</File>
+	<File name="SoundManager.h" open="1" top="0" tabpos="81">
+		<Cursor position="589" topLine="0" />
 	</File>
 	<File name="Store.cpp" open="1" top="0" tabpos="39">
 		<Cursor position="389" topLine="52" />
 	</File>
 	<File name="Systems.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="2060" topLine="81" />
+		<Cursor position="2060" topLine="61" />
 	</File>
 	<File name="Systems.h" open="1" top="0" tabpos="11">
-		<Cursor position="214" topLine="8" />
+		<Cursor position="214" topLine="1" />
 	</File>
 	<File name="Telegram.cpp" open="1" top="0" tabpos="40">
-		<Cursor position="1869" topLine="72" />
+		<Cursor position="1869" topLine="50" />
 	</File>
 	<File name="TypeDefs.h" open="1" top="0" tabpos="20">
-		<Cursor position="1509" topLine="38" />
+		<Cursor position="1509" topLine="19" />
 	</File>
 	<File name="Ui.cpp" open="1" top="0" tabpos="41">
 		<Cursor position="0" topLine="0" />
@@ -143,6 +146,6 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="195" topLine="3" />
+		<Cursor position="195" topLine="21" />
 	</File>
 </CodeBlocks_layout_file>

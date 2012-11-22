@@ -21,9 +21,9 @@ void System<CollisionComp>::update(double elapsed)
 //    std::cout << "Updating CollisionSys" << std::endl;
 
     //create hash and clear it
-    CollisionHash* hash = new CollisionHash;
-//    static_cast<CollisionHash*>(extensions_);
-    extensions_ = hash;
+    CollisionHash* hash = static_cast<CollisionHash*>(extensions_);
+////    static_cast<CollisionHash*>(extensions_);
+//    extensions_ = hash;
 //    std::cout << "Clearing hash" << std::endl;
     hash->clear();
 //    std::cout << "Cleared" << std::endl;
@@ -237,4 +237,12 @@ void System<CollisionComp>::deliverMessage_(Message message)
 
 
 
+}
+
+
+template <>
+void System<CollisionComp>::init()
+{
+    CollisionHash* hash = new CollisionHash;
+    extensions_ = hash;
 }

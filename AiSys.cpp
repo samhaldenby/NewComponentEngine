@@ -45,3 +45,11 @@ void System<AiComp>::deliverMessage_(Message message)
 
 
 }
+
+
+template <>
+void System<AiComp>::init()
+{
+
+}
+

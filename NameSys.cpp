@@ -35,3 +35,8 @@ void System<NameComp>::deliverMessage_(Message message)
 
 
 
+template <>
+void System<NameComp>::init()
+{
+
+}

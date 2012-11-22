@@ -18,8 +18,9 @@ template <class T>
 inline System<T>::System(Core* core) : core_(core)
 {
     std::cout << "Creating System<" <<  typeid(T).name() << ">" << std::endl;
+    init();
+    std::cout << "Initialised" << std::endl;
 
-    extensions_=NULL;
 }
 
 

@@ -81,3 +81,11 @@ void System<EventComp>::deliverMessage_(Message message)
 //        std::cout << "PLAYING A SOUND!" << std::endl;
 //    }
 }
+
+
+template <>
+void System<EventComp>::init()
+{
+
+}
+

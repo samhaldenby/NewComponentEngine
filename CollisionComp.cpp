@@ -41,3 +41,6 @@ std::vector<Parameters> CollisionComp::getOnCollisionMessages()
 {
     return onCollisionMessages_;
 }
+
+
+

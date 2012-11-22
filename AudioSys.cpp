@@ -13,14 +13,11 @@ void System<AudioComp>::update(double elapsed)
     std::map<ObjectId,AudioComp>::iterator iCom = components_.begin();
 
     //ensure there are initialised audios available
-    if (this->extensions_==NULL)
-    {
-        std::cout << "No audios initialised. Will create now" << std::endl;
-        extensions_ = new SoundManager();
-        SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
-        soundManager->loadMusic("ith.wav");
-        soundManager->analyseMusic();
-    }
+//    if (this->extensions_==NULL)
+//    {
+//        std::cout << "No audios initialised. Will create now" << std::endl;
+//
+//    }
 
 
 }
@@ -64,4 +61,14 @@ void System<AudioComp>::deliverMessage_(Message message)
 //    }
 
 
+}
+
+
+template <>
+void System<AudioComp>::init()
+{
+    extensions_ = new SoundManager();
+    SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
+    soundManager->loadMusic("ith.wav");
+    soundManager->analyseMusic();
 }

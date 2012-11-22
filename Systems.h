@@ -24,6 +24,7 @@ class System
         Core* getCore();
 
         T* getComponent(ObjectId id);
+        void init();
         void addComponent(ObjectId id);
         void removeComponent(ObjectId id);
 

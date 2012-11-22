@@ -87,3 +87,10 @@ void System<MoveComp>::deliverMessage_(Message message)
 
 
 }
+
+
+template <>
+void System<MoveComp>::init()
+{
+
+}

@@ -100,3 +100,11 @@ void System<LauncherComp>::deliverMessage_(Message message)
 
 
 }
+
+
+
+template <>
+void System<LauncherComp>::init()
+{
+
+}

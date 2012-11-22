@@ -82,3 +82,11 @@ void System<GfxComp>::deliverMessage_(Message message)
 
 
 }
+
+
+
+template <>
+void System<GfxComp>::init()
+{
+
+}

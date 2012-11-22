@@ -88,3 +88,10 @@ void System<HealthComp>::deliverMessage_(Message message)
 //        targetComponent->setSprite(params[2]);
 //    }
 }
+
+
+template <>
+void System<HealthComp>::init()
+{
+
+}

@@ -48,3 +48,11 @@ void System<CoordsComp>::deliverMessage_(Message message)
         std::cout << "Set dimensions of entity " << message.getTargetId() << " to " << targetComponent->getCoords() << std::endl;
     }
 }
+
+
+
+template <>
+void System<CoordsComp>::init()
+{
+
+}

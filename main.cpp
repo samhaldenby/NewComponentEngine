@@ -10,6 +10,8 @@
 #include "Ui.h"
 #include "Telegram.h"
 
+#include "MusicPlayer.h"
+
 
 
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
@@ -32,10 +34,25 @@ int main()
   //  clock_t startTime = clock();
     sf::Clock fpsClock;
     double startTime = fpsClock.GetElapsedTime();
+
+    MusicPlayer mPlayer(&core);
+    mPlayer.loadMusic("ith.wav");
+    mPlayer.play();
+
+
     while(firstRun==true)
     {
+
         elapsed = fpsClock.GetElapsedTime();
+
+
+
+
+
         fpsClock.Reset();
+
+        //update music player
+        mPlayer.update(elapsed);
         //update messageCentre
         core.getMessageCentre()->update(elapsed);
 

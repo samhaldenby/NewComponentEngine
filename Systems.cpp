@@ -91,8 +91,33 @@ void System<T>::addMessage(Message message)
 
 
 
+template<class T>
+void System<T>::addToRunningClock(double elapsed)
+{
+    runningElapsed_ += elapsed;
+}
 
 
+template<class T>
+double System<T>::getRunningClockTime()
+{
+    return runningElapsed_;
+}
+
+
+
+template<class T>
+void System<T>::resetRunningClock()
+{
+    runningElapsed_ = 0.0;
+}
+
+
+template<class T>
+void System<T>::reduceRunningClockBy(double elapsed)
+{
+    runningElapsed_ -=elapsed;
+}
 
 template class System<HealthComp>;
 template class System<NameComp>;

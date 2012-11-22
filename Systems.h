@@ -34,10 +34,17 @@ class System
 
         void displayStats(ObjectId id);
 
+        void addToRunningClock(double elapsed);
+        double getRunningClockTime();
+        void resetRunningClock();
+        void reduceRunningClockBy(double elapsed);
+
+
 
     private:
         //pointer to any other stuff
         void* extensions_;
+        double runningElapsed_;
         std::vector<Message> messages_;
         Core* core_;
         std::multimap<ObjectId, T> components_;

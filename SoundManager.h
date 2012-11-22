@@ -13,6 +13,8 @@ class SoundManager
         void analyseMusic();
 
         int getNextPlayerNum();
+
+        double getNextChunk();
     private:
         std::vector<sf::Sound> soundInstances_;
         std::vector<sf::Sound> protectedSoundInstances_;
@@ -21,7 +23,10 @@ class SoundManager
         sf::Sound music_;
         sf::SoundBuffer musicBuffer_;
         std::vector<short> soundChunks_;
+        std::vector<double>processedChunks_;
         int nextPlayer_;
+
+        int currChunk_;
 };
 
 

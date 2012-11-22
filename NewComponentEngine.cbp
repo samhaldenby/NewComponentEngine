@@ -84,6 +84,8 @@
 		<Unit filename="MoveComp.cpp" />
 		<Unit filename="MoveComp.h" />
 		<Unit filename="MoveSys.cpp" />
+		<Unit filename="MusicPlayer.cpp" />
+		<Unit filename="MusicPlayer.h" />
 		<Unit filename="NameComp.cpp" />
 		<Unit filename="NameComp.h" />
 		<Unit filename="NameSys.cpp" />

@@ -1162,7 +1162,7 @@
 	<iostream>
 	"Goal.h"
 
-1353609226 d:\users\sam\documents\github\newcomponentengine\systems.h
+1353614356 d:\users\sam\documents\github\newcomponentengine\systems.h
 	"TypeDefs.h"
 	"Message.h"
 	<map>
@@ -1243,7 +1243,7 @@
 	"AudioComp.h"
 	"Store.h"
 
-1353609380 source:d:\users\sam\documents\github\newcomponentengine\audiosys.cpp
+1353617352 source:d:\users\sam\documents\github\newcomponentengine\audiosys.cpp
 	"Systems.h"
 	"Core.h"
 	"AudioComp.h"
@@ -1256,14 +1256,14 @@
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1353523805 d:\users\sam\documents\github\newcomponentengine\soundmanager.h
+1353614778 d:\users\sam\documents\github\newcomponentengine\soundmanager.h
 	<SFML/Audio.hpp>
 
 1353609482 source:d:\users\sam\documents\github\newcomponentengine\collisioncomp.cpp
 	"CollisionComp.h"
 	"Utils.h"
 
-1353609877 source:d:\users\sam\documents\github\newcomponentengine\collisionsys.cpp
+1353610054 source:d:\users\sam\documents\github\newcomponentengine\collisionsys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -1419,7 +1419,7 @@
 	"Core.h"
 	<iostream>
 
-1353524320 source:d:\users\sam\documents\github\newcomponentengine\soundmanager.cpp
+1353617316 source:d:\users\sam\documents\github\newcomponentengine\soundmanager.cpp
 	<iostream>
 	"TypeDefs.h"
 	"SoundManager.h"
@@ -1434,7 +1434,7 @@
 	"Core.h"
 	"Store.h"
 
-1353609226 source:d:\users\sam\documents\github\newcomponentengine\systems.cpp
+1353614338 source:d:\users\sam\documents\github\newcomponentengine\systems.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"NameComp.h"
@@ -1475,7 +1475,7 @@
 	"Vector2d.h"
 	<math.h>
 
-1353523123 source:d:\users\sam\documents\github\newcomponentengine\main.cpp
+1353619480 source:d:\users\sam\documents\github\newcomponentengine\main.cpp
 	<iostream>
 	<vector>
 	"Core.h"
@@ -1485,4 +1485,13 @@
 	"NameComp.h"
 	"Ui.h"
 	"Telegram.h"
+	"MusicPlayer.h"
+
+1353618992 source:d:\users\sam\documents\github\newcomponentengine\musicplayer.cpp
+	"MusicPlayer.h"
+	"Core.h"
+
+1353618768 d:\users\sam\documents\github\newcomponentengine\musicplayer.h
+	<string>
+	<SFML/Audio.hpp>
 

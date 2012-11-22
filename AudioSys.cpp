@@ -9,6 +9,8 @@
 template <>
 void System<AudioComp>::update(double elapsed)
 {
+    //update music chunks
+    SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
 
     std::map<ObjectId,AudioComp>::iterator iCom = components_.begin();
 
@@ -68,7 +70,5 @@ template <>
 void System<AudioComp>::init()
 {
     extensions_ = new SoundManager();
-    SoundManager* soundManager = static_cast<SoundManager*>(extensions_);
-    soundManager->loadMusic("ith.wav");
-    soundManager->analyseMusic();
+
 }

@@ -1215,7 +1215,7 @@
 1353352338 d:\users\sam\documents\github\newcomponentengine\vector2d.h
 	<iostream>
 
-1353352338 d:\users\sam\documents\github\newcomponentengine\movecomp.h
+1354128281 d:\users\sam\documents\github\newcomponentengine\movecomp.h
 	"Components.h"
 	"Vector2d.h"
 	"TypeDefs.h"
@@ -1266,7 +1266,7 @@
 	"CollisionComp.h"
 	"Utils.h"
 
-1353610054 source:d:\users\sam\documents\github\newcomponentengine\collisionsys.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\collisionsys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -1274,6 +1274,7 @@
 	"Telegram.h"
 	"Message.h"
 	"MessageCentre.h"
+	"Ui.h"
 
 1353352338 d:\users\sam\documents\github\newcomponentengine\telegram.h
 	"TypeDefs.h"
@@ -1375,10 +1376,10 @@
 	"Telegram.h"
 	<iostream>
 
-1353352338 source:d:\users\sam\documents\github\newcomponentengine\movecomp.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\movecomp.cpp
 	"MoveComp.h"
 
-1353609341 source:d:\users\sam\documents\github\newcomponentengine\movesys.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\movesys.cpp
 	"Systems.h"
 	"MoveComp.h"
 	"CoordsComp.h"
@@ -1403,7 +1404,7 @@
 1353352338 d:\users\sam\documents\github\newcomponentengine\object.h
 	"TypeDefs.h"
 
-1353352338 source:d:\users\sam\documents\github\newcomponentengine\objectbuilder.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\objectbuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"
@@ -1422,7 +1423,7 @@
 	"Core.h"
 	<iostream>
 
-1353617316 source:d:\users\sam\documents\github\newcomponentengine\soundmanager.cpp
+1354137016 source:d:\users\sam\documents\github\newcomponentengine\soundmanager.cpp
 	<iostream>
 	"TypeDefs.h"
 	"SoundManager.h"
@@ -1461,7 +1462,7 @@
 	"Systems.h"
 	<iostream>
 
-1353352338 source:d:\users\sam\documents\github\newcomponentengine\ui.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\ui.cpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 	"Ui.h"
@@ -1478,7 +1479,7 @@
 	"Vector2d.h"
 	<math.h>
 
-1353619480 source:d:\users\sam\documents\github\newcomponentengine\main.cpp
+1354128281 source:d:\users\sam\documents\github\newcomponentengine\main.cpp
 	<iostream>
 	<vector>
 	"Core.h"
@@ -1490,7 +1491,7 @@
 	"Telegram.h"
 	"MusicPlayer.h"
 
-1353618992 source:d:\users\sam\documents\github\newcomponentengine\musicplayer.cpp
+1354137015 source:d:\users\sam\documents\github\newcomponentengine\musicplayer.cpp
 	"MusicPlayer.h"
 	"Core.h"
 

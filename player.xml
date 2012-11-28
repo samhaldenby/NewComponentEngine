@@ -18,7 +18,7 @@
   </Health>
   
   <Move>true
-  	<speedFactor>50.0</speedFactor>
+    <speedFactor>80.0</speedFactor>
     <x>0</x>
     <y>0</y>
   </Move>
@@ -30,10 +30,7 @@
     <Projectile>simpleBullet</Projectile>
   </Launcher>
   
-  <Launcher>true
-    <MaxCooldown>0.15</MaxCooldown>
-    <Projectile>angleBullet</Projectile>
-  </Launcher>
+
   
   <Collision>true</Collision>
   

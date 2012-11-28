@@ -8,7 +8,7 @@
   
   <Audio>
     true
-    <Sounds>onHit audio/laser.wav;onCreate audio/laser.wav</Sounds>
+    <Sounds>onHit audio/laser.wav;onCreate audio/laser3.wav</Sounds>
   </Audio>
   
   <Events>

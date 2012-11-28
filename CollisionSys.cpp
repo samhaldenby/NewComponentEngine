@@ -5,7 +5,7 @@
 #include "Telegram.h"
 #include "Message.h"
 #include "MessageCentre.h"
-
+#include "Ui.h"
 //template <>
 //inline System<CollisionComp>::System(Core* core) : core_(core)
 //{
@@ -14,8 +14,7 @@
 //    extensions_ = new CollisionHash*;
 //}
 
-int SCREENH=100;
-int SCREENW=200;
+
 template <>
 void System<CollisionComp>::update(double elapsed)
 {
@@ -30,6 +29,9 @@ void System<CollisionComp>::update(double elapsed)
 //    std::cout << "Cleared" << std::endl;
 
     //update all collision components
+
+    int screenWidth = core_->getUi()->getWindow()->GetWidth();
+    int screenHeight = core_->getUi()->getWindow()->GetHeight();
     std::multimap<ObjectId,CollisionComp>::iterator iCom = components_.begin();
     while(iCom!=components_.end())
     {
@@ -45,8 +47,8 @@ void System<CollisionComp>::update(double elapsed)
         Vector2d dimensions = coordsComponent->getDimensions();
         Vector2d bottomRight = topLeft + dimensions;
 
-        //get rid of entities that go off bottom of screen TODO: Currently hard coded?
-        if(bottomRight.y > SCREENH +100 || topLeft.y < -100 || bottomRight.x < -100 || topLeft.y > SCREENW + 100)
+        //get rid of entities that go off bottom of screen TODO: Could be implemented as an onOffScreen message?
+        if(topLeft.y < -100 || bottomRight.x < -100 || bottomRight.y > screenWidth +100 || topLeft.y > screenHeight + 100)
         {
             Parameters params;
             params.push_back("object");

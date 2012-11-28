@@ -50,8 +50,8 @@ void MusicPlayer::profileMusic_()
 //    int dump;
 //    std::cin >> dump;
 
-    std::ofstream outSound;
-    outSound.open("sound.txt");
+//    std::ofstream outSound;
+//    outSound.open("sound.txt");
     //int winLen = 44100;
     int winLen = 44100;
     int stepSize = 4410;
@@ -120,7 +120,7 @@ void MusicPlayer::profileMusic_()
 
 
 
-    outSound.close();
+//    outSound.close();
 
 
 

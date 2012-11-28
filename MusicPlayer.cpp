@@ -170,7 +170,7 @@ void MusicPlayer::update(double elapsed)
 
             std::stringstream xSS(""),ySpeed("");
             xSS << rand()%800;
-            ySpeed << float(rand()%30+5.0)/5.0;
+            ySpeed << timeSlices_[timeSliceNum_]*50;//float(rand()%30+5.0)/5.0;
             std::cout << "Coords(" << xSS.str() << ",0)" << std::endl;
             params["Object.Coords.x"]=xSS.str();
             params["Object.Coords.y"]="0";

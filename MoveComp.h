@@ -17,9 +17,12 @@ class MoveComp : public Component
         Vector2d getMove();
         void setLocalDestination(Vector2d v);
         Vector2d getLocalDestination();
+        void setSpeed(double s);
+        double getSpeed();
     private:
         Vector2d move_;
         Vector2d localDestination_;
+        double speed_;
 };
 
 

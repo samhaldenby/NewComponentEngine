@@ -31,3 +31,13 @@ Vector2d MoveComp::getLocalDestination()
 {
     return localDestination_;
 }
+
+void MoveComp::setSpeed(double speed)
+{
+    speed_=speed;
+}
+
+double MoveComp::getSpeed()
+{
+    return speed_;
+}

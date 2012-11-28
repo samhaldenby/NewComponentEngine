@@ -24,8 +24,9 @@
   
   <Move>
     true
-    <x>2</x>
-    <y>-5</y>
+    <speedFactor>200</speedFactor>
+    <x>0.371</x>
+    <y>-0.928</y>
   </Move>
   
   <Collision>

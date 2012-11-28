@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1353320976 source:/home/sh695/Documents/Programs/NewComponentEngine/Systems.cpp
+1354114592 source:/home/sh695/Documents/Programs/NewComponentEngine/Systems.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"NameComp.h"
@@ -14,7 +14,7 @@
 	<iostream>
 	<typeinfo>
 
-1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
+1354114592 /home/sh695/Documents/Programs/NewComponentEngine/Systems.h
 	"TypeDefs.h"
 	"Message.h"
 	<map>
@@ -57,7 +57,7 @@
 1352392790 /home/sh695/Documents/Programs/NewComponentEngine/HealthComp.h
 	"Components.h"
 
-1353324895 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
+1354118630 source:/home/sh695/Documents/Programs/NewComponentEngine/main.cpp
 	<iostream>
 	<vector>
 	"Core.h"
@@ -67,6 +67,7 @@
 	"NameComp.h"
 	"Ui.h"
 	"Telegram.h"
+	"MusicPlayer.h"
 
 1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/NameComp.cpp
 	"NameComp.h"
@@ -125,12 +126,12 @@
 	"Systems.h"
 	<iostream>
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
+1354114592 source:/home/sh695/Documents/Programs/NewComponentEngine/NameSys.cpp
 	"Systems.h"
 	"NameComp.h"
 	<iostream>
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/HealthSys.cpp
 	"Systems.h"
 	"HealthComp.h"
 	"Telegram.h"
@@ -167,7 +168,7 @@
 	"ObjectStore.h"
 	"MessageCentre.h"
 
-1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
+1354117360 /home/sh695/Documents/Programs/NewComponentEngine/Ui.h
 	<SFML/Graphics.hpp>
 	"Vector2d.h"
 	"TypeDefs.h"
@@ -179,7 +180,7 @@
 	<string>
 	"TypeDefs.h"
 
-1353329582 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
+1353335321 source:/home/sh695/Documents/Programs/NewComponentEngine/ObjectBuilder.cpp
 	"ObjectBuilder.h"
 	"ObjectStore.h"
 	"Core.h"
@@ -192,7 +193,7 @@
 	"Utils.h"
 	"Object.h"
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
+1354117846 source:/home/sh695/Documents/Programs/NewComponentEngine/Ui.cpp
 	<boost/property_tree/ptree.hpp>
 	<boost/property_tree/xml_parser.hpp>
 	"Ui.h"
@@ -212,7 +213,7 @@
 	"Vector2d.h"
 	"TypeDefs.h"
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/CoordsSys.cpp
 	"Systems.h"
 	"CoordsComp.h"
 	<iostream>
@@ -225,7 +226,7 @@
 1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveComp.cpp
 	"MoveComp.h"
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
+1354114592 source:/home/sh695/Documents/Programs/NewComponentEngine/MoveSys.cpp
 	"Systems.h"
 	"MoveComp.h"
 	"CoordsComp.h"
@@ -243,7 +244,7 @@
 	"Store.h"
 	<SFML/Graphics.hpp>
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
+1354117371 source:/home/sh695/Documents/Programs/NewComponentEngine/GfxSys.cpp
 	"Systems.h"
 	"GfxComp.h"
 	"CoordsComp.h"
@@ -257,7 +258,7 @@
 1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherComp.cpp
 	"LauncherComp.h"
 
-1353320976 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
+1354114592 source:/home/sh695/Documents/Programs/NewComponentEngine/LauncherSys.cpp
 	"Systems.h"
 	"LauncherComp.h"
 	<iostream>
@@ -266,7 +267,7 @@
 	"Message.h"
 	"MessageCentre.h"
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionComp.cpp
 	"CollisionComp.h"
 	"Utils.h"
 
@@ -275,7 +276,7 @@
 	"TypeDefs.h"
 	<set>
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
+1354118331 source:/home/sh695/Documents/Programs/NewComponentEngine/CollisionSys.cpp
 	"Systems.h"
 	"CollisionComp.h"
 	<iostream>
@@ -1023,7 +1024,7 @@
 	"TypeDefs.h"
 	<SFML/Audio.hpp>
 
-1352392785 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/AudioSys.cpp
 	"Systems.h"
 	"Core.h"
 	"AudioComp.h"
@@ -1039,7 +1040,7 @@
 	"Components.h"
 	"TypeDefs.h"
 
-1352392790 /home/sh695/Documents/Programs/NewComponentEngine/SoundManager.h
+1354114592 /home/sh695/Documents/Programs/NewComponentEngine/SoundManager.h
 	<SFML/Audio.hpp>
 
 1352392790 /home/sh695/Documents/Programs/NewComponentEngine/Utils.h
@@ -1074,7 +1075,7 @@
 1353320976 /home/sh695/Documents/Programs/NewComponentEngine/GoalBuilders.h
 	"TypeDefs.h"
 
-1353320969 source:/home/sh695/Documents/Programs/NewComponentEngine/AiSys.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/AiSys.cpp
 	"Systems.h"
 	"Core.h"
 	"AiComp.h"
@@ -1086,7 +1087,7 @@
 	"Utils.h"
 	"Store.h"
 
-1353328470 source:/home/sh695/Documents/Programs/NewComponentEngine/EventSys.cpp
+1354114591 source:/home/sh695/Documents/Programs/NewComponentEngine/EventSys.cpp
 	"Systems.h"
 	"Core.h"
 	"EventComp.h"
@@ -1102,10 +1103,11 @@
 	"GoalBuilders.h"
 	"Goal.h"
 
-1353320976 source:/home/sh695/Documents/Programs/NewComponentEngine/SoundManager.cpp
+1354114592 source:/home/sh695/Documents/Programs/NewComponentEngine/SoundManager.cpp
 	<iostream>
 	"TypeDefs.h"
 	"SoundManager.h"
+	<math.h>
 
 1353352338 source:d:\users\sam\documents\github\newcomponentengine\aicomp.cpp
 	"AiComp.h"
@@ -1492,6 +1494,14 @@
 	"Core.h"
 
 1353618768 d:\users\sam\documents\github\newcomponentengine\musicplayer.h
+	<string>
+	<SFML/Audio.hpp>
+
+1354115914 source:/home/sh695/Documents/Programs/NewComponentEngine/MusicPlayer.cpp
+	"MusicPlayer.h"
+	"Core.h"
+
+1354114592 /home/sh695/Documents/Programs/NewComponentEngine/MusicPlayer.h
 	<string>
 	<SFML/Audio.hpp>
 

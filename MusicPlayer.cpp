@@ -78,7 +78,7 @@ void MusicPlayer::profileMusic_()
         timeSlices_.push_back(rmsq);
        // std::cout << "RMS    : " << int(rmsq) << std::endl;
 
-       outSound << float(x)/44100.f << "\t" << rmsq << std::endl;
+//       outSound << float(x)/44100.f << "\t" << rmsq << std::endl;
 
     }
 
@@ -166,6 +166,18 @@ void MusicPlayer::update(double elapsed)
         {
             ++totalBaddies;
             std::cout << "Baddies : " << totalBaddies << std::endl;
+            NamedParams params;
+
+            std::stringstream xSS(""),ySpeed("");
+            xSS << rand()%200;
+            ySpeed << float(rand()%30+5.0)/10.0;
+            std::cout << "Coords(" << xSS.str() << ",0)" << std::endl;
+            params["Object.Coords.x"]=xSS.str();
+            params["Object.Coords.y"]="0";
+            params["Object.Move.y"]=ySpeed.str();
+            params["Object.Move.x"]="0";
+
+            core_->getObjectBuilder()->createObject("coin",params);
 //            Enemy* p = new Enemy(&db);
 //            GameObject* pAst =  p;
 //            int xCo = rand()%int(db.screenDimensions.x-100) + 50;

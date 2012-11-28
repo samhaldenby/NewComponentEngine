@@ -14,6 +14,7 @@ Ui::Ui(Core* core, std::string uiConfigFileName) : core_(core)
     screenSize_ = Vector2d(tree.get<int>("Ui.Dimensions.x"),tree.get<int>("Ui.Dimensions.y"));
 
     window_ = new sf::RenderWindow(sf::VideoMode(screenSize_.x, screenSize_.y, 32), "Ui");
+    window_->SetFramerateLimit(60);
 
     //hook into event system
     input_ = (const_cast<sf::Input*>(&getWindow()->GetInput()));

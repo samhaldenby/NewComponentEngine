@@ -17,7 +17,7 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-//    std::cout.setstate(std::ios::failbit);
+    std::cout.setstate(std::ios::failbit);
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
@@ -39,12 +39,19 @@ int main()
     mPlayer.loadMusic("ith.wav");
     mPlayer.play();
 
-
+    double spareTime = 0;
+    float fps = 60.0;
     while(firstRun==true)
     {
 
         elapsed = fpsClock.GetElapsedTime();
-
+//        if(elapsed < 1.0/fps)
+//        {
+//            sf::Sleep(1.0/fps - elapsed);
+//            spareTime+=(1.0/fps - elapsed);
+//            std::cout << "Sleeping: " << 1.0/fps - elapsed << "\t" << spareTime << std::endl;
+//
+//        }
 
 
 
@@ -111,11 +118,9 @@ int main()
             totElapsed-=1.0;
             count = 0;
         }
+        //        std::cout << "Elapsed this frame: " << elapsed << std::endl;
 
-        if(elapsed < 0.016667)
-        {
-            sf::Sleep(0.016667 - elapsed);
-        }
+
 
     }
 

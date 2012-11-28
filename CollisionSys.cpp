@@ -14,7 +14,8 @@
 //    extensions_ = new CollisionHash*;
 //}
 
-
+int SCREENH=100;
+int SCREENW=200;
 template <>
 void System<CollisionComp>::update(double elapsed)
 {
@@ -44,6 +45,18 @@ void System<CollisionComp>::update(double elapsed)
         Vector2d dimensions = coordsComponent->getDimensions();
         Vector2d bottomRight = topLeft + dimensions;
 
+        //get rid of entities that go off bottom of screen TODO: Currently hard coded?
+        if(bottomRight.y > SCREENH +100 || topLeft.y < -100 || bottomRight.x < -100 || topLeft.y > SCREENW + 100)
+        {
+            Parameters params;
+            params.push_back("object");
+            params.push_back("destroy");
+            Message msg(objId, objId, params);
+            Telegram telegram(objId, objId, 0.0, msg);
+            core_->getMessageCentre()->addTelegram(telegram);
+            ++iCom;
+            continue;
+        }
         //get hash locations for all four corners
         std::set<GridLocation> locations;
         locations.insert(std::make_pair<int,int>(int(topLeft.x)/MAX_OBJECT_DIMENSION,int(topLeft.y)/MAX_OBJECT_DIMENSION));

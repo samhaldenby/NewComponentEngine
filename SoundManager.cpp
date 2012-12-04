@@ -11,9 +11,9 @@ SoundManager::SoundManager()
     for (int c=0; c< MAX_CONCURRENT_SOUNDS/2; ++c)
     {
         soundInstances_.push_back(sf::Sound());
-        soundInstances_[c].SetVolume(6);
+        soundInstances_[c].SetVolume(50);
         protectedSoundInstances_.push_back(sf::Sound());
-        soundInstances_[c].SetVolume(6);
+        soundInstances_[c].SetVolume(50);
     }
 
 

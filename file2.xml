@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object>
+	
+  
+  
+  
+
+    
+
+  
+
+  
+
+  
+				
+  
+
+  
+  
+  
+  
+
+	<Name>livingQuarters</Name>
+	<Gfx>
+		true
+    
+  
+		<Sprite>K240/graphics/living_quarters.png</Sprite>
+	</Gfx>
+	<Audio>
+		
+    true
+    
+  
+		<Sounds>onDestroy audio/explosion1.wav</Sounds>
+	</Audio>
+	<Events>
+		
+    true
+    
+  
+		<Messages>onDestroy=audio play onDestroy;object destroy</Messages>
+	</Events>
+	<Coords>
+		true
+    
+    
+  
+		<x>50</x>
+		<y>0</y>
+	</Coords>
+	<Health>
+		true
+    
+    
+    
+  
+		<Max>100</Max>
+		<Current>100</Current>
+		<onZeroHealth>event execute onDestroy</onZeroHealth>
+	</Health>
+	<OnSelect>
+		true
+    
+  
+		<Command>SetFocus</Command>
+	</OnSelect>
+	<Move>
+		true
+    
+    
+    
+  
+		<speedFactor>20</speedFactor>
+		<x>0</x>
+		<y>14.4516</y>
+	</Move>
+	<Collision>true
+  </Collision>
+	<Anchor>
+		<Offset>
+			<x/>
+			<y/>
+		</Offset>
+		<Parent/>
+	</Anchor>
+</Object>
+<Anchor/>

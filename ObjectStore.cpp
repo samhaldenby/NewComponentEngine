@@ -66,6 +66,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getAiSub()->removeComponent(id);
                     break;
                 }
+                case (cFlag::Anchor):
+                {
+                    core_->getAnchorSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Event):
                 {
                     core_->getEventSub()->removeComponent(id);

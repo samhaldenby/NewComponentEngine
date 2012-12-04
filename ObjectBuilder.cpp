@@ -24,6 +24,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
     compMakerFnMap_["Gfx"]=&ObjectBuilder::addGfxComp_;
     compMakerFnMap_["Audio"]=&ObjectBuilder::addAudioComp_;
     compMakerFnMap_["Ai"]=&ObjectBuilder::addAiComp_;
+    compMakerFnMap_["Anchor"]=&ObjectBuilder::addAnchorComp_;
     compMakerFnMap_["Coords"]=&ObjectBuilder::addCoordsComp_;
     compMakerFnMap_["Health"]=&ObjectBuilder::addHealthComp_;
     compMakerFnMap_["Move"]=&ObjectBuilder::addMoveComp_;
@@ -58,6 +59,9 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
         blueprint->put(iVar->first, iVar->second);
         ++iVar;
     }
+    //test export
+    boost::property_tree::xml_writer_settings<char> settings('\t', 1);
+    write_xml("file2.xml", *blueprint, std::locale(), settings);
 
 
     std::cout << "BLUEPRINT: " << blueprint << std::endl;
@@ -76,6 +80,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     bool hasLauncher = blueprint->get("Object.Launcher",false);
     bool hasCollision = blueprint->get("Object.Collision",false);
     bool hasEvent = blueprint->get("Object.Events",false);
+    bool hasAnchor = blueprint->get("Object.Anchor",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -85,6 +90,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     std::cout << (hasAudio ? "has" : "does not have") << " Audio" << std::endl;
     std::cout << (hasAi ? "has" : "does not have") << " Ai" << std::endl;
     std::cout << (hasEvent ? "has" : "does not have") << " Event" << std::endl;
+    std::cout << (hasAnchor ? "has" : "does not have") << " Anchor" << std::endl;
 //    std::cout << (hasCoords ? "has" : "does not have") << " Coords" << std::endl;
 //    std::cout << (hasCollision ? "has" : "does not have") << " Collision" << std::endl;
 //    std::cout << (hasSfx ? "has" : "does not have") << " Sfx" << std::endl;
@@ -115,6 +121,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
         if(iCompMakerFn!=compMakerFnMap_.end())
         {
             //pass sub-tree to function
+            std::cout << "Found: " << componentName << std::endl;
             (this->*(compMakerFnMap_[componentName]))(objectId,object,(Blueprint*)(&v.second));
 //              (this->*(compMakerFnMap_[componentName]))(objectId,object,blueprint);
         }
@@ -207,6 +214,32 @@ bool ObjectBuilder::addAiComp_(ObjectId objectId, Object* object, Blueprint* blu
     object->addFlag(cFlag::Ai);
     core_->getAiSub()->addComponent(objectId);
     AiComp* ai = core_->getAiSub()->getComponent(objectId);
+
+    return true;
+}
+
+
+bool ObjectBuilder::addAnchorComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+
+    object->addFlag(cFlag::Anchor);
+    std::string parentIdStr = blueprint->get("Parent","");
+    std::string xOffStr = blueprint->get("Offset.x","0");
+    std::string yOffStr = blueprint->get("Offset.y","0");
+    Vector2d offVec(atoi(xOffStr.c_str()), atoi(yOffStr.c_str()));
+
+    if (parentIdStr=="")
+    {
+        std::cout << "No parent set - not adding anchor component" << std::endl;
+        return false;
+    }
+
+    core_->getAnchorSub()->addComponent(objectId);
+    AnchorComp* anchor = core_->getAnchorSub()->getComponent(objectId);
+
+    anchor->setParentEntity(atoi(parentIdStr.c_str()));
+    anchor->setOffset(offVec);
+
 
     return true;
 }

@@ -51,6 +51,7 @@ void Telegram::sendMessage()
 {
 //    std::cout << "Implement Telegram::sendMessage()" << std::endl;
     //TODO: if this is to remain as an if/else set up, ensure that you put the most frequently used ones at the top of chain
+    //Prob best implemented as hash_map of object function pointers
     std::cout << "Telegram::sendMessage()" << std::endl;
     std::string targetSub = message_.getParameters()[0];
     std::cout << "->" <<  targetSub;
@@ -65,6 +66,7 @@ void Telegram::sendMessage()
     else if (targetSub=="move") core_->getMoveSub()->addMessage(message_);
     else if (targetSub=="gfx") core_->getGfxSub()->addMessage(message_);
     else if (targetSub=="ai") core_->getAiSub()->addMessage(message_);
+    else if (targetSub=="anchor") core_->getAnchorSub()->addMessage(message_);
     else if (targetSub=="event") core_->getEventSub()->addMessage(message_);
     else if (targetSub=="audio") core_->getAudioSub()->addMessage(message_);
     else if (targetSub=="launcher") core_->getLauncherSub()->addMessage(message_);

@@ -33,7 +33,8 @@ namespace cType
             Launcher=7,
             Collision=8,
             Ai=9,
-            Event=10
+            Event=10,
+            Anchor=11
         };
 }
 
@@ -55,7 +56,8 @@ namespace cFlag
             Launcher=0x800,//2048,
             Ai      =0x1000,//4096
             Event   =0x2000,//8192
-            MAX     =0x2000//16384,
+            Anchor  =0x4000,//16384
+            MAX     =0x8000//32768,
         };
 
 

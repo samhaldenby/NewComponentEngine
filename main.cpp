@@ -17,12 +17,21 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    std::cout.setstate(std::ios::failbit);
+//    std::cout.setstate(std::ios::failbit);
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
     core.getObjectBuilder()->createObject("coin");
     core.getObjectBuilder()->createObject("livingQuarters");
+
+    NamedParams params;
+    params["Anchor"]="true";
+    std::stringstream parentId("");
+    parentId << playerId;
+    params["Object.Anchor.Parent"]=parentId.str();
+    params["Object.Anchor.Offset.x"]="10";
+    params["Object.Anchor.Offset.y"]="10";
+    core.getObjectBuilder()->createObject("livingQuarters",params);
 
     core.getUi()->setPlayer(playerId);
 
@@ -36,7 +45,7 @@ int main()
     double startTime = fpsClock.GetElapsedTime();
 
     MusicPlayer mPlayer(&core);
-    mPlayer.loadMusic("ith.wav");
+    mPlayer.loadMusic("grime.wav");
     mPlayer.play();
 
     double spareTime = 0;
@@ -67,6 +76,7 @@ int main()
         core.getMoveSub()->deliverAllMessages();
         core.getHealthSub()->deliverAllMessages();
         core.getNameSub()->deliverAllMessages();
+        core.getAnchorSub()->deliverAllMessages();
         core.getCoordsSub()->deliverAllMessages();
         core.getGfxSub()->deliverAllMessages();
         core.getAudioSub()->deliverAllMessages();
@@ -78,6 +88,7 @@ int main()
 
         //update subsystems
 //        core.getInputSub()->update(elapsed);
+        core.getAnchorSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
 //        core.getGfxSub()->update(elapsed);
         core.getHealthSub()->update(elapsed);

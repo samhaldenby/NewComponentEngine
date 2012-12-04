@@ -6,6 +6,7 @@
 #include "GfxComp.h"
 #include "AudioComp.h"
 #include "AiComp.h"
+#include "AnchorComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
 #include "EventComp.h"
@@ -125,6 +126,7 @@ template class System<CoordsComp>;
 template class System<MoveComp>;
 template class System<GfxComp>;
 template class System<AudioComp>;
+template class System<AnchorComp>;
 template class System<AiComp>;
 template class System<LauncherComp>;
 template class System<CollisionComp>;

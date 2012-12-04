@@ -31,6 +31,7 @@ class ObjectBuilder
         bool addGfxComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addAudioComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addAiComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
+        bool addAnchorComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addEventComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addNameComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addCoordsComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
@@ -38,6 +39,7 @@ class ObjectBuilder
         bool addMoveComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addLauncherComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addCollisionComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
+
 
 
 

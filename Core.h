@@ -6,6 +6,7 @@
 
 #include "Systems.h"
 #include "AiComp.h"
+#include "AnchorComp.h"
 #include "AudioComp.h"
 #include "HealthComp.h"
 #include "NameComp.h"
@@ -46,6 +47,7 @@ class Core
         System<MoveComp>*   getMoveSub();
         System<GfxComp>*    getGfxSub();
         System<AiComp>*     getAiSub();
+        System<AnchorComp>* getAnchorSub();
         System<AudioComp>*  getAudioSub();
         System<LauncherComp>* getLauncherSub();
         System<CollisionComp>* getCollisionSub();
@@ -60,6 +62,7 @@ class Core
         System<MoveComp>*   moveSub_;
         System<GfxComp>*    gfxSub_;
         System<AiComp>*     aiSub_;
+        System<AnchorComp>* anchorSub_;
         System<AudioComp>*  audioSub_;
         System<LauncherComp>* launcherSub_;
         System<CollisionComp>* collisionSub_;

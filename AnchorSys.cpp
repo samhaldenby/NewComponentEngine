@@ -37,7 +37,7 @@ void System<AnchorComp>::update(double elapsed)
         CoordsComp* childCoordsComp = core_->getCoordsSub()->getComponent(iCom->first);
         if (childCoordsComp != NULL)
         {
-            childCoordsComp->setCoords(parentCoordsComp->getCoords()+anchorComp->getOffset());
+            childCoordsComp->setCoords(parentCoordsComp->getCenter()+anchorComp->getOffset() - (childCoordsComp->getDimensions()/2));
         }
 
         ++iCom;

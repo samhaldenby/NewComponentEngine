@@ -29,9 +29,13 @@ int main()
     std::stringstream parentId("");
     parentId << playerId;
     params["Object.Anchor.Parent"]=parentId.str();
-    params["Object.Anchor.Offset.x"]="10";
-    params["Object.Anchor.Offset.y"]="10";
-    core.getObjectBuilder()->createObject("livingQuarters",params);
+    params["Object.Anchor.Offset.x"]="30";
+    params["Object.Anchor.Offset.y"]="0";
+    core.getObjectBuilder()->createObject("coin",params);
+
+    params["Object.Anchor.Offset.x"]="-30";
+    core.getObjectBuilder()->createObject("coin",params);
+
 
     core.getUi()->setPlayer(playerId);
 

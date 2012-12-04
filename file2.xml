@@ -46,7 +46,7 @@
     
     
   
-		<x>50</x>
+		<x>282</x>
 		<y>0</y>
 	</Coords>
 	<Health>
@@ -73,16 +73,8 @@
   
 		<speedFactor>20</speedFactor>
 		<x>0</x>
-		<y>14.4516</y>
+		<y>5.74659</y>
 	</Move>
 	<Collision>true
   </Collision>
-	<Anchor>
-		<Offset>
-			<x/>
-			<y/>
-		</Offset>
-		<Parent/>
-	</Anchor>
 </Object>
-<Anchor/>

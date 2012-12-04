@@ -41,8 +41,8 @@ void System<GfxComp>::update(double elapsed)
 
         Vector2d coords = coordsCom->getCoords();
 //        std::cout << "   -> @ " << coords.x << "," << coords.y << std::endl;
-        sprite->SetX(coords.x);
-        sprite->SetY(coords.y);
+        sprite->SetX(coords.x );
+        sprite->SetY(coords.y );
         window_->Draw(*sprite);
         ++iCom;
     }

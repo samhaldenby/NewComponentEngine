@@ -25,10 +25,9 @@
   
   <Input>true</Input>
   
-  <Launcher>true
-    <MaxCooldown>0.1</MaxCooldown>
-    <Projectile>simpleBullet</Projectile>
-  </Launcher>
+  <Trigger>true
+    <Messages>guns=launcher launch;</Messages>
+  </Trigger>
   
 
   

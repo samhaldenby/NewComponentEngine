@@ -39,6 +39,7 @@ class ObjectBuilder
         bool addMoveComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addLauncherComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addCollisionComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
+        bool addTriggerComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
 
 
 

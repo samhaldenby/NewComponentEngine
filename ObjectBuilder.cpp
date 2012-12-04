@@ -31,6 +31,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
     compMakerFnMap_["Launcher"]=&ObjectBuilder::addLauncherComp_;
     compMakerFnMap_["Collision"]=&ObjectBuilder::addCollisionComp_;
     compMakerFnMap_["Events"]=&ObjectBuilder::addEventComp_;
+    compMakerFnMap_["Trigger"]=&ObjectBuilder::addTriggerComp_;
 
 }
 
@@ -43,7 +44,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     if(!blueprint)
     {
         std::cout << "Unable to fetch blueprint: " << blueprintName << std::endl;
-        return -1;
+        exit(EXIT_FAILURE);
     }
 
 
@@ -81,6 +82,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     bool hasCollision = blueprint->get("Object.Collision",false);
     bool hasEvent = blueprint->get("Object.Events",false);
     bool hasAnchor = blueprint->get("Object.Anchor",false);
+    bool hasTrigger = blueprint->get("Object.Trigger",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -99,6 +101,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     std::cout << (hasName ? "has" : "does not have") << " Name " << std::endl;
     std::cout << (hasLauncher ? "has" : "does not have") << " Launcher " << std::endl;
     std::cout << (hasCollision ? "has" : "does not have") << " Collision " << std::endl;
+    std::cout << (hasTrigger ? "has" : "does not have") << " Trigger " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
 
@@ -347,6 +350,41 @@ bool ObjectBuilder::addCollisionComp_(ObjectId objectId, Object* object, Bluepri
     core_->getCollisionSub()->addComponent(objectId);
     CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
     collision->addOnCollisionMessages(blueprint->get("onCollision",""));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addTriggerComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Trigger);
+    core_->getTriggerSub()->addComponent(objectId);
+    TriggerComp* triggerComp = core_->getTriggerSub()->getComponent(objectId);
+
+    //grab trigger tags and associated message params <Messages>gun=launcher launch;sound blah;/shield=shield activate</Messages>
+    std::string msgStr = blueprint->get("Messages","");
+    std::cout << "MsgStr: " << msgStr << std::endl;
+    //split by /
+    StrTokens msgs =  tokenise(msgStr,'/');
+    StrTokens::iterator iMsg = msgs.begin();
+    while(iMsg!=msgs.end())
+    {
+        //split by =
+        StrTokens scSplit = tokenise(*iMsg,'=');
+        std::string tag = scSplit[0];
+        std::string msgs = scSplit[1];
+        std::vector<std::string> params = tokenise(msgs,';');
+        std::vector<std::string>::iterator iParams = params.begin();
+        while(iParams!=params.end())
+        {
+
+            triggerComp->addMessageParams(tag, tokenise(*iParams, ' '));
+            ++iParams;
+        }
+        ++iMsg;
+    }
+
+    //For now, no need to add actual triggered objects as this will only be known at runtime. Can't hard code in integers into xml
 
     return true;
 }

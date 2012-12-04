@@ -10,6 +10,7 @@
 #include "LauncherComp.h"
 #include "CollisionComp.h"
 #include "EventComp.h"
+#include "TriggerComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -131,4 +132,5 @@ template class System<AiComp>;
 template class System<LauncherComp>;
 template class System<CollisionComp>;
 template class System<EventComp>;
+template class System<TriggerComp>;
 

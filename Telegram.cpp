@@ -72,6 +72,7 @@ void Telegram::sendMessage()
     else if (targetSub=="launcher") core_->getLauncherSub()->addMessage(message_);
     else if (targetSub=="collision") core_->getCollisionSub()->addMessage(message_);
     else if (targetSub=="object") core_->getObjectStore()->addMessage(message_);
+    else if (targetSub=="trigger") core_->getTriggerSub()->addMessage(message_);
 //    std::cout << "Sending message from telegram " << this << std::endl;
 //
 //    //select target based on first argument of message

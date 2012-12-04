@@ -46,7 +46,7 @@
     
     
   
-		<x>282</x>
+		<x>65</x>
 		<y>0</y>
 	</Coords>
 	<Health>
@@ -73,7 +73,7 @@
   
 		<speedFactor>20</speedFactor>
 		<x>0</x>
-		<y>5.74659</y>
+		<y>3.31346</y>
 	</Move>
 	<Collision>true
   </Collision>

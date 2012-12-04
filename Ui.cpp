@@ -79,52 +79,54 @@ void Ui::update(double elapsed)
 
     if(input_->IsMouseButtonDown(sf::Mouse::Right))
     {
+
+        //get player trigger comp if it has one (It should do!)
+        TriggerComp* playerTriggerComp = core_->getTriggerSub()->getComponent(playerId_);
+        if (playerTriggerComp)
+        {
+            //prepare message to send TODO: Currently hard coded (like "guns" below) but would be fairly simple to make configurable in xml
+//            Parameters launchParams;
+//            launchParams.push_back("launcher");
+//            launchParams.push_back("launch");
+
+
+            //TODO: This is currently hard coded, but needn't be
+            std::vector<ObjectId> ids = playerTriggerComp->getTriggeredObjects("guns");
+            std::vector<Parameters> launchParams = playerTriggerComp->getTriggeredParameters("guns");
+            std::cout << "There are " << ids.size() << " target objects for guns message" << std::endl;
+            std::vector<ObjectId>::iterator iId = ids.begin();
+            while(iId!=ids.end())
+            {
+                std::cout << "Processing message for object "<< *iId << std::endl;
+                //for each set of message params, send a message
+                std::vector<Parameters>::iterator iParams = launchParams.begin();
+                while(iParams != launchParams.end())
+                {
+                    //bundle message and send it
+                    Message launchMsg(playerId_, *iId, *iParams);
+                    Telegram launchTelegram(playerId_, *iId,0.0, launchMsg);
+                    core_->getMessageCentre()->addTelegram(launchTelegram);
+                    ++iParams;
+                }
+                ++iId;
+            }
+        }
         //get launcher and launch if exists
         //grab corresponding Coords comp
-        LauncherComp* launcherComp = core_->getLauncherSub()->getComponent(playerId_);
-        if (launcherComp)
-        {
-            Parameters launchParams;
-            launchParams.push_back("launcher");
-            launchParams.push_back("launch");
-            Message launchMessage(playerId_, playerId_, launchParams);
-            Telegram launchTelegram(playerId_, playerId_, 0.0, launchMessage);
-            //send messages
-            core_->getMessageCentre()->addTelegram(launchTelegram);
-        }
-
-//        //create telegram for shooting a bullet
-//        ObjectId bulletId = core_->getObjectBuilder()->createObject("simpleBullet");
-//        Parameters changePosParams;
-//        changePosParams.push_back("coords");
-//        changePosParams.push_back("setCoords");
-//        std::stringstream xSS(""), ySS("");
-//        CoordsComp* playerCoordsComp = core_->getCoordsSub()->getComponent(playerId_);
-//        xSS << playerCoordsComp->getCoords().x;
-//        ySS << playerCoordsComp->getCoords().y;
-//        changePosParams.push_back(xSS.str());
-//        changePosParams.push_back(ySS.str());
-//        Message changePosMessage(bulletId, bulletId, changePosParams);
-//        Telegram changePosTelegram(bulletId, bulletId, 0.0, changePosMessage);
+//        LauncherComp* launcherComp = core_->getLauncherSub()->getComponent(playerId_);
+//        if (launcherComp)
+//        {
+//            Parameters launchParams;
+//            launchParams.push_back("launcher");
+//            launchParams.push_back("launch");
 //
-//        //set move
-//        Parameters bulletSpeedParams;
-//        bulletSpeedParams.push_back("move");
-//        bulletSpeedParams.push_back("setVelocity");
-//        bulletSpeedParams.push_back("0");
-//        bulletSpeedParams.push_back("-2");
-//        Message bulletSpeedMessage(bulletId, bulletId, bulletSpeedParams);
-//        Telegram bulletSpeedTelegram(bulletId, bulletId, 0.0, bulletSpeedMessage);
 //
-//        //send messages
-//        core_->getMessageCentre()->addTelegram(changePosTelegram);
-//        core_->getMessageCentre()->addTelegram(bulletSpeedTelegram);
+//            Message launchMessage(playerId_, playerId_, launchParams);
+//            Telegram launchTelegram(playerId_, playerId_, 0.0, launchMessage);
+//            //send messages
+//            core_->getMessageCentre()->addTelegram(launchTelegram);
+//        }
 
 
-//        Parameters changeGfxParams = core_->getStore()->getMessageParameters("changeSprite");
-//        changeGfxParams.push_back("coin.png");
-//        Message message(iCom->second.getId(), iCom->second.getId(), changeGfxParams);
-//        Telegram telegram(iCom->second.getId(), iCom->second.getId(), 0.0, message);
-//        core_->getMessageCentre()->addTelegram(telegram);
     }
 }

@@ -13,6 +13,8 @@
 #include "MusicPlayer.h"
 
 
+//TODO: For event system, we have the sender id! We can message back if a message fails - you should utilise this feature....
+//TODO: Need a feature to monitor bolt-ons like what guns a ship has etc and how long they have left (just a bit field thing would do) as a component? Would help with powerups too
 
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
@@ -29,13 +31,25 @@ int main()
     std::stringstream parentId("");
     parentId << playerId;
     params["Object.Anchor.Parent"]=parentId.str();
+
+    //first gun
     params["Object.Anchor.Offset.x"]="30";
     params["Object.Anchor.Offset.y"]="0";
-    core.getObjectBuilder()->createObject("coin",params);
+    ObjectId gun1id = core.getObjectBuilder()->createObject("gun",params);
 
+    //second gun
     params["Object.Anchor.Offset.x"]="-30";
-    core.getObjectBuilder()->createObject("coin",params);
+    ObjectId gun2id = core.getObjectBuilder()->createObject("gun",params);
 
+    //rear gun
+    params["Object.Anchor.Offset.x"]="0";
+    params["Object.Anchor.Offset.y"]="40";
+    ObjectId gun3id = core.getObjectBuilder()->createObject("rearGun",params);
+
+    TriggerComp* playerTriggerComp = core.getTriggerSub()->getComponent(playerId);
+    playerTriggerComp->addReceiverObject("guns",gun1id);
+    playerTriggerComp->addReceiverObject("guns",gun2id);
+    playerTriggerComp->addReceiverObject("guns",gun3id);
 
     core.getUi()->setPlayer(playerId);
 
@@ -88,6 +102,7 @@ int main()
         core.getEventSub()->deliverAllMessages();
         core.getLauncherSub()->deliverAllMessages();
         core.getCollisionSub()->deliverAllMessages();
+        core.getTriggerSub()->deliverAllMessages();
         core.getObjectStore()->deliverAllMessages();
 
         //update subsystems
@@ -103,6 +118,7 @@ int main()
         core.getAiSub()->update(elapsed);
         core.getEventSub()->update(elapsed);
         core.getCollisionSub()->update(elapsed);
+        core.getTriggerSub()->update(elapsed);
 
         firstRun = true;
 //        elapsed=clock() - startTime;

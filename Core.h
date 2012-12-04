@@ -16,6 +16,7 @@
 #include "GfxComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
+#include "TriggerComp.h"
 #include "ObjectBuilder.h"
 
 
@@ -52,6 +53,7 @@ class Core
         System<LauncherComp>* getLauncherSub();
         System<CollisionComp>* getCollisionSub();
         System<EventComp>* getEventSub();
+        System<TriggerComp>* getTriggerSub();
 
 
 
@@ -67,6 +69,7 @@ class Core
         System<LauncherComp>* launcherSub_;
         System<CollisionComp>* collisionSub_;
         System<EventComp>* eventSub_;
+        System<TriggerComp>* triggerSub_;
 
         Store* store_;
         ObjectBuilder* objectBuilder_;

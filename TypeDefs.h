@@ -10,7 +10,7 @@
 typedef boost::property_tree::ptree Blueprint;
 typedef unsigned long ObjectId;
 typedef unsigned long CompType;
-typedef unsigned short ComponentFlag;
+typedef unsigned long ComponentFlag;
 typedef std::vector<std::string> Parameters;
 typedef std::map<std::string, std::string> NamedParams;
 
@@ -34,7 +34,8 @@ namespace cType
             Collision=8,
             Ai=9,
             Event=10,
-            Anchor=11
+            Anchor=11,
+            Trigger=12
         };
 }
 
@@ -57,7 +58,8 @@ namespace cFlag
             Ai      =0x1000,//4096
             Event   =0x2000,//8192
             Anchor  =0x4000,//16384
-            MAX     =0x8000//32768,
+            Trigger =0x8000,//32768
+            MAX     =65536//65536,
         };
 
 

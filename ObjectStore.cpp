@@ -38,7 +38,7 @@ void ObjectStore::removeObject(ObjectId id)
     Object* object = &iObj->second;
 
     //check which components this object has and destroy them
-    for(ComponentFlag x=1; x!=cFlag::MAX ; x*=2)
+    for(ComponentFlag x=1; x<cFlag::MAX ; x*=2)
     {
         if(object->hasFlag(x))
         {
@@ -106,6 +106,11 @@ void ObjectStore::removeObject(ObjectId id)
 //                    core_->getOnSelectSub()->removeComponent(id);
 //                    break;
 //                }
+                case (cFlag::Trigger):
+                {
+                    core_->getTriggerSub()->removeComponent(id);
+                    break;
+                }
                 default:
                     std::cout << "Cannot find this sub" << std::endl;
             }

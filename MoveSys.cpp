@@ -45,7 +45,7 @@ void System<MoveComp>::update(double elapsed)
         }
 
         //now move
-        coordsComp->setCoords(coordsComp->getCoords() + currComp->getMove()*elapsed *currComp->getSpeed()); //TODO: Change this 50.0 to a speed factor statistic
+        coordsComp->setCoords(coordsComp->getCoords() + currComp->getMove()*elapsed *currComp->getSpeed());
 //        std::cout << "Moving obj " << iCom->first << " (" << coordsComp->getCoords() << ")" << std::endl;
 
         ++iCom;

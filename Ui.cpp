@@ -79,38 +79,16 @@ void Ui::update(double elapsed)
 
     if(input_->IsMouseButtonDown(sf::Mouse::Right))
     {
+        //trigger off player guns
+        Parameters params;
+        params.push_back("trigger");
+        params.push_back("activate");
+        params.push_back("guns");
+        Message msg(playerId_, playerId_, params);
+        Telegram tel(playerId_, playerId_, 0.0, msg);
+        core_->getMessageCentre()->addTelegram(tel);
 
-        //get player trigger comp if it has one (It should do!)
-        TriggerComp* playerTriggerComp = core_->getTriggerSub()->getComponent(playerId_);
-        if (playerTriggerComp)
-        {
-            //prepare message to send TODO: Currently hard coded (like "guns" below) but would be fairly simple to make configurable in xml
-//            Parameters launchParams;
-//            launchParams.push_back("launcher");
-//            launchParams.push_back("launch");
 
-
-            //TODO: This is currently hard coded, but needn't be
-            std::vector<ObjectId> ids = playerTriggerComp->getTriggeredObjects("guns");
-            std::vector<Parameters> launchParams = playerTriggerComp->getTriggeredParameters("guns");
-            std::cout << "There are " << ids.size() << " target objects for guns message" << std::endl;
-            std::vector<ObjectId>::iterator iId = ids.begin();
-            while(iId!=ids.end())
-            {
-                std::cout << "Processing message for object "<< *iId << std::endl;
-                //for each set of message params, send a message
-                std::vector<Parameters>::iterator iParams = launchParams.begin();
-                while(iParams != launchParams.end())
-                {
-                    //bundle message and send it
-                    Message launchMsg(playerId_, *iId, *iParams);
-                    Telegram launchTelegram(playerId_, *iId,0.0, launchMsg);
-                    core_->getMessageCentre()->addTelegram(launchTelegram);
-                    ++iParams;
-                }
-                ++iId;
-            }
-        }
         //get launcher and launch if exists
         //grab corresponding Coords comp
 //        LauncherComp* launcherComp = core_->getLauncherSub()->getComponent(playerId_);

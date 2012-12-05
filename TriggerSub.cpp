@@ -65,18 +65,34 @@ void System<TriggerComp>::deliverMessage_(Message message)
     std::string mainCmd = params[1];
 
 
+    if (mainCmd=="activate")
+    {
+        std::string activationTag = params[2];
 
-//    if (mainCmd=="changeSprite")
-//    {
-//        targetComponent->setSprite(core_->getStore()->getImage(params[2]));
-////        targetComponent->setLocalDestination(Vector2d(atoi(params[2].c_str()),atoi(params[3].c_str())));
-//    }
-//
-//    else if (mainCmd=="changeCurrBy")
-//    {
-//        targetComponent->setCurrent(targetComponent->getCurrent() + atoi(params[2].c_str()));
-//    }
 
+
+
+        //TODO: This is currently hard coded, but needn't be
+        std::vector<ObjectId> ids = targetComponent->getTriggeredObjects(activationTag);
+        std::vector<Parameters> trigParams = targetComponent->getTriggeredParameters(activationTag);
+        std::cout << "There are " << ids.size() << " target objects for '" << activationTag << "' tag" << std::endl;
+        std::vector<ObjectId>::iterator iId = ids.begin();
+        while(iId!=ids.end())
+        {
+            std::cout << "Processing message for object "<< *iId << std::endl;
+            //for each set of message params, send a message
+            std::vector<Parameters>::iterator iParams = trigParams.begin();
+            while(iParams != trigParams.end())
+            {
+                //bundle message and send it
+                Message trigMsg(message.getTargetId(), *iId, *iParams);
+                Telegram trigTelegram(message.getTargetId(), *iId,0.0, trigMsg);
+                core_->getMessageCentre()->addTelegram(trigTelegram);
+                ++iParams;
+            }
+            ++iId;
+        }
+    }
 
 }
 

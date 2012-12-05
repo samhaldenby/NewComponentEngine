@@ -70,3 +70,42 @@ std::vector<Parameters> TriggerComp::getTriggeredParameters(std::string tag)
 }
 
 
+void TriggerComp::removeReceiverObject(std::string tag, ObjectId id)
+{
+    //see if tag present in map
+    std::map<std::string, std::vector<ObjectId> >::iterator iFind = tagObjectMap_.find(tag);
+    if (iFind!=tagObjectMap_.end())
+    {
+        std::vector<ObjectId>::iterator iObj = iFind->second.begin();
+        while(iObj != iFind->second.end())
+        {
+            if(*iObj==id)
+            {
+                iFind->second.erase(iObj);
+                return;
+            }
+            ++iObj;
+        }
+    }
+}
+
+
+void TriggerComp::removeReceiverObject(ObjectId id)
+{
+    //see if tag present in map
+    std::map<std::string, std::vector<ObjectId> >::iterator iTag = tagObjectMap_.begin();
+    while(iTag!=tagObjectMap_.end())
+    {
+        std::vector<ObjectId>::iterator iObj = iTag->second.begin();
+        while(iObj != iTag->second.end())
+        {
+            if(*iObj==id)
+            {
+                iTag->second.erase(iObj);
+                return;
+            }
+            ++iObj;
+        }
+        ++iTag;
+    }
+}

@@ -21,6 +21,7 @@
 int main()
 {
 //    std::cout.setstate(std::ios::failbit);
+
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");

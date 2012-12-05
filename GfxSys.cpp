@@ -36,6 +36,15 @@ void System<GfxComp>::update(double elapsed)
         //get sprite
         sf::Sprite* sprite = iCom->second.getSprite();
 
+        //test rotation
+        sprite->SetCenter(sprite->GetSize().x/2,sprite->GetSize().y/2);
+        MoveComp* move = core_->getMoveSub()->getComponent(iCom->second.getId());
+        if (move)
+        {
+            sprite->SetRotation(-90-180/PI *(atan2(move->getMove().y, move->getMove().x)));
+        }
+        //test rotation end
+
         //get coordsCom
         CoordsComp* coordsCom = core_->getCoordsSub()->getComponent(iCom->second.getId());
 

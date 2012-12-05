@@ -42,6 +42,7 @@ Core::Core(std::string coreConfigFileName)
     aiSub_ = new System<AiComp>(this);
     eventSub_ = new System<EventComp>(this);
     anchorSub_ = new System<AnchorComp>(this);
+    statsSub_ = new System<StatsComp>(this);
     triggerSub_ = new System<TriggerComp>(this);
 
 
@@ -138,6 +139,11 @@ System<LauncherComp>* Core::getLauncherSub()
 System<CollisionComp>* Core::getCollisionSub()
 {
     return collisionSub_;
+}
+
+System<StatsComp>* Core::getStatsSub()
+{
+    return statsSub_;
 }
 
 System<TriggerComp>* Core::getTriggerSub()

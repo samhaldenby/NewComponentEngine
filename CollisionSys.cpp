@@ -6,13 +6,6 @@
 #include "Message.h"
 #include "MessageCentre.h"
 #include "Ui.h"
-//template <>
-//inline System<CollisionComp>::System(Core* core) : core_(core)
-//{
-//    std::cout << "Creating System<CollisionComp>" << std::endl;
-//
-//    extensions_ = new CollisionHash*;
-//}
 
 
 template <>
@@ -210,23 +203,9 @@ void System<CollisionComp>::update(double elapsed)
             core_->getMessageCentre()->addTelegram(telegram);
             ++iMessage;
         }
-//        Parameters launchParams;
-//
-//        launchParams.push_back("launcher");
-//        launchParams.push_back("launch");
-//        Message launchMessage(playerId_, playerId_, launchParams);
-//        Telegram launchTelegram(playerId_, playerId_, 0.0, launchMessage);
-//            //send messages
-//        core_->getMessageCentre()->addTelegram(launchTelegram);
-//        count++;
 
         ++iCol;
     }
-
-
-
-
-
 }
 
 

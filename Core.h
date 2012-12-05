@@ -16,6 +16,7 @@
 #include "GfxComp.h"
 #include "LauncherComp.h"
 #include "CollisionComp.h"
+#include "StatsComp.h"
 #include "TriggerComp.h"
 #include "ObjectBuilder.h"
 
@@ -53,6 +54,7 @@ class Core
         System<LauncherComp>* getLauncherSub();
         System<CollisionComp>* getCollisionSub();
         System<EventComp>* getEventSub();
+        System<StatsComp>* getStatsSub();
         System<TriggerComp>* getTriggerSub();
 
 
@@ -69,6 +71,7 @@ class Core
         System<LauncherComp>* launcherSub_;
         System<CollisionComp>* collisionSub_;
         System<EventComp>* eventSub_;
+        System<StatsComp>* statsSub_;
         System<TriggerComp>* triggerSub_;
 
         Store* store_;
@@ -77,26 +80,5 @@ class Core
         MessageCentre* messageCentre_;
         Ui* ui_;
 };
-//class Core
-//{
-//    private:
-//        Store* store_;
-//        ObjectStore* objectStore_;
-//
-//        //Systems
-//        System<HealthComp>* healthSub;
-//        System<NameComp>*   nameSub;
-//
-//    public:
-//        Store* getStore()
-//        {
-//            return store_;
-//        }
-//
-//        ObjectStore* getObjectStore()
-//        {
-//            return objectStore_;
-//        }
-//};
 
 #endif // CORE_H_INCLUDED

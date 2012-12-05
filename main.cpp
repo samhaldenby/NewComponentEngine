@@ -104,6 +104,7 @@ int main()
         core.getLauncherSub()->deliverAllMessages();
         core.getCollisionSub()->deliverAllMessages();
         core.getTriggerSub()->deliverAllMessages();
+        core.getStatsSub()->deliverAllMessages();
         core.getObjectStore()->deliverAllMessages();
 
         //update subsystems
@@ -119,6 +120,7 @@ int main()
         core.getAiSub()->update(elapsed);
         core.getEventSub()->update(elapsed);
         core.getCollisionSub()->update(elapsed);
+        core.getStatsSub()->update(elapsed);
         core.getTriggerSub()->update(elapsed);
 
         firstRun = true;

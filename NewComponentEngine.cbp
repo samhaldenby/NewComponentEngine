@@ -100,6 +100,9 @@
 		<Unit filename="ObjectStore.h" />
 		<Unit filename="SoundManager.cpp" />
 		<Unit filename="SoundManager.h" />
+		<Unit filename="StatsComp.cpp" />
+		<Unit filename="StatsComp.h" />
+		<Unit filename="StatsSys.cpp" />
 		<Unit filename="Store.cpp" />
 		<Unit filename="Store.h" />
 		<Unit filename="Systems.cpp" />

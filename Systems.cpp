@@ -10,6 +10,7 @@
 #include "LauncherComp.h"
 #include "CollisionComp.h"
 #include "EventComp.h"
+#include "StatsComp.h"
 #include "TriggerComp.h"
 #include <iostream>
 #include <typeinfo>
@@ -132,5 +133,6 @@ template class System<AiComp>;
 template class System<LauncherComp>;
 template class System<CollisionComp>;
 template class System<EventComp>;
+template class System<StatsComp>;
 template class System<TriggerComp>;
 

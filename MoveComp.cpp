@@ -1,7 +1,7 @@
 #include "MoveComp.h"
 
-void setMove(Vector2d v);
-Vector2d getMove();
+//void setMove(Vector2d v);
+//Vector2d getMove();
 
 MoveComp::MoveComp(ObjectId id): Component(id, cType::Move)
 {

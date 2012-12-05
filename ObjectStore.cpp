@@ -106,6 +106,11 @@ void ObjectStore::removeObject(ObjectId id)
 //                    core_->getOnSelectSub()->removeComponent(id);
 //                    break;
 //                }
+                case (cFlag::Stats):
+                {
+                    core_->getStatsSub()->removeComponent(id);
+                    break;
+                }
                 case (cFlag::Trigger):
                 {
                     core_->getTriggerSub()->removeComponent(id);

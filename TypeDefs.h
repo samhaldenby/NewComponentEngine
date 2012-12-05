@@ -12,6 +12,7 @@ typedef unsigned long ObjectId;
 typedef unsigned long CompType;
 typedef unsigned long ComponentFlag;
 typedef std::vector<std::string> Parameters;
+typedef std::map<std::string, double> StatsMap;
 typedef std::map<std::string, std::string> NamedParams;
 
 //collision typedefs
@@ -36,7 +37,8 @@ namespace cType
             Ai=9,
             Event=10,
             Anchor=11,
-            Trigger=12
+            Trigger=12,
+            Stats=13
         };
 }
 

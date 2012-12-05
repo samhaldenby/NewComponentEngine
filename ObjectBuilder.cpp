@@ -31,6 +31,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
     compMakerFnMap_["Launcher"]=&ObjectBuilder::addLauncherComp_;
     compMakerFnMap_["Collision"]=&ObjectBuilder::addCollisionComp_;
     compMakerFnMap_["Events"]=&ObjectBuilder::addEventComp_;
+    compMakerFnMap_["Stats"]=&ObjectBuilder::addStatsComp_;
     compMakerFnMap_["Trigger"]=&ObjectBuilder::addTriggerComp_;
 
 }
@@ -82,6 +83,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     bool hasCollision = blueprint->get("Object.Collision",false);
     bool hasEvent = blueprint->get("Object.Events",false);
     bool hasAnchor = blueprint->get("Object.Anchor",false);
+    bool hasStats = blueprint->get("Object.Stats",false);
     bool hasTrigger = blueprint->get("Object.Trigger",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
@@ -101,6 +103,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     std::cout << (hasName ? "has" : "does not have") << " Name " << std::endl;
     std::cout << (hasLauncher ? "has" : "does not have") << " Launcher " << std::endl;
     std::cout << (hasCollision ? "has" : "does not have") << " Collision " << std::endl;
+    std::cout << (hasStats ? "has" : "does not have") << " Stats "<< std::endl;
     std::cout << (hasTrigger ? "has" : "does not have") << " Trigger " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
@@ -352,6 +355,28 @@ bool ObjectBuilder::addCollisionComp_(ObjectId objectId, Object* object, Bluepri
     core_->getCollisionSub()->addComponent(objectId);
     CollisionComp* collision = core_->getCollisionSub()->getComponent(objectId);
     collision->addOnCollisionMessages(blueprint->get("onCollision",""));
+
+    return true;
+}
+
+
+bool ObjectBuilder::addStatsComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Stats);
+    core_->getStatsSub()->addComponent(objectId);
+    StatsComp* stats = core_->getStatsSub()->getComponent(objectId);
+      //iterate over ptree and build stats accordingly
+    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
+                  blueprint->get_child(""))
+    {
+        std::string statName = v.first.data();
+        double value = atof(v.second.data().c_str());
+        std::cout << "STAT: " << statName << "\t" << "VAL: " << value << std::endl;
+        stats->addStat(statName,value);
+//        std::string blueprintFileName = v.second.data();
+//        continue this bit!
+    }
+
 
     return true;
 }

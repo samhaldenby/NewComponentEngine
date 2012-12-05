@@ -29,6 +29,12 @@
     <Messages>guns=launcher launch;</Messages>
   </Trigger>
   
+  <Stats>true
+    <Defence>10</Defence>
+    <Power>5</Power>
+    <Dodge>0.05</Dodge>
+  </Stats>
+  
 
   
   <Collision>true</Collision>

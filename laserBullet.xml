@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Object>
+  <Name>laserBullet</Name>
+  <Gfx>
+    true
+    <Sprite>laserBullet.png</Sprite>
+  </Gfx>
+  
+  <Audio>
+    true
+    <Sounds>onHit audio/laser.wav;onCreate audio/laser.wav</Sounds>
+  </Audio>
+  
+  <Events>
+    true
+    <Messages>onCreate=audio play onCreate;/onDestroy=object destroy</Messages>
+  </Events>
+
+  <Coords>
+    true
+  </Coords>
+  
+  
+  <Collision>
+    true
+    <onCollision>target health changeCurrBy -2;self audio play onHit</onCollision>
+  </Collision>
+  
+</Object>

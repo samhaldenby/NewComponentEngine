@@ -2,9 +2,11 @@
 <Entries>
 				<player>player.xml</player>
 				<simpleBullet>simpleBullet.xml</simpleBullet>
+				<laserBullet>laserBullet.xml</laserBullet>
 				<angleBullet>angleBullet.xml</angleBullet>
 				<coin>coin.xml</coin>
 				<gun>forwardGun.xml</gun>
+				<laserGun>laserGun.xml</laserGun>
 				<rearGun>rearGun.xml</rearGun>
 				<livingQuarters>K240/b_livingQuarters.xml</livingQuarters>
 </Entries>

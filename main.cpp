@@ -36,7 +36,7 @@ int main()
     //first gun
     params["Object.Anchor.Offset.x"]="30";
     params["Object.Anchor.Offset.y"]="0";
-    ObjectId gun1id = core.getObjectBuilder()->createObject("gun",params);
+    ObjectId gun1id = core.getObjectBuilder()->createObject("laserGun",params);
 
     //second gun
     params["Object.Anchor.Offset.x"]="-30";

@@ -20,7 +20,7 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-//    std::cout.setstate(std::ios::failbit);
+    std::cout.setstate(std::ios::failbit);
 
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
@@ -35,16 +35,22 @@ int main()
     params["Object.Anchor.Parent"]=parentId.str();
 
     //first gun
-    params["Object.Anchor.Offset.x"]="30";
+    int xOffset = core.getCoordsSub()->getComponent(playerId)->getDimensions().x/2;
+    int x = -40 - xOffset;
+    std::stringstream ss("");
+    ss << x;
+    params["Object.Anchor.Offset.x"]="40"; ;
     params["Object.Anchor.Offset.y"]="0";
-    ObjectId gun1id = core.getObjectBuilder()->createObject("laserGun",params);
+    ObjectId gun1id = core.getObjectBuilder()->createObject("gun",params);
 
     //second gun
-    params["Object.Anchor.Offset.x"]="-30";
+    params["Object.Anchor.Offset.x"]=ss.str();
     ObjectId gun2id = core.getObjectBuilder()->createObject("gun",params);
 
     //rear gun
-    params["Object.Anchor.Offset.x"]="0";
+    std::stringstream ss2("");
+    ss2 << 0 - xOffset;
+    params["Object.Anchor.Offset.x"]=ss2.str();
     params["Object.Anchor.Offset.y"]="40";
     ObjectId gun3id = core.getObjectBuilder()->createObject("rearGun",params);
 

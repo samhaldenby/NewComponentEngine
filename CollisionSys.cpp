@@ -117,9 +117,9 @@ void System<CollisionComp>::update(double elapsed)
                     float radiusB = (dimsB.x >= dimsB.y ? float(dimsB.y) /2.0 : float(dimsB.x) / 2.0);
                     //calculate max distance between objects to obtain a collision
                     float distForCollision = radiusA + radiusB;
-//                    float distAB = sqrt(pow((coordsA.x - coordsB.x),2) + pow((coordsA.y - coordsB.y),2));
-                    float distAB = sqrt(pow((coordsA.x + float(dimsA.x) /2.0) - (coordsB.x + float(dimsB.x)/2.0),2) +
-                                        pow((coordsA.y + float(dimsA.y) /2.0) - (coordsB.y + float(dimsB.y)/2.0),2));
+                    float distAB = sqrt(pow((coordsA.x - coordsB.x),2) + pow((coordsA.y - coordsB.y),2));
+//                    float distAB = sqrt(pow((coordsA.x + float(dimsA.x) /2.0) - (coordsB.x + float(dimsB.x)/2.0),2) +
+//                                        pow((coordsA.y + float(dimsA.y) /2.0) - (coordsB.y + float(dimsB.y)/2.0),2));
                     //now, check for collision
                     if (distAB <= distForCollision)
                     {

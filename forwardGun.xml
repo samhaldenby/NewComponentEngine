@@ -1,29 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Object>
   <Name>forwardGun</Name>
-  
   <Gfx>true
-    <Sprite>coin.png</Sprite>
-  </Gfx>
-  
+    <Sprite>coin.png</Sprite></Gfx>
   <Coords>true
-    <x>20</x>
-    <y>50</y>
-  </Coords>
-  
-  
- 
-  
-  
+    <x>20</x><y>50</y></Coords>
   <Launcher>true
-    <MaxCooldown>0.1</MaxCooldown>
-    <Angle>25</Angle>
-    <Speed>200</Speed>
-    <Projectile>simpleBullet</Projectile>
-  </Launcher>
-  
-
-  
+    <MaxCooldown>0.1</MaxCooldown><Angle>0</Angle><Speed>200</Speed><Projectile>simpleBullet</Projectile></Launcher>
 </Object>
-
-

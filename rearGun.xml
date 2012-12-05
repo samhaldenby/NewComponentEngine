@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Object>
-  <Name>forwardGun</Name>
+  <Name>rearGun</Name>
   
   <Gfx>true
     <Sprite>coin.png</Sprite>
@@ -17,7 +17,9 @@
   
   <Launcher>true
     <MaxCooldown>0.15</MaxCooldown>
-    <Projectile>reverseBullet</Projectile>
+    <Projectile>simpleBullet</Projectile>
+    <Angle>225.0</Angle>
+    <Speed>200</Speed>
   </Launcher>
   
 

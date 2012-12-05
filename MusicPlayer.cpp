@@ -174,9 +174,9 @@ void MusicPlayer::update(double elapsed)
             std::cout << "Coords(" << xSS.str() << ",0)" << std::endl;
             params["Object.Coords.x"]=xSS.str();
             params["Object.Coords.y"]="0";
+//            params["Object.Move"]="true";
             params["Object.Move.y"]=ySpeed.str();
             params["Object.Move.x"]="0";
-
             core_->getObjectBuilder()->createObject("livingQuarters",params);
 //            Enemy* p = new Enemy(&db);
 //            GameObject* pAst =  p;

@@ -9,6 +9,31 @@ LauncherComp::LauncherComp(ObjectId id): Component(id, cType::Launcher)
 }
 
 
+void LauncherComp::setAngle(double a)
+{
+    angle_ = a;
+}
+
+
+double LauncherComp::getAngle()
+{
+    return angle_;
+}
+
+
+void LauncherComp::setSpeed(double s)
+{
+    speed_ = s;
+}
+
+
+double LauncherComp::getSpeed()
+{
+    return speed_;
+}
+
+
+
 void LauncherComp::setMaxCooldown(double c)
 {
     maxCooldown_ = c;

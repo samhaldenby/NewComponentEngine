@@ -108,7 +108,7 @@
 		<Unit filename="Telegram.h" />
 		<Unit filename="TriggerComp.cpp" />
 		<Unit filename="TriggerComp.h" />
-		<Unit filename="TriggerSub.cpp" />
+		<Unit filename="TriggerSys.cpp" />
 		<Unit filename="TypeDefs.h" />
 		<Unit filename="Ui.cpp" />
 		<Unit filename="Ui.h" />

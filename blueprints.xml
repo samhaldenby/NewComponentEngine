@@ -6,6 +6,5 @@
 				<coin>coin.xml</coin>
 				<gun>forwardGun.xml</gun>
 				<rearGun>rearGun.xml</rearGun>
-				<reverseBullet>reverseBullet.xml</reverseBullet>
 				<livingQuarters>K240/b_livingQuarters.xml</livingQuarters>
 </Entries>

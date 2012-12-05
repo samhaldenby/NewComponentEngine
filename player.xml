@@ -18,7 +18,7 @@
   </Health>
   
   <Move>true
-    <speedFactor>80.0</speedFactor>
+    <SpeedFactor>80.0</SpeedFactor>
     <x>0</x>
     <y>0</y>
   </Move>

@@ -24,7 +24,7 @@
   
   <Move>
     true
-    <speedFactor>200</speedFactor>
+    <SpeedFactor>200</SpeedFactor>
     <x>0.371</x>
     <y>-0.928</y>
   </Move>

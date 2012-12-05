@@ -21,7 +21,8 @@ typedef std::multimap<GridLocation,std::vector<ObjectId> > CollisionHash;
 const int MIN_DIST = 4;
 const int MAX_OBJECT_DIMENSION = 50;
 const int MAX_CONCURRENT_SOUNDS = 16;
-
+const double PI = 3.14159265;
+const double DEG_TO_RAD_MOD = PI/180.00;
 namespace cType
 {
     enum{   Health=1,
@@ -59,7 +60,7 @@ namespace cFlag
             Event   =0x2000,//8192
             Anchor  =0x4000,//16384
             Trigger =0x8000,//32768
-            MAX     =65536//65536,
+            MAX     =0x10000//65536,
         };
 
 

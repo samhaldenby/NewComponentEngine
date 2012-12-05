@@ -326,7 +326,7 @@ bool ObjectBuilder::addMoveComp_(ObjectId objectId, Object* object, Blueprint* b
 //        blueprint->insert(blueprint->find("Object.Move.x"),10.f)
 //        blueprint->put("Object.Move.x","1");
     move->setMove(Vector2d(blueprint->get("x",0.f), blueprint->get("y",0.f)));
-    move->setSpeed(blueprint->get("speedFactor",0.f));
+    move->setSpeed(blueprint->get("SpeedFactor",0.f));
 
     return true;
 }
@@ -339,6 +339,8 @@ bool ObjectBuilder::addLauncherComp_(ObjectId objectId, Object* object, Blueprin
     LauncherComp* launcher = core_->getLauncherSub()->getComponent(objectId);
     launcher->setMaxCooldown(blueprint->get("MaxCooldown",0.f));
     launcher->setProjectileBlueprintName(blueprint->get("Projectile",""));
+    launcher->setAngle(180.0f - blueprint->get("Angle",0.f));
+    launcher->setSpeed(blueprint->get("Speed",0.f));
 
     return true;
 }

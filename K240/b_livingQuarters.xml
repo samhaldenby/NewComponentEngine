@@ -32,7 +32,7 @@
   </OnSelect>
 
   <Move>true
-    <speedFactor>20</speedFactor>
+    <SpeedFactor>20</SpeedFactor>
     <x>0</x>
     <y>0</y>
   </Move>

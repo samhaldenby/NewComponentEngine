@@ -17,6 +17,8 @@
   
   <Launcher>true
     <MaxCooldown>0.1</MaxCooldown>
+    <Angle>25</Angle>
+    <Speed>200</Speed>
     <Projectile>simpleBullet</Projectile>
   </Launcher>
   

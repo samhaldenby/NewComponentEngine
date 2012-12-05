@@ -72,6 +72,22 @@ void System<LauncherComp>::deliverMessage_(Message message)
             kwargs["Object.Coords.x"] = xSS.str();
             kwargs["Object.Coords.y"] = ySS.str();
 
+            //set velocity
+            double dirX = sin(targetComponent->getAngle()*DEG_TO_RAD_MOD);
+            double dirY = cos(targetComponent->getAngle()*DEG_TO_RAD_MOD);
+
+            std::stringstream xDirSs(""), yDirSs(""),speedSs("");
+            xDirSs << dirX;
+            yDirSs << dirY;
+            speedSs << targetComponent->getSpeed();
+            kwargs["Object.Move"]="true";
+            kwargs["Object.Move.SpeedFactor"]= speedSs.str();
+            kwargs["Object.Move.x"]=xDirSs.str();
+            kwargs["Object.Move.y"]=yDirSs.str();
+
+
+//            kwargs["Object.Coords.
+
             core_->getObjectBuilder()->createObject(targetComponent->getProjectileBlueprintName(),kwargs);
 
 //            Parameters changePosParams;

@@ -18,6 +18,7 @@
 #include "CollisionComp.h"
 #include "StatsComp.h"
 #include "TriggerComp.h"
+#include "EffectsComp.h"
 #include "ObjectBuilder.h"
 
 
@@ -43,6 +44,8 @@ class Core
         MessageCentre*      getMessageCentre();
         Ui*                 getUi();
 
+
+        System<EffectsComp>* getEffectsSub();
         System<HealthComp>* getHealthSub();
         System<NameComp>*   getNameSub();
         System<CoordsComp>* getCoordsSub();
@@ -73,6 +76,7 @@ class Core
         System<EventComp>* eventSub_;
         System<StatsComp>* statsSub_;
         System<TriggerComp>* triggerSub_;
+        System<EffectsComp>* effectsSub_;
 
         Store* store_;
         ObjectBuilder* objectBuilder_;

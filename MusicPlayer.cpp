@@ -177,29 +177,9 @@ void MusicPlayer::update(double elapsed)
 //            params["Object.Move"]="true";
             params["Object.Move.y"]=ySpeed.str();
             params["Object.Move.x"]="0";
-            core_->getObjectBuilder()->createObject("livingQuarters",params);
-//            Enemy* p = new Enemy(&db);
-//            GameObject* pAst =  p;
-//            int xCo = rand()%int(db.screenDimensions.x-100) + 50;
-//            pAst->coords = Vector2d(xCo, 70);
-//            pAst->changeSprite("enemy_ship01");
-//            p->maxHealth=20;
-//            p->health = 20;
-//            p->statSpeed = timeSlices_[timeSlice]*1000;
-//            p->statShotCoolDown=float(rand())/RAND_MAX + 0.3;
-//            p->statShotSpeed = float(p->statSpeed+200);
-//
-//            //create a meter
-//            //create meter
-////                Meter* pMeter =new Meter(p);
-////                pMeter->dims = Vector2d(db.screenDimensions.x/10,5);
-////                pMeter->coords = Vector2d(db.screenDimensions.x/40 , db.screenDimensions.y/40);
-////                pMeter->anchored =true;
-////                db.meterList.push_back(pMeter);
-////                std::cout << "done" << std::endl;
-//
-////                pAst->velocity = Vector2d(rand()%100 -50,rand()%500 + 100);
-//            pAst->velocity = Vector2d(rand()%200 -100,p->statSpeed);
+
+//            core_->getObjectBuilder()->createObject("livingQuarters",params);
+
             runningTot_-=1;
 
         }

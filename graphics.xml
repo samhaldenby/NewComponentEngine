@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entries>
 				<Entry>coin.png</Entry>
+				<Entry>powerup.png</Entry>
 				<Entry>spaceship.png</Entry>
 				<Entry>Enemy_ship.png</Entry>
 				<Entry>simpleBullet.png</Entry>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Object>
+  <Name>powerUp</Name>
+  
+  <Gfx>true
+    <Sprite>powerup.png</Sprite>
+  </Gfx>
+  
+  <Coords>true
+    <x>120</x>
+    <y>50</y>
+  </Coords>
+  
+  <Move>true
+    <SpeedFactor>80.0</SpeedFactor>
+    <x>0</x>
+    <y>0</y>
+  </Move>
+
+
+  <Events>
+    true
+    <Messages>onDestroy=object destroy</Messages>
+  </Events>
+  
+
+  <Effects>true
+    <SpeedBoost>
+      <Active>No</Active>
+      <Params>stats_modify_speed_10;stats_modify_power_5;/;/;stats_modify_speed_-10;stats_modify_speed_-5;/1000</Params>
+    </SpeedBoost>
+  </Effects>
+  
+  <Collision>true
+    <onCollision>target effects add SpeedBoost stats_modify_speed_10*stats_modify_power_5*/*/*stats_modify_speed_-10*stats_modify_speed_-5*/1000;self event execute onDestroy;</onCollision>
+  </Collision>
+  
+</Object>
+
+

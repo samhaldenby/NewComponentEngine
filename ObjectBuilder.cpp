@@ -33,6 +33,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
     compMakerFnMap_["Events"]=&ObjectBuilder::addEventComp_;
     compMakerFnMap_["Stats"]=&ObjectBuilder::addStatsComp_;
     compMakerFnMap_["Trigger"]=&ObjectBuilder::addTriggerComp_;
+    compMakerFnMap_["Effects"]=&ObjectBuilder::addEffectsComp_;
 
 }
 
@@ -85,6 +86,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     bool hasAnchor = blueprint->get("Object.Anchor",false);
     bool hasStats = blueprint->get("Object.Stats",false);
     bool hasTrigger = blueprint->get("Object.Trigger",false);
+    bool hasEffects = blueprint->get("Object.Effects",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -105,6 +107,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     std::cout << (hasCollision ? "has" : "does not have") << " Collision " << std::endl;
     std::cout << (hasStats ? "has" : "does not have") << " Stats "<< std::endl;
     std::cout << (hasTrigger ? "has" : "does not have") << " Trigger " << std::endl;
+    std::cout << (hasEffects ? "has" : "does not have") << " Effects " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
 
@@ -417,3 +420,25 @@ bool ObjectBuilder::addTriggerComp_(ObjectId objectId, Object* object, Blueprint
 }
 
 
+bool ObjectBuilder::addEffectsComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Effects);
+    core_->getEffectsSub()->addComponent(objectId);
+    EffectsComp* effects = core_->getEffectsSub()->getComponent(objectId);
+      //iterate over ptree and build stats accordingly
+    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
+                  blueprint->get_child(""))
+    {
+        std::string effectName = v.first.data();
+        std::string effectStr = v.second.get("Params","");
+        bool active = v.second.get("Active",false);
+        std::cout << "EFFECT: " << effectName << "\t" << "EFFSTR: " << effectStr<< std::endl;
+        effects->addEffect(effectName,effectStr);
+        effects->getEffect(effectName)->setActive(active);
+//        std::string blueprintFileName = v.second.data();
+//        continue this bit!
+    }
+
+
+    return true;
+}

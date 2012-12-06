@@ -198,6 +198,11 @@ void System<CollisionComp>::update(double elapsed)
              //grab all params except first one from onCollisionMessage (first one is whether target is self or other)
             Parameters params(iMessage->begin()+1, iMessage->end());
             //build message and dispatch
+            std::cout << "Sending collision message: ";
+            for (int x=0;x<params.size();++x)
+            {
+                std::cout << "\t>" << x << ": " << params[x] << std::endl;
+            }
             Message msg(iCol->second, targetObject, params);
             Telegram telegram(iCol->second, targetObject, 0.0, msg);
             core_->getMessageCentre()->addTelegram(telegram);

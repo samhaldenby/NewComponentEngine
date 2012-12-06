@@ -48,6 +48,7 @@ void System<EventComp>::deliverMessage_(Message message)
     if (mainCmd=="execute")
     {
         //get key
+        std::cout << "Executing '" << params[2] << "'" << std::endl;
         std::string key = params[2];
         std::vector<Parameters>* message = targetComponent->getEvents(key);
         if (message!=NULL)

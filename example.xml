@@ -25,10 +25,6 @@
   
   <Input>true</Input>
   
-  <Effects>true
-    
-  </Effects>
-  
   <Trigger>true
     <Messages>guns=launcher launch;</Messages>
   </Trigger>
@@ -39,9 +35,14 @@
     <Dodge>0.05</Dodge>
   </Stats>
   
-
   
-  <Collision>true</Collision>
+
+  <Effects>
+    <
+  </Effects>
+  <Collision>true
+    <onCollision>target health changeCurrBy -5;self event execute onDestroy;self audio play onHit</onCollision>
+  </Collision>
   
 </Object>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entries>
+				<speedPowerUp>speedPowerUp.xml</speedPowerUp>
 				<player>player.xml</player>
 				<simpleBullet>simpleBullet.xml</simpleBullet>
 				<laserBullet>laserBullet.xml</laserBullet>

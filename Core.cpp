@@ -31,6 +31,7 @@ Core::Core(std::string coreConfigFileName)
 
 
     //create subsystems
+    effectsSub_ = new System<EffectsComp>(this);
     healthSub_ = new System<HealthComp>(this);
     nameSub_ = new System<NameComp>(this);
     coordsSub_ = new System<CoordsComp>(this);
@@ -84,6 +85,10 @@ Ui* Core::getUi()
 }
 
 
+System<EffectsComp>* Core::getEffectsSub()
+{
+    return effectsSub_;
+}
 
 System<HealthComp>* Core::getHealthSub()
 {

@@ -7,12 +7,18 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
+
+//forward decs
+class Effect;
+
+
 typedef boost::property_tree::ptree Blueprint;
 typedef unsigned long ObjectId;
 typedef unsigned long CompType;
 typedef unsigned long ComponentFlag;
 typedef std::vector<std::string> Parameters;
 typedef std::map<std::string, double> StatsMap;
+typedef std::map<std::string, Effect*> EffectsMap;
 typedef std::map<std::string, std::string> NamedParams;
 
 //collision typedefs
@@ -22,6 +28,7 @@ typedef std::multimap<GridLocation,std::vector<ObjectId> > CollisionHash;
 const int MIN_DIST = 4;
 const int MAX_OBJECT_DIMENSION = 50;
 const int MAX_CONCURRENT_SOUNDS = 16;
+const double NO_DURATION = -999999;
 const double PI = 3.14159265;
 const double DEG_TO_RAD_MOD = PI/180.00;
 namespace cType
@@ -38,7 +45,8 @@ namespace cType
             Event=10,
             Anchor=11,
             Trigger=12,
-            Stats=13
+            Stats=13,
+            Effects=14
         };
 }
 
@@ -51,7 +59,7 @@ namespace cFlag
             Audio   =0x4,//4,
             Move    =0x8,//8,
             Input   =0x10,//16,
-            Brain   =0x20,//=32,
+            Effects =0x20,//=32,
             Stats   =0x40,//=64,
             Collision=0x80,//=128,
             Health  =0x100,//256,

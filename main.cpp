@@ -20,13 +20,13 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    std::cout.setstate(std::ios::failbit);
 
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
     core.getObjectBuilder()->createObject("coin");
     core.getObjectBuilder()->createObject("livingQuarters");
+    core.getObjectBuilder()->createObject("speedPowerUp");
 
     NamedParams params;
     params["Anchor"]="true";
@@ -99,6 +99,7 @@ int main()
         core.getMessageCentre()->update(elapsed);
 
         //deliver messages
+        core.getEffectsSub()->deliverAllMessages();
         core.getMoveSub()->deliverAllMessages();
         core.getHealthSub()->deliverAllMessages();
         core.getNameSub()->deliverAllMessages();
@@ -116,6 +117,7 @@ int main()
 
         //update subsystems
 //        core.getInputSub()->update(elapsed);
+        core.getEffectsSub()->update(elapsed);
         core.getAnchorSub()->update(elapsed);
         core.getMoveSub()->update(elapsed);
 //        core.getGfxSub()->update(elapsed);

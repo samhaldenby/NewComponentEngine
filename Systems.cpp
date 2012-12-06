@@ -12,6 +12,7 @@
 #include "EventComp.h"
 #include "StatsComp.h"
 #include "TriggerComp.h"
+#include "EffectsComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -125,6 +126,7 @@ void System<T>::reduceRunningClockBy(double elapsed)
 template class System<HealthComp>;
 template class System<NameComp>;
 template class System<CoordsComp>;
+template class System<EffectsComp>;
 template class System<MoveComp>;
 template class System<GfxComp>;
 template class System<AudioComp>;

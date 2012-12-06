@@ -4,77 +4,56 @@
   
   
   
-
-    
-
+  
+  
   
 
   
-
-  
-				
-  
-
   
   
   
   
 
-	<Name>livingQuarters</Name>
+	<Name>simpleBullet</Name>
 	<Gfx>
-		true
+		
+    true
     
   
-		<Sprite>K240/graphics/living_quarters.png</Sprite>
+		<Sprite>simpleBullet.png</Sprite>
 	</Gfx>
 	<Audio>
 		
     true
     
   
-		<Sounds>onDestroy audio/explosion1.wav</Sounds>
+		<Sounds>onHit audio/laser.wav;onCreate audio/laser3.wav</Sounds>
 	</Audio>
 	<Events>
 		
     true
     
   
-		<Messages>onDestroy=audio play onDestroy;object destroy</Messages>
+		<Messages>onCreate=audio play onCreate;/onDestroy=object destroy</Messages>
 	</Events>
 	<Coords>
-		true
-    
-    
+		
+    true
   
-		<x>180</x>
-		<y>0</y>
+		<x>44.738</x>
+		<y>88.2028</y>
 	</Coords>
-	<Health>
-		true
-    
-    
-    
-  
-		<Max>100</Max>
-		<Current>100</Current>
-		<onZeroHealth>event execute onDestroy</onZeroHealth>
-	</Health>
-	<OnSelect>
-		true
+	<Collision>
+		
+    true
     
   
-		<Command>SetFocus</Command>
-	</OnSelect>
+		<onCollision>target health changeCurrBy -5;self event execute onDestroy;self audio play onHit</onCollision>
+	</Collision>
 	<Move>
 		true
-    
-    
-    
-  
-		<SpeedFactor>20</SpeedFactor>
-		<x>0</x>
-		<y>9.90035</y>
+		<SpeedFactor>200</SpeedFactor>
+		<x>3.58979e-09</x>
+		<y>-1</y>
 	</Move>
-	<Collision>true
-  </Collision>
 </Object>

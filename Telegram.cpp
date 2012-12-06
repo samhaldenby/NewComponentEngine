@@ -61,6 +61,7 @@ void Telegram::sendMessage()
     }
     std::cout << std::endl;
     if (targetSub=="health") core_->getHealthSub()->addMessage(message_);
+    else if (targetSub=="effects") core_->getEffectsSub()->addMessage(message_);
     else if (targetSub=="name") core_->getNameSub()->addMessage(message_);
     else if (targetSub=="coords") core_->getCoordsSub()->addMessage(message_);
     else if (targetSub=="move") core_->getMoveSub()->addMessage(message_);

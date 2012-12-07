@@ -24,15 +24,10 @@
   </Events>
   
 
-  <Effects>true
-    <SpeedBoost>
-      <Active>No</Active>
-      <Params>stats_modify_speed_10;stats_modify_power_5;/;/;stats_modify_speed_-10;stats_modify_speed_-5;/1000</Params>
-    </SpeedBoost>
-  </Effects>
+
   
   <Collision>true
-    <onCollision>target effects add SpeedBoost stats_modify_speed_10*stats_modify_power_5*/*/*stats_modify_speed_-10*stats_modify_speed_-5*/1000;self event execute onDestroy;</onCollision>
+    <onCollision>target effects add SpeedBoost stats_modify_speed_10*stats_modify_power_5*/*/*stats_modify_speed_-10*stats_modify_speed_-5*/5;self event execute onDestroy;</onCollision>
   </Collision>
   
 </Object>

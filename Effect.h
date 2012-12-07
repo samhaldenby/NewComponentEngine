@@ -10,8 +10,6 @@ class Effect
     public:
 
         Effect(std::string effectString);
-        void setActive(bool a);
-        bool isActive();
         void setOnBegin(std::string);
         void setOnUpdate(std::string);
         void setOnEnd(std::string);
@@ -28,7 +26,6 @@ class Effect
         std::vector<Parameters> onBeginParams_;
         std::vector<Parameters> onUpdateParams_;
         std::vector<Parameters> onEndParams_;
-        bool active_;
         bool hasDuration_;
 
         double duration_;

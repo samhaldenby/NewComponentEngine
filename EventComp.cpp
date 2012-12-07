@@ -53,8 +53,10 @@ std::vector<Parameters>* EventComp::getEvents(std::string key)
     std::map<std::string, std::vector<Parameters> >::iterator iParams = eventMap_.find(key);
     if(iParams==eventMap_.end())
     {
-        std::cout << "Warning : This event does not exist or was already deleted" << std::endl;
+        std::cout << "Warning : This event does not exist or was already deleted '" << key << "'" << std::endl;
+       // exit(EXIT_FAILURE);
         return NULL;
+
     }
     else
     {

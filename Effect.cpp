@@ -4,7 +4,6 @@
 Effect::Effect(std::string effectString)
 {
     hasDuration_ = false;
-    active_ = false;
 
     //parse string
     //split on /
@@ -29,16 +28,6 @@ Effect::Effect(std::string effectString)
 
 
 
-void Effect::setActive(bool a)
-{
-    active_ = a;
-}
-
-
-bool Effect::isActive()
-{
-    return active_;
-}
 
 void Effect::setOnBegin(std::string effectString)
 {
@@ -92,15 +81,16 @@ void Effect::setDuration(double duration)
 
 void Effect::updateDuration(double elapsed)
 {
+    std::cout << "Duration of effect reduced from " << duration_ << " to ";
     duration_-=elapsed;
+    std::cout << " duration" << std::endl;
+
 }
 
 
 bool Effect::hasDuration()
 {
-    std::cout << "ASSESSING: " << std::endl;
-    std::cout << "This: " << this << std::endl;
-    std::cout << this->hasDuration_ << std::endl;
+
     return hasDuration_;
 }
 

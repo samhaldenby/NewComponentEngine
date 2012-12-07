@@ -14,6 +14,7 @@ MessageCentre::MessageCentre(Core* core)  : core_(core)
 
 void MessageCentre::addTelegram(Telegram T)
 {
+    T.debugPrintMessage();
     telegrams_.push_back(T);
 }
 

@@ -6,6 +6,7 @@
 #include "MessageCentre.h"
 #include <iostream>
 
+//TODO With any effect messages, don't bother to send them if they're empty! Not only a waste of resources but also causes crashng
 
 template <>
 void System<EffectsComp>::update(double elapsed)
@@ -17,51 +18,55 @@ void System<EffectsComp>::update(double elapsed)
     {
         EffectsComp* effectsComp = &iCom->second;
         EffectsMap* effectsMap = effectsComp->getEffects();
-        std::cout << "Address of effectsMap: "<< effectsMap << std::endl;
-        std::cout << "copy of effects map size : "<< effectsMap->size() << std::endl;
-        std::cout << "orig effects map size : " << effectsComp->getEffects()->size() << std::endl;
+//        std::cout << "Address of effectsMap: "<< effectsMap << std::endl;
+//        std::cout << "copy of effects map size : "<< effectsMap->size() << std::endl;
+//        std::cout << "orig effects map size : " << effectsComp->getEffects()->size() << std::endl;
         //update each effect in component as necessary
         EffectsMap::iterator iEffect = effectsMap->begin();
         while(iEffect!=effectsMap->end())
         {
-            //only update if active
-            if(iEffect->second->isActive())
+             //update timer if necessary
+            if(iEffect->second->hasDuration())
             {
-                 //update timer if necessary
-                if(iEffect->second->hasDuration())
+                iEffect->second->updateDuration(elapsed);
+                //check if timer has expired
+                if (iEffect->second->hasExpired())
                 {
-                    iEffect->second->updateDuration(elapsed);
-                    //check if timer has expired
-                    if (iEffect->second->hasExpired())
+                    //do on end messages
+                    std::vector<Parameters> endParams = iEffect->second->getOnEnd();
+                    std::vector<Parameters>::iterator iParams = endParams.begin();
+                    while(iParams!= endParams.end())
                     {
-                        //do on end messages
-                        std::vector<Parameters> endParams = iEffect->second->getOnEnd();
-                        std::vector<Parameters>::iterator iParams = endParams.begin();
-                        while(iParams!= endParams.end())
+                        if(iParams->size()>0)
                         {
                             Message msg(effectsComp->getId(), effectsComp->getId(), *iParams);
                             Telegram tel(effectsComp->getId(), effectsComp->getId(), 0.0, msg);
                             core_->getMessageCentre()->addTelegram(tel);
-                            ++iParams;
                         }
-
-                        //delete params
-                        effectsMap->erase(iEffect++);
+                        ++iParams;
                     }
 
+                    //delete params
+                    effectsMap->erase(iEffect++);
+                    continue;
                 }
 
-                //carry out onUpdate messages
-                std::vector<Parameters> updateParams = iEffect->second->getOnUpdate();
-                std::vector<Parameters>::iterator iParams = updateParams.begin();
-                while(iParams!= updateParams.end())
+            }
+
+            //carry out onUpdate messages
+            std::vector<Parameters> updateParams = iEffect->second->getOnUpdate();
+            std::vector<Parameters>::iterator iParams = updateParams.begin();
+            while(iParams!= updateParams.end())
+            {
+                if(iParams->size()>0)
                 {
                     Message msg(effectsComp->getId(), effectsComp->getId(), *iParams);
                     Telegram tel(effectsComp->getId(), effectsComp->getId(), 0.0, msg);
                     core_->getMessageCentre()->addTelegram(tel);
-                    ++iParams;
                 }
+                ++iParams;
             }
+
             ++iEffect;
 
         }
@@ -105,9 +110,12 @@ void System<EffectsComp>::deliverMessage_(Message message)
             std::vector<Parameters>::iterator iParams = endParams.begin();
             while(iParams!= endParams.end())
             {
-                Message msg(message.getSourceId(), targetComponent->getId(), *iParams);
-                Telegram tel(message.getSourceId(), targetComponent->getId(), 0.0, msg);
-                core_->getMessageCentre()->addTelegram(tel);
+                if(iParams->size()>0)
+                {
+                    Message msg(message.getSourceId(), targetComponent->getId(), *iParams);
+                    Telegram tel(message.getSourceId(), targetComponent->getId(), 0.0, msg);
+                    core_->getMessageCentre()->addTelegram(tel);
+                }
                 ++iParams;
             }
         }
@@ -119,9 +127,13 @@ void System<EffectsComp>::deliverMessage_(Message message)
         std::vector<Parameters>::iterator iParams = beginParams.begin();
         while(iParams!= beginParams.end())
         {
-            Message msg(message.getSourceId(), targetComponent->getId(), *iParams);
-            Telegram tel(message.getSourceId(), targetComponent->getId(), 0.0, msg);
-            core_->getMessageCentre()->addTelegram(tel);
+            if(iParams->size()>0)
+            {
+                Message msg(message.getSourceId(), targetComponent->getId(), *iParams);
+                Telegram tel(message.getSourceId(), targetComponent->getId(), 0.0, msg);
+                std::cout << "Sending onBegin effect message to " << (*iParams)[0]<< std::endl;
+                core_->getMessageCentre()->addTelegram(tel);
+            }
             ++iParams;
         }
     }

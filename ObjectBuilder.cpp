@@ -424,20 +424,19 @@ bool ObjectBuilder::addEffectsComp_(ObjectId objectId, Object* object, Blueprint
 {
     object->addFlag(cFlag::Effects);
     core_->getEffectsSub()->addComponent(objectId);
-    EffectsComp* effects = core_->getEffectsSub()->getComponent(objectId);
-      //iterate over ptree and build stats accordingly
-    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
-                  blueprint->get_child(""))
-    {
-        std::string effectName = v.first.data();
-        std::string effectStr = v.second.get("Params","");
-        bool active = v.second.get("Active",false);
-        std::cout << "EFFECT: " << effectName << "\t" << "EFFSTR: " << effectStr<< std::endl;
-        effects->addEffect(effectName,effectStr);
-        effects->getEffect(effectName)->setActive(active);
-//        std::string blueprintFileName = v.second.data();
-//        continue this bit!
-    }
+//    EffectsComp* effects = core_->getEffectsSub()->getComponent(objectId);
+//      //iterate over ptree and build stats accordingly
+//    BOOST_FOREACH(boost::property_tree::ptree::value_type &v,
+//                  blueprint->get_child(""))
+//    {
+//        std::string effectName = v.first.data();
+//        std::string effectStr = v.second.get("Params","");
+//        std::cout << "EFFECT: " << effectName << "\t" << "EFFSTR: " << effectStr<< std::endl;
+//        effects->addEffect(effectName,effectStr);
+//        effects->getEffect(effectName)->setActive(active);
+////        std::string blueprintFileName = v.second.data();
+////        continue this bit!
+//    }
 
 
     return true;

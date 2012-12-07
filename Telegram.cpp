@@ -33,18 +33,39 @@ void Telegram::reduceTime(double elapsed)
 
 bool Telegram::isValid()
 {
+    std::cout << "Checking message validity" << std::endl;
     //check target exists
     Object* targetObject = NULL;
     targetObject = core_->getObjectStore()->getObject(receiver_);
 
-    if(targetObject)
+    debugPrintMessage();
+    if(message_.getParameters().size()==0)
     {
-        return true;
+        std::cout << "Message contains no parameters" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    if(targetObject==NULL)
+    {
+        return false;
     }
 
-    return false;
+    return true;
 }
 
+
+void Telegram::debugPrintMessage()
+{
+    std::cout << "** Telegram" << std::endl;
+    std::cout << "**  From: " << message_.getSourceId() << std::endl;
+    std::cout << "**    To: " << message_.getTargetId() << std::endl;
+    std::cout << "**Params: " << std::endl;
+    Parameters params = message_.getParameters();
+    for (int x=0; x< params.size();++x)
+    {
+        std::cout << x << ": " << params[x] << std::endl;
+    }
+
+}
 
 //@@@Requires updating on addition on new subsystem
 void Telegram::sendMessage()

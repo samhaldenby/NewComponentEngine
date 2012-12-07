@@ -18,6 +18,7 @@ class Telegram
         bool isValid();
         void sendMessage();
         bool readyForDispatch();
+        void debugPrintMessage();
 
     private:
         ObjectId sender_;

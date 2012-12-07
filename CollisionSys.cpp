@@ -183,10 +183,12 @@ void System<CollisionComp>::update(double elapsed)
             ObjectId targetObject;
             if((*iMessage)[0]=="self")
             {
+                std::cout << "Sending collision message to self" << std::endl;
                 targetObject = iCol->second;    //not iCol->first, as we're now dealing with how B deals with A, not A deals with B.
             }
             else if ((*iMessage)[0]=="target")
             {
+                std::cout << "Sending collision message to target" << std::endl;
                 targetObject = iCol->first;
             }
             else

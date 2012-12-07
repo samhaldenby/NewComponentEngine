@@ -7,53 +7,48 @@
   
   
   
+  
+ 
+  
+  
+  
+  
 
   
-  
-  
-  
-  
 
-	<Name>simpleBullet</Name>
+	<Name>rearGun</Name>
 	<Gfx>
-		
-    true
-    
-  
-		<Sprite>simpleBullet.png</Sprite>
-	</Gfx>
-	<Audio>
-		
-    true
-    
-  
-		<Sounds>onHit audio/laser.wav;onCreate audio/laser3.wav</Sounds>
-	</Audio>
-	<Events>
-		
-    true
-    
-  
-		<Messages>onCreate=audio play onCreate;/onDestroy=object destroy</Messages>
-	</Events>
-	<Coords>
-		
-    true
-  
-		<x>44.738</x>
-		<y>88.2028</y>
-	</Coords>
-	<Collision>
-		
-    true
-    
-  
-		<onCollision>target health changeCurrBy -5;self event execute onDestroy;self audio play onHit</onCollision>
-	</Collision>
-	<Move>
 		true
-		<SpeedFactor>200</SpeedFactor>
-		<x>3.58979e-09</x>
-		<y>-1</y>
-	</Move>
+    
+  
+		<Sprite>coin.png</Sprite>
+	</Gfx>
+	<Coords>
+		true
+    
+    
+  
+		<x>20</x>
+		<y>50</y>
+	</Coords>
+	<Launcher>
+		true
+    
+    
+    
+    
+  
+		<MaxCooldown>0.15</MaxCooldown>
+		<Projectile>simpleBullet</Projectile>
+		<Angle>225.0</Angle>
+		<Speed>200</Speed>
+	</Launcher>
+	<Anchor>
+		<Offset>
+			<x>-15</x>
+			<y>40</y>
+		</Offset>
+		<Parent>0</Parent>
+	</Anchor>
 </Object>
+<Anchor>true</Anchor>

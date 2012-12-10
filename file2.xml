@@ -4,51 +4,77 @@
   
   
   
+
+    
+
   
+
   
+
   
+				
   
- 
+
   
   
   
   
 
-  
-
-	<Name>rearGun</Name>
+	<Name>livingQuarters</Name>
 	<Gfx>
 		true
     
   
-		<Sprite>coin.png</Sprite>
+		<Sprite>K240/graphics/living_quarters.png</Sprite>
 	</Gfx>
+	<Audio>
+		
+    true
+    
+  
+		<Sounds>onDestroy audio/explosion1.wav</Sounds>
+	</Audio>
+	<Events>
+		
+    true
+    
+  
+		<Messages>onDestroy=audio play onDestroy;object destroy</Messages>
+	</Events>
 	<Coords>
 		true
     
     
   
-		<x>20</x>
-		<y>50</y>
+		<x>262</x>
+		<y>0</y>
 	</Coords>
-	<Launcher>
+	<Health>
 		true
     
     
     
+  
+		<Max>100</Max>
+		<Current>100</Current>
+		<onZeroHealth>event execute onDestroy</onZeroHealth>
+	</Health>
+	<OnSelect>
+		true
     
   
-		<MaxCooldown>0.15</MaxCooldown>
-		<Projectile>simpleBullet</Projectile>
-		<Angle>225.0</Angle>
-		<Speed>200</Speed>
-	</Launcher>
-	<Anchor>
-		<Offset>
-			<x>-15</x>
-			<y>40</y>
-		</Offset>
-		<Parent>0</Parent>
-	</Anchor>
+		<Command>SetFocus</Command>
+	</OnSelect>
+	<Move>
+		true
+    
+    
+    
+  
+		<SpeedFactor>20</SpeedFactor>
+		<x>0</x>
+		<y>5.81374</y>
+	</Move>
+	<Collision>true
+  </Collision>
 </Object>
-<Anchor>true</Anchor>

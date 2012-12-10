@@ -21,6 +21,8 @@
 int main()
 {
 
+    std::cout.setstate(std::ios::failbit);
+
     Core core("coreConfig.xml");
     ObjectId playerId = core.getObjectBuilder()->createObject("player");
     core.getObjectBuilder()->createObject("simpleBullet");
@@ -71,11 +73,12 @@ int main()
     double startTime = fpsClock.GetElapsedTime();
 
     MusicPlayer mPlayer(&core);
-    mPlayer.loadMusic("grime.wav");
+    mPlayer.loadMusic("../wiig.wav");
+//    mPlayer.loadMusic("grime.wav");
     mPlayer.play();
 
     double spareTime = 0;
-    float fps = 60.0;
+    float fps = 20.0;
     while(firstRun==true)
     {
 

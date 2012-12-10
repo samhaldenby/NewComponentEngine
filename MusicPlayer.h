@@ -2,6 +2,7 @@
 #define MUSICPLAYER_H_INCLUDED
 
 #include <string>
+#include "TypeDefs.h"
 #include <SFML/Audio.hpp>
 
 class Core;
@@ -12,6 +13,9 @@ class MusicPlayer
         MusicPlayer(Core* core);
         bool loadMusic(std::string fileName);
         void play();
+
+        void addRespondingObject(ObjectId id);
+        void removeRespondingObject(ObjectId id);
 
         void update(double elapsed);
 
@@ -30,6 +34,8 @@ class MusicPlayer
         double runningTot_;
 
         double cumulativeElapsed_;
+
+        std::set<ObjectId> respondingObjects_;
 
 
 

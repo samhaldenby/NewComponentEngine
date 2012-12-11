@@ -72,7 +72,7 @@ int main()
 
 
     MusicPlayer mPlayer(&core);
-    mPlayer.loadMusic("grime.wav");
+    mPlayer.loadMusic("../wiig.wav");
     sf::Clock fpsClock;
     double startTime = fpsClock.GetElapsedTime();
     fpsClock.Reset();
@@ -90,7 +90,7 @@ int main()
 
         fpsClock.Reset();
         totTime+=elapsed;
-        std::cerr << "tot: " << totTime << std::endl;
+//        std::cerr << "tot: " << totTime << std::endl;
 //        if(elapsed < 1.0/fps)
 //        {
 //            sf::Sleep(1.0/fps - elapsed);

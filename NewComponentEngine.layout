@@ -112,11 +112,11 @@
 	<File name="MoveSys.cpp" open="1" top="0" tabpos="21">
 		<Cursor position="1830" topLine="21" />
 	</File>
-	<File name="MusicPlayer.cpp" open="1" top="0" tabpos="52">
-		<Cursor position="4090" topLine="125" />
+	<File name="MusicPlayer.cpp" open="1" top="1" tabpos="52">
+		<Cursor position="5201" topLine="171" />
 	</File>
 	<File name="MusicPlayer.h" open="1" top="0" tabpos="51">
-		<Cursor position="713" topLine="18" />
+		<Cursor position="703" topLine="18" />
 	</File>
 	<File name="NameComp.cpp" open="1" top="0" tabpos="35">
 		<Cursor position="0" topLine="0" />
@@ -172,7 +172,7 @@
 	<File name="Vector2d.h" open="1" top="0" tabpos="22">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="2456" topLine="61" />
+	<File name="main.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="2458" topLine="56" />
 	</File>
 </CodeBlocks_layout_file>

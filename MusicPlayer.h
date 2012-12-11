@@ -32,6 +32,7 @@ class MusicPlayer
         int timeSliceNum_;
 
         double runningTot_;
+        int stepsPerSecond_;
 
         double cumulativeElapsed_;
 

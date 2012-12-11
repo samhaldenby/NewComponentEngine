@@ -24,10 +24,11 @@ bool MusicPlayer::loadMusic(std::string fileName)
     if(musicBuffer_.LoadFromFile(fileName))
     {
         music_.SetBuffer(musicBuffer_);
-        profileMusic_();
         cumulativeElapsed_ = 0;
         timeSliceNum_ = 0;
         runningTot_ = 0;
+        profileMusic_();
+
         return true;
     }
 
@@ -53,15 +54,29 @@ void MusicPlayer::profileMusic_()
     std::copy(musicBuffer_.GetSamples(), musicBuffer_.GetSamples()+numSamples, std::back_inserter(buffer));
 
     //set moving window length and step size
-    int windowLength = samplesPerSecond * 1; //1 second
-    int stepSize = samplesPerSecond / 10; //0.1 second
+    stepsPerSecond_ = 10;
+    int windowLength = samplesPerSecond * 0.2; //1 second
+    int stepSize = samplesPerSecond / stepsPerSecond_; //0.1 second
     std::cout << "SamplesPerSecond: " << samplesPerSecond << std::endl;
     std::cout << "StepSize        : " << stepSize << std::endl;
     double stepLengthInSeconds = samplesPerSecond / stepSize;
-    std::cout << "StepLenSeconds  : " << stepLengthInSeconds << std::endl;
+    std::cerr << "StepLenSeconds  : " << stepLengthInSeconds << std::endl;
+
+    //set first time slice to begin + 0.5 * winLength in to track
+    double stepsInOneWindow = double(windowLength) / double(stepSize);
+    double stepsToMoveInToTrack = stepsInOneWindow/2.0;
+    std::cerr << "Steps to move in: " << stepsToMoveInToTrack << std::endl;
+    std::vector<double> rawWindowBuffer;
+    for (int x=0;x<stepsToMoveInToTrack; ++x)
+    {
+        rawWindowBuffer.push_back(0.0);
+    }
+//    timeSliceNum_ = stepsToMoveInToTrack;
+
+
 //    int dump; std::cin >> dump;
     //load window data into memory
-    std::vector<double> rawWindowBuffer;
+
     std::vector<double> rawWindowTot;
     for (int b=0;b<buffer.size()-windowLength;b+=stepSize)
     {
@@ -97,13 +112,11 @@ void MusicPlayer::profileMusic_()
         ++iWin;
     }
 
-    //test output to file
-    std::ofstream output("test.txt");
+
 //    std::vector<double>::iterator iVal = cumulativeDiffBuffer.begin();
     float timeStamp = 0;
     for (int x=0;x<rawWindowBuffer.size();++x)
     {
-        output << timeStamp << "\t" << rawWindowBuffer[x] << std::endl;
         timeStamp = timeStamp + (windowLength / samplesPerSecond) / (samplesPerSecond/stepSize);
     }
 //    while(iVal!=cumulativeDiffBuffer.end())
@@ -113,7 +126,6 @@ void MusicPlayer::profileMusic_()
 //        timeStamp = timeStamp + (windowLength / samplesPerSecond) / (samplesPerSecond/stepSize);
 //    }
     timeSlices_ = rawWindowBuffer;
-    output.close();
     std::cout << "Duration: " << musicBuffer_.GetDuration() << std::endl;
 //    exit(EXIT_FAILURE);
 
@@ -139,16 +151,16 @@ void MusicPlayer::update(double elapsed)
 //    clock_t currTime = clock();
 
     int totalBaddies = 0;
-    std::cerr << timeSliceNum_<< "\t" << cumulativeElapsed_ << "\t+\t" << elapsed << "\t= ";
+//    std::cerr << timeSliceNum_<< "\t" << cumulativeElapsed_ << "\t+\t" << elapsed << "\t= ";
     cumulativeElapsed_+=elapsed;
-    std::cerr << cumulativeElapsed_<< "\n";
+//    std::cerr << cumulativeElapsed_<< "\n";
     for (int x=0; x<timeSlices_[timeSliceNum_]*50; ++x)
     {
         std::cout << "*";
     }
     std::cout << std::endl;
 //    << timeSlicestimeSliceNum_] <<std::endl;
-    while(cumulativeElapsed_>0.1)
+    while(cumulativeElapsed_>1.0/stepsPerSecond_)
     {
         ++timeSliceNum_;
 //        std::cout << cumulativeElapsed_<< ":\t" << timeSliceNum_ << "\t" << timeSlices_[timeSliceNum_] << "\n";
@@ -168,7 +180,7 @@ void MusicPlayer::update(double elapsed)
             params["Object.Coords.x"]=xSS.str();
             params["Object.Coords.y"]="0";
 //            params["Object.Move"]="true";
-            params["Object.Move.y"]=ySpeed.str();
+            params["Object.Move.y"]="5";//ySpeed.str();
             params["Object.Move.x"]="0";
 
             ObjectId id = core_->getObjectBuilder()->createObject("livingQuarters",params);
@@ -211,7 +223,7 @@ void MusicPlayer::update(double elapsed)
 //            }
 //            ++iEnemy;
 //        }
-        cumulativeElapsed_ -=0.1;
+        cumulativeElapsed_ -=1.0/stepsPerSecond_;
     }
 }
 

@@ -69,20 +69,28 @@ int main()
     int count = 0;
     double totElapsed =0.0;
   //  clock_t startTime = clock();
-    sf::Clock fpsClock;
-    double startTime = fpsClock.GetElapsedTime();
+
 
     MusicPlayer mPlayer(&core);
-    mPlayer.loadMusic("../wiig.wav");
+    mPlayer.loadMusic("grime.wav");
+    sf::Clock fpsClock;
+    double startTime = fpsClock.GetElapsedTime();
+    fpsClock.Reset();
+
 //    mPlayer.loadMusic("grime.wav");
     mPlayer.play();
 
     double spareTime = 0;
     float fps = 20.0;
+    double totTime = 0.0;
     while(firstRun==true)
     {
 
         elapsed = fpsClock.GetElapsedTime();
+
+        fpsClock.Reset();
+        totTime+=elapsed;
+        std::cerr << "tot: " << totTime << std::endl;
 //        if(elapsed < 1.0/fps)
 //        {
 //            sf::Sleep(1.0/fps - elapsed);
@@ -94,7 +102,6 @@ int main()
 
 
 
-        fpsClock.Reset();
 
         //update music player
         mPlayer.update(elapsed);

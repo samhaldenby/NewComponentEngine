@@ -68,7 +68,7 @@
 		<Cursor position="2943" topLine="45" />
 	</File>
 	<File name="GfxComp.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="194" topLine="0" />
+		<Cursor position="136" topLine="0" />
 	</File>
 	<File name="GfxComp.h" open="1" top="0" tabpos="15">
 		<Cursor position="0" topLine="0" />
@@ -98,7 +98,7 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="MessageCentre.cpp" open="1" top="0" tabpos="33">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="0" topLine="13" />
 	</File>
 	<File name="MessageCentre.h" open="1" top="0" tabpos="50">
 		<Cursor position="460" topLine="0" />
@@ -113,10 +113,10 @@
 		<Cursor position="1830" topLine="21" />
 	</File>
 	<File name="MusicPlayer.cpp" open="1" top="0" tabpos="52">
-		<Cursor position="2140" topLine="56" />
+		<Cursor position="4090" topLine="125" />
 	</File>
 	<File name="MusicPlayer.h" open="1" top="0" tabpos="51">
-		<Cursor position="587" topLine="0" />
+		<Cursor position="713" topLine="18" />
 	</File>
 	<File name="NameComp.cpp" open="1" top="0" tabpos="35">
 		<Cursor position="0" topLine="0" />
@@ -154,6 +154,9 @@
 	<File name="Telegram.cpp" open="1" top="0" tabpos="40">
 		<Cursor position="1104" topLine="40" />
 	</File>
+	<File name="TriggerComp.h" open="1" top="0" tabpos="58">
+		<Cursor position="0" topLine="0" />
+	</File>
 	<File name="TypeDefs.h" open="1" top="0" tabpos="20">
 		<Cursor position="936" topLine="27" />
 	</File>
@@ -170,6 +173,6 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="591" topLine="0" />
+		<Cursor position="2456" topLine="61" />
 	</File>
 </CodeBlocks_layout_file>

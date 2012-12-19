@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\NewComponentEngine" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/NewComponentEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\NewComponentEngine" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/NewComponentEngine" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -35,13 +35,12 @@
 			<Add option="-DSFML_DYNAMIC" />
 		</Compiler>
 		<Linker>
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-system.a" />
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-window.a" />
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-audio.a" />
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-graphics.a" />
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-main.a" />
-			<Add library="C:\sfml\SFML-1.6\lib\libsfml-network.a" />
-			<Add directory="\usr\local\lib" />
+			<Add library="/usr/local/lib/libsfml-audio.so" />
+			<Add library="/usr/local/lib/libsfml-graphics.so" />
+			<Add library="/usr/local/lib/libsfml-network.so" />
+			<Add library="/usr/local/lib/libsfml-system.so" />
+			<Add library="/usr/local/lib/libsfml-window.so" />
+			<Add directory="/usr/local/lib" />
 		</Linker>
 		<Unit filename="AiComp.cpp" />
 		<Unit filename="AiComp.h" />

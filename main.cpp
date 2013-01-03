@@ -21,9 +21,9 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    int w = 500;
-    int h = 500;
-    Path p = SplineGenerator::makeBezier(100,10,27041977);
+    int w = 200;
+    int h = 200;
+    Path p = SplineGenerator::makeCatmul(100,10,180282);
     SplineGenerator::drawSpline(p,w,h);
     return 1;
 //    srand(time(NULL));
@@ -32,113 +32,8 @@ int main()
 //    int h=150;
     int steps = 50;
 
-    //test for catmull
 
-    Vector2d p0(rand()%w,rand()%h);
-    Vector2d p1(rand()%w,rand()%h);
-    Vector2d p2(rand()%w,rand()%h);
-    Vector2d p3(rand()%w,rand()%h);
 
-    std::ofstream out;
-    out.open("catmull.txt");
-
-    for (int c=0; c<10; ++c)
-    {
-        Vector2d next(rand()%w,rand()%h);
-        Vector2d next2(rand()%w,rand()%h);
-        //works ok - quite roundy
-        p0=p1;
-        p1=p2;
-        p2=p3;
-        p3=next;
-        //works ok - more roundy
-//        p0=p1;
-//        p1=p2;
-//        p2=next;
-//        p3=next2;
-
-        for (int x=0;x<steps;++x)
-        {
-            float t = x/float(steps);
-            Vector2d r = calculateCatmullPoint(t,p0,p1,p2,p3);
-            if(x==0)
-            {
-                out << r.x << "\t" << r.y << "\t" << r.x << "\t" << r.y << std::endl;
-            }
-            else
-            {
-                 out << r.x << "\t" << r.y << "\t" << std::endl;
-            }
-        }
-    }
-
-    out.close();
-    //end test for catmull
-    //test for bezier curving
-
-//    int minDist = sqrt(h/2 *h/2 + w/2 * w/2) * 0.5;
-//    std::cout << "MinDist: " << minDist << std::endl;
-//    Vector2d start(rand()%w,0);
-//    Vector2d end(rand()%w,h);
-//    std::ofstream out;
-//    out.open("bezier.txt");
-//    for (int c=0;c<3;++c)
-//    {
-//
-//        Vector2d p0 = start;
-//        Vector2d p1(rand()%w,rand()%h);
-//        Vector2d p2(rand()%w,rand()%h);
-//        Vector2d p3(rand()%w,rand()%h);
-//        while(p3.getDistance(p1)<minDist)
-//        {
-//            p3.x = rand()%w;
-//            p3.y = rand()%h;
-//        }
-//
-//        for (int x=0; x<steps;++x)
-//        {
-//            float t = x/float(steps);
-//            Vector2d res= calculateBezierPoint(t,p0,p1,p2,p3);
-//            if (x!=0)
-//            {
-//                out << t << "\t" << res.x <<"\t" << res.y << std::endl;
-//            }
-//            else
-//            {
-//                out << t << "\t" << res.x <<"\t" << res.y << "\t" << start.x << "\t" << start.y << std::endl;
-//            }
-//        }
-//
-//        start = p3;
-//    }
-//
-//    //do last link
-//    Vector2d p0 = start;
-//    Vector2d p1(rand()%w,rand()%h);
-//    Vector2d p2(rand()%w,rand()%h);
-//    Vector2d p3 = end;
-//    for (int x=0; x<steps;++x)
-//    {
-//        float t = x/float(steps);
-//        Vector2d res= calculateBezierPoint(t,p0,p1,p2,p3);
-//        if (x!=0)
-//        {
-//            out << t << "\t" << res.x <<"\t" << res.y << std::endl;
-//        }
-//        else
-//        {
-//            out << t << "\t" << res.x <<"\t" << res.y << "\t" << start.x << "\t" << start.y << std::endl;
-//        }
-//    }
-//
-//
-//
-//
-//    out.close();
-//
-    //end test for bezier curving
-
-//    return 1;
 
     std::cout.setstate(std::ios::failbit);
 

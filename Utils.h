@@ -13,9 +13,4 @@ StrTokens tokenise(std::string str, char delimiter);
 float randf();
 
 
-Vector2d calculateCatmullPoint(float t,
-                               Vector2d p0,
-                               Vector2d p1,
-                               Vector2d p2,
-                               Vector2d p3);
 #endif // UTILS_H_INCLUDED

@@ -19,6 +19,7 @@
 #include "StatsComp.h"
 #include "TriggerComp.h"
 #include "EffectsComp.h"
+#include "PathComp.h"
 #include "ObjectBuilder.h"
 
 
@@ -59,6 +60,7 @@ class Core
         System<EventComp>* getEventSub();
         System<StatsComp>* getStatsSub();
         System<TriggerComp>* getTriggerSub();
+        System<PathComp>*   getPathSub();
 
 
 
@@ -77,6 +79,7 @@ class Core
         System<StatsComp>* statsSub_;
         System<TriggerComp>* triggerSub_;
         System<EffectsComp>* effectsSub_;
+        System<PathComp>*   pathSub_;
 
         Store* store_;
         ObjectBuilder* objectBuilder_;

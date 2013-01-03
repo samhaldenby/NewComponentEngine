@@ -42,6 +42,7 @@ class ObjectBuilder
         bool addStatsComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addTriggerComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
         bool addEffectsComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
+        bool addPathComp_(ObjectId objectId, Object* object, Blueprint* blueprint);
 
 
 

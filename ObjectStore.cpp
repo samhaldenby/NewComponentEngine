@@ -116,6 +116,11 @@ void ObjectStore::removeObject(ObjectId id)
                     core_->getTriggerSub()->removeComponent(id);
                     break;
                 }
+                case (cFlag::Path):
+                {
+                    core_->getPathSub()->removeComponent(id);
+                    break;
+                }
                 default:
                     std::cout << "Cannot find this sub" << std::endl;
             }

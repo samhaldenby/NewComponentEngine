@@ -96,6 +96,7 @@ void Telegram::sendMessage()
     else if (targetSub=="object") core_->getObjectStore()->addMessage(message_);
     else if (targetSub=="stats") core_->getStatsSub()->addMessage(message_);
     else if (targetSub=="trigger") core_->getTriggerSub()->addMessage(message_);
+    else if (targetSub=="path") core_->getPathSub()->addMessage(message_);
 
 }
 

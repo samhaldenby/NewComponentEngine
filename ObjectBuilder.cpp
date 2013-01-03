@@ -34,6 +34,7 @@ ObjectBuilder::ObjectBuilder(Core* core) : core_(core)
     compMakerFnMap_["Stats"]=&ObjectBuilder::addStatsComp_;
     compMakerFnMap_["Trigger"]=&ObjectBuilder::addTriggerComp_;
     compMakerFnMap_["Effects"]=&ObjectBuilder::addEffectsComp_;
+    compMakerFnMap_["Path"]=&ObjectBuilder::addPathComp_;
 
 }
 
@@ -87,6 +88,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     bool hasStats = blueprint->get("Object.Stats",false);
     bool hasTrigger = blueprint->get("Object.Trigger",false);
     bool hasEffects = blueprint->get("Object.Effects",false);
+    bool hasPath = blueprint->get("Object.Path",false);
 //    bool hasInput = blueprint->get("Object.Input", false);
 //    bool hasOnSelect = blueprint->get("Object.OnSelect", false);
 
@@ -108,6 +110,7 @@ ObjectId ObjectBuilder::createObject(std::string blueprintName, NamedParams addi
     std::cout << (hasStats ? "has" : "does not have") << " Stats "<< std::endl;
     std::cout << (hasTrigger ? "has" : "does not have") << " Trigger " << std::endl;
     std::cout << (hasEffects ? "has" : "does not have") << " Effects " << std::endl;
+    std::cout << (hasPath ? "has" : "does not have") << " Path " << std::endl;
 //    std::cout << (hasInput ? "has" : "does not have") << " Input " << std::endl;
 //    std::cout << (hasOnSelect ? "has" : "does not have") << " OnSelect " << std::endl;
 
@@ -438,6 +441,20 @@ bool ObjectBuilder::addEffectsComp_(ObjectId objectId, Object* object, Blueprint
 ////        continue this bit!
 //    }
 
+
+    return true;
+}
+
+
+bool ObjectBuilder::addPathComp_(ObjectId objectId, Object* object, Blueprint* blueprint)
+{
+    object->addFlag(cFlag::Path);
+    core_->getPathSub()->addComponent(objectId);
+    PathComp* path = core_->getPathSub()->getComponent(objectId);
+//    launcher->setMaxCooldown(blueprint->get("MaxCooldown",0.f));
+//    launcher->setProjectileBlueprintName(blueprint->get("Projectile",""));
+//    launcher->setAngle(180.0f - blueprint->get("Angle",0.f));
+//    launcher->setSpeed(blueprint->get("Speed",0.f));
 
     return true;
 }

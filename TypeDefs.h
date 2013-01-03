@@ -75,7 +75,8 @@ namespace cFlag
             Event   =0x2000,//8192
             Anchor  =0x4000,//16384
             Trigger =0x8000,//32768
-            MAX     =0x10000//65536,
+            Path    =0x10000,//65536
+            MAX     =0x20000//131072,
         };
 
 

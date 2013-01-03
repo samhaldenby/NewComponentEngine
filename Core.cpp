@@ -45,6 +45,7 @@ Core::Core(std::string coreConfigFileName)
     anchorSub_ = new System<AnchorComp>(this);
     statsSub_ = new System<StatsComp>(this);
     triggerSub_ = new System<TriggerComp>(this);
+    pathSub_ = new System<PathComp>(this);
 
 
 }
@@ -154,4 +155,9 @@ System<StatsComp>* Core::getStatsSub()
 System<TriggerComp>* Core::getTriggerSub()
 {
     return triggerSub_;
+}
+
+System<PathComp>* Core::getPathSub()
+{
+    return pathSub_;
 }

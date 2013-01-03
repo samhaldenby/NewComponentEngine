@@ -21,16 +21,13 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    int w = 200;
-    int h = 200;
-    Path p = SplineGenerator::makeCatmul(100,10,180282);
-    SplineGenerator::drawSpline(p,w,h);
-    return 1;
-//    srand(time(NULL));
-    srand(25);
-//    int w=200;
-//    int h=150;
-    int steps = 50;
+//    int w = 200;
+//    int h = 200;
+//    Path p = SplineGenerator::makeCatmul(100,10,180282);
+//    SplineGenerator::drawSpline(p,w,h);
+//    return 1;
+    srand(time(NULL));
+
 
 
 

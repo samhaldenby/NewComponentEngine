@@ -1,5 +1,6 @@
 #include "Systems.h"
 #include "PathComp.h"
+#include "PathStore.h"
 #include <iostream>
 
 template <>
@@ -40,9 +41,10 @@ void System<PathComp>::deliverMessage_(Message message)
     if (mainCmd=="set")
     {
         //see what path is to be set by number or random
-//        if (params[2]=="random")
-//        {
-//            sthis->extensions_
+        int id = atoi(params[2].c_str());
+        PathStore* store = static_cast<PathStore*>(extensions_);
+        Path* path = store->getPath(id);
+        targetComponent->setPath(path);
     }
 
 
@@ -53,5 +55,5 @@ void System<PathComp>::deliverMessage_(Message message)
 template <>
 void System<PathComp>::init()
 {
-
+    extensions_ = new PathStore;
 }

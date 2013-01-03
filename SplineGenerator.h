@@ -6,8 +6,8 @@
 class SplineGenerator
 {
     public:
-        static Path makeBezier(int points, int nodes, int seed, Vector2d topLeft, Vector2d bottomRight);
-        static Path makeCatmul(int points, int nodes, int seed, Vector2d topLeft, Vector2d bottomRight);
+        static Path makeBezier(int points, int nodes, int seed);
+        static Path makeCatmul(int points, int nodes, int seed);
         static void drawSpline(Path p, int x, int y);
 
     private:
@@ -42,7 +42,7 @@ void SplineGenerator::drawSpline(Path p,int x, int y)
         while(iPath!=p.end())
         {
             Vector2d currPoint = *iPath;
-            sf::Shape line   = sf::Shape::Line(prevPoint.x, prevPoint.y,currPoint.x, currPoint.y, 1, sf::Color::Red);
+            sf::Shape line   = sf::Shape::Line(prevPoint.x * x, prevPoint.y * y,currPoint.x * x , currPoint.y * y, 1, sf::Color::Red);
             App.Draw(line);
             ++iPath;
             prevPoint = currPoint;
@@ -53,28 +53,27 @@ void SplineGenerator::drawSpline(Path p,int x, int y)
     }
 }
 
-Path SplineGenerator::makeBezier(int points, int nodes, int seed, Vector2d topLeft, Vector2d bottomRight)
+Path SplineGenerator::makeBezier(int points, int nodes, int seed)
 {
     srand(seed);
     Path path;
-    int h = bottomRight.y - topLeft.y;
-    int w = bottomRight.x - topLeft.x;
-    int minDist = sqrt(h/2 *h/2 + w/2 * w/2) * 0.5;
+    int minDist = 0.35355;
     std::cout << "MinDist: " << minDist << std::endl;
-    Vector2d start(rand()%w,0);
-    Vector2d end(rand()%w,h);
+    Vector2d start(randf(),0);
+    Vector2d end(randf(),1);
 
     for (int node=0 ; node < nodes ; ++node)
     {
 
         Vector2d p0 = start;
-        Vector2d p1(rand()%w,rand()%h);
-        Vector2d p2(rand()%w,rand()%h);
-        Vector2d p3(rand()%w,rand()%h);
+        Vector2d p1(randf(), randf());
+//        Vector2d p1(rand()%w,rand()%h);
+        Vector2d p2(randf(), randf());
+        Vector2d p3(randf(), randf());
         while(p3.getDistance(p1)<minDist)
         {
-            p3.x = rand()%w;
-            p3.y = rand()%h;
+            p3.x = randf();
+            p3.y = randf();
         }
 
         int pointsPerNode = points / nodes;
@@ -83,9 +82,6 @@ Path SplineGenerator::makeBezier(int points, int nodes, int seed, Vector2d topLe
             float t = x/float(pointsPerNode);
             Vector2d res= calculateBezierPoint(t,p0,p1,p2,p3);
             path.push_back(res);
-            std::cout << res.x << "\t" << res.y << std::endl;
-
-
         }
 
         start = p3;
@@ -119,7 +115,7 @@ Path SplineGenerator::makeBezier(int points, int nodes, int seed, Vector2d topLe
 
 
 
-Path SplineGenerator::makeCatmul(int points, int nodes, int seed, Vector2d topLeft, Vector2d bottomRight)
+Path SplineGenerator::makeCatmul(int points, int nodes, int seed)
 {
 
 }

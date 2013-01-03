@@ -10,6 +10,8 @@ typedef std::vector<std::string> StrTokens;
 StrTokens tokenise(std::string str, char delimiter);
 
 
+float randf();
+
 
 Vector2d calculateCatmullPoint(float t,
                                Vector2d p0,

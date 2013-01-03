@@ -17,7 +17,10 @@ StrTokens tokenise(std::string str, char delimiter)
     return tokens;
 }
 
-
+float randf()
+{
+    return (float)rand()/(float)RAND_MAX;
+}
 
 ////////////
 //p1 and p2 define section

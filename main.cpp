@@ -21,9 +21,9 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    int w = 200;
-    int h = 150;
-    Path p = SplineGenerator::makeBezier(40,4,18021982,Vector2d(0,0),Vector2d(w,h));
+    int w = 500;
+    int h = 500;
+    Path p = SplineGenerator::makeBezier(100,10,27041977);
     SplineGenerator::drawSpline(p,w,h);
     return 1;
 //    srand(time(NULL));

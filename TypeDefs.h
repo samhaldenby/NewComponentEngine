@@ -6,10 +6,12 @@
 #include <map>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-
+#include "Vector2d.h"
+#include <list>
 
 //forward decs
 class Effect;
+
 
 
 typedef boost::property_tree::ptree Blueprint;
@@ -20,6 +22,7 @@ typedef std::vector<std::string> Parameters;
 typedef std::map<std::string, double> StatsMap;
 typedef std::map<std::string, Effect*> EffectsMap;
 typedef std::map<std::string, std::string> NamedParams;
+typedef std::list<Vector2d> Path;
 
 //collision typedefs
 typedef std::pair<int,int> GridLocation;
@@ -46,7 +49,8 @@ namespace cType
             Anchor=11,
             Trigger=12,
             Stats=13,
-            Effects=14
+            Effects=14,
+            Path=15,
         };
 }
 

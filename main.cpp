@@ -13,7 +13,7 @@
 
 #include "MusicPlayer.h"
 
-
+#include "SplineGenerator.h"
 
 //TODO: For event system, we have the sender id! We can message back if a message fails - you should utilise this feature....
 //TODO: Need a feature to monitor bolt-ons like what guns a ship has etc and how long they have left (just a bit field thing would do) as a component? Would help with powerups too
@@ -21,9 +21,15 @@
 //Search for "//@@@Requires updating on addition on new subsystem" when adding new subsystems"
 int main()
 {
-    srand(time(NULL));
-    int w=200;
-    int h=150;
+    int w = 200;
+    int h = 150;
+    Path p = SplineGenerator::makeBezier(40,4,18021982,Vector2d(0,0),Vector2d(w,h));
+    SplineGenerator::drawSpline(p,w,h);
+    return 1;
+//    srand(time(NULL));
+    srand(25);
+//    int w=200;
+//    int h=150;
     int steps = 50;
 
     //test for catmull
@@ -36,20 +42,20 @@ int main()
     std::ofstream out;
     out.open("catmull.txt");
 
-    for (int c=0; c<5; ++c)
+    for (int c=0; c<10; ++c)
     {
         Vector2d next(rand()%w,rand()%h);
         Vector2d next2(rand()%w,rand()%h);
         //works ok - quite roundy
-//        p0=p1;
-//        p1=p2;
-//        p2=p3;
-//        p3=next;
-        //works ok - more jaggedy
         p0=p1;
         p1=p2;
-        p2=next;
-        p3=next2;
+        p2=p3;
+        p3=next;
+        //works ok - more roundy
+//        p0=p1;
+//        p1=p2;
+//        p2=next;
+//        p3=next2;
 
         for (int x=0;x<steps;++x)
         {
@@ -132,7 +138,7 @@ int main()
 //
     //end test for bezier curving
 
-    return 1;
+//    return 1;
 
     std::cout.setstate(std::ios::failbit);
 
@@ -255,6 +261,8 @@ int main()
         core.getStatsSub()->update(elapsed);
         core.getTriggerSub()->update(elapsed);
 
+
+
         firstRun = true;
 //        elapsed=clock() - startTime;
         ++count;
@@ -284,7 +292,6 @@ int main()
             totElapsed-=1.0;
             count = 0;
         }
-        //        std::cout << "Elapsed this frame: " << elapsed << std::endl;
 
 
 

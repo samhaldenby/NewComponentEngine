@@ -13,6 +13,7 @@
 #include "StatsComp.h"
 #include "TriggerComp.h"
 #include "EffectsComp.h"
+#include "PathComp.h"
 #include <iostream>
 #include <typeinfo>
 //@@@Requires updating on addition on new subsystem" when adding new subsystems
@@ -137,4 +138,5 @@ template class System<CollisionComp>;
 template class System<EventComp>;
 template class System<StatsComp>;
 template class System<TriggerComp>;
+template class System<PathComp>;
 

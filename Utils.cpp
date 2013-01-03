@@ -17,25 +17,7 @@ StrTokens tokenise(std::string str, char delimiter)
     return tokens;
 }
 
-Vector2d calculateBezierPoint(float t,
-                              Vector2d p0,
-                              Vector2d p1,
-                              Vector2d p2,
-                              Vector2d p3)
-{
-    float u   = 1 - t;
-    float tt  = t * t;
-    float uu  = u * u;
-    float uuu = u * u * u;
-    float ttt = t * t * t;
 
-    Vector2d p = p0 * uuu; //first term
-    p += p1 * (uu * 3  * t); //second term
-    p += p2 * (3 * u * tt) ; //third term
-    p += p3 * ttt; //fourth term
-
-    return p;
-}
 
 ////////////
 //p1 and p2 define section

@@ -103,8 +103,13 @@
 		<Unit filename="ObjectBuilder.h" />
 		<Unit filename="ObjectStore.cpp" />
 		<Unit filename="ObjectStore.h" />
+		<Unit filename="PathComp.cpp" />
+		<Unit filename="PathComp.h" />
+		<Unit filename="PathStore.h" />
+		<Unit filename="PathSys.cpp" />
 		<Unit filename="SoundManager.cpp" />
 		<Unit filename="SoundManager.h" />
+		<Unit filename="SplineGenerator.h" />
 		<Unit filename="StatsComp.cpp" />
 		<Unit filename="StatsComp.h" />
 		<Unit filename="StatsSys.cpp" />

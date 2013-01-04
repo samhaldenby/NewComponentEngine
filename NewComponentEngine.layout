@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Release" />
+	<ActiveTarget name="Debug" />
 	<File name="AiComp.cpp" open="1" top="0" tabpos="43">
 		<Cursor position="114" topLine="0" />
+	</File>
+	<File name="AiComp.h" open="1" top="0" tabpos="66">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="AiManager.cpp" open="1" top="0" tabpos="54">
 		<Cursor position="422" topLine="0" />
@@ -35,7 +38,7 @@
 		<Cursor position="320" topLine="0" />
 	</File>
 	<File name="CollisionSys.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2475" topLine="3" />
+		<Cursor position="4061" topLine="102" />
 	</File>
 	<File name="Components.cpp" open="1" top="0" tabpos="27">
 		<Cursor position="0" topLine="0" />
@@ -53,10 +56,19 @@
 		<Cursor position="1435" topLine="12" />
 	</File>
 	<File name="Core.cpp" open="1" top="0" tabpos="18">
-		<Cursor position="2179" topLine="103" />
+		<Cursor position="2920" topLine="125" />
 	</File>
-	<File name="Core.h" open="1" top="0" tabpos="12">
-		<Cursor position="158" topLine="0" />
+	<File name="Core.h" open="1" top="1" tabpos="12">
+		<Cursor position="1838" topLine="54" />
+	</File>
+	<File name="Effect.cpp" open="1" top="0" tabpos="60">
+		<Cursor position="2382" topLine="82" />
+	</File>
+	<File name="Effect.h" open="1" top="0" tabpos="61">
+		<Cursor position="442" topLine="1" />
+	</File>
+	<File name="EffectsComp.h" open="1" top="0" tabpos="62">
+		<Cursor position="584" topLine="0" />
 	</File>
 	<File name="EventComp.cpp" open="1" top="0" tabpos="45">
 		<Cursor position="926" topLine="18" />
@@ -68,13 +80,19 @@
 		<Cursor position="2943" topLine="45" />
 	</File>
 	<File name="GfxComp.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="136" topLine="0" />
+		<Cursor position="40" topLine="0" />
 	</File>
 	<File name="GfxComp.h" open="1" top="0" tabpos="15">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="GfxSys.cpp" open="1" top="0" tabpos="28">
-		<Cursor position="1068" topLine="33" />
+		<Cursor position="1068" topLine="0" />
+	</File>
+	<File name="Goal.h" open="1" top="0" tabpos="63">
+		<Cursor position="0" topLine="15" />
+	</File>
+	<File name="GoalBuilders.h" open="1" top="0" tabpos="64">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="HealthComp.cpp" open="1" top="0" tabpos="29">
 		<Cursor position="0" topLine="0" />
@@ -86,7 +104,7 @@
 		<Cursor position="2556" topLine="51" />
 	</File>
 	<File name="LauncherComp.cpp" open="1" top="0" tabpos="31">
-		<Cursor position="0" topLine="18" />
+		<Cursor position="369" topLine="51" />
 	</File>
 	<File name="LauncherComp.h" open="1" top="0" tabpos="17">
 		<Cursor position="308" topLine="0" />
@@ -112,11 +130,11 @@
 	<File name="MoveSys.cpp" open="1" top="0" tabpos="21">
 		<Cursor position="1830" topLine="21" />
 	</File>
-	<File name="MusicPlayer.cpp" open="1" top="1" tabpos="52">
-		<Cursor position="5201" topLine="171" />
+	<File name="MusicPlayer.cpp" open="1" top="0" tabpos="52">
+		<Cursor position="5268" topLine="174" />
 	</File>
 	<File name="MusicPlayer.h" open="1" top="0" tabpos="51">
-		<Cursor position="703" topLine="18" />
+		<Cursor position="703" topLine="13" />
 	</File>
 	<File name="NameComp.cpp" open="1" top="0" tabpos="35">
 		<Cursor position="0" topLine="0" />
@@ -128,13 +146,28 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="ObjectBuilder.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="6244" topLine="215" />
+		<Cursor position="1402" topLine="40" />
 	</File>
 	<File name="ObjectBuilder.h" open="1" top="0" tabpos="7">
-		<Cursor position="135" topLine="7" />
+		<Cursor position="1941" topLine="12" />
 	</File>
 	<File name="ObjectStore.cpp" open="1" top="0" tabpos="38">
-		<Cursor position="2034" topLine="46" />
+		<Cursor position="417" topLine="148" />
+	</File>
+	<File name="PathComp.cpp" open="1" top="0" tabpos="67">
+		<Cursor position="545" topLine="8" />
+	</File>
+	<File name="PathComp.h" open="1" top="0" tabpos="65">
+		<Cursor position="351" topLine="0" />
+	</File>
+	<File name="PathStore.cpp" open="1" top="0" tabpos="76">
+		<Cursor position="38" topLine="0" />
+	</File>
+	<File name="PathStore.h" open="1" top="0" tabpos="70">
+		<Cursor position="506" topLine="0" />
+	</File>
+	<File name="PathSys.cpp" open="1" top="0" tabpos="69">
+		<Cursor position="65" topLine="0" />
 	</File>
 	<File name="SoundManager.cpp" open="1" top="0" tabpos="23">
 		<Cursor position="261" topLine="0" />
@@ -142,37 +175,49 @@
 	<File name="SoundManager.h" open="1" top="0" tabpos="49">
 		<Cursor position="67" topLine="0" />
 	</File>
+	<File name="SplineGenerator.h" open="1" top="0" tabpos="71">
+		<Cursor position="629" topLine="0" />
+	</File>
+	<File name="StatsComp.cpp" open="1" top="0" tabpos="59">
+		<Cursor position="142" topLine="0" />
+	</File>
+	<File name="StatsSys.cpp" open="1" top="0" tabpos="68">
+		<Cursor position="1368" topLine="35" />
+	</File>
 	<File name="Store.cpp" open="1" top="0" tabpos="39">
-		<Cursor position="2067" topLine="28" />
+		<Cursor position="2067" topLine="148" />
 	</File>
 	<File name="Systems.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="317" topLine="94" />
+		<Cursor position="412" topLine="105" />
 	</File>
 	<File name="Systems.h" open="1" top="0" tabpos="11">
-		<Cursor position="631" topLine="9" />
+		<Cursor position="631" topLine="17" />
 	</File>
 	<File name="Telegram.cpp" open="1" top="0" tabpos="40">
-		<Cursor position="1104" topLine="40" />
+		<Cursor position="3324" topLine="66" />
 	</File>
 	<File name="TriggerComp.h" open="1" top="0" tabpos="58">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="TypeDefs.h" open="1" top="0" tabpos="20">
-		<Cursor position="936" topLine="27" />
+		<Cursor position="2086" topLine="48" />
 	</File>
 	<File name="Ui.cpp" open="1" top="0" tabpos="41">
 		<Cursor position="1588" topLine="0" />
 	</File>
 	<File name="Utils.cpp" open="1" top="0" tabpos="42">
-		<Cursor position="338" topLine="0" />
+		<Cursor position="401" topLine="0" />
+	</File>
+	<File name="Utils.h" open="1" top="0" tabpos="72">
+		<Cursor position="230" topLine="0" />
 	</File>
 	<File name="Vector2d.cpp" open="1" top="0" tabpos="24">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="234" topLine="21" />
 	</File>
 	<File name="Vector2d.h" open="1" top="0" tabpos="22">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="2458" topLine="56" />
+		<Cursor position="860" topLine="14" />
 	</File>
 </CodeBlocks_layout_file>

@@ -15,6 +15,9 @@ struct Vector2d
 
     //functions
     void zero();
+    void nullify(); //makes into a null vector
+    bool isNull();
+
     double getDistance(Vector2d b);
 
     //operators
@@ -22,6 +25,7 @@ struct Vector2d
     void operator-=(const Vector2d& v);
     void operator*=(double n);
     void operator/=(double n);
+    bool operator==(const Vector2d& v);
 
     Vector2d operator+(const Vector2d& v);
     Vector2d operator-(const Vector2d& v);

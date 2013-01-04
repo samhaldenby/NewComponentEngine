@@ -14,6 +14,7 @@
 #include "MusicPlayer.h"
 
 #include "SplineGenerator.h"
+#include "TypeDefs.h"
 
 //TODO: For event system, we have the sender id! We can message back if a message fails - you should utilise this feature....
 //TODO: Need a feature to monitor bolt-ons like what guns a ship has etc and how long they have left (just a bit field thing would do) as a component? Would help with powerups too
@@ -28,7 +29,14 @@ int main()
 //    return 1;
     srand(time(NULL));
 
+    Vector2d vx;
+    std::cout << vx.isNull() << std::endl;
+    vx.nullify();
+    std::cout << vx.isNull() << std::endl;
 
+    Vector2d vy = NO_VECTOR;
+    std::cout << (vx==vy) << std::endl;
+    return 1;
 
 
 

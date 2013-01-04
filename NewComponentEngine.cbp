@@ -105,10 +105,12 @@
 		<Unit filename="ObjectStore.h" />
 		<Unit filename="PathComp.cpp" />
 		<Unit filename="PathComp.h" />
+		<Unit filename="PathStore.cpp" />
 		<Unit filename="PathStore.h" />
 		<Unit filename="PathSys.cpp" />
 		<Unit filename="SoundManager.cpp" />
 		<Unit filename="SoundManager.h" />
+		<Unit filename="SplineGenerator.cpp" />
 		<Unit filename="SplineGenerator.h" />
 		<Unit filename="StatsComp.cpp" />
 		<Unit filename="StatsComp.h" />

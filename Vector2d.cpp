@@ -1,4 +1,5 @@
 #include "Vector2d.h"
+#include "TypeDefs.h"
 #include <math.h>
 
 //constructors
@@ -17,6 +18,17 @@ void Vector2d::zero()
 {
     x = 0.0;
     y = 0.0;
+}
+
+void Vector2d::nullify()
+{
+    *this = NO_VECTOR;
+}
+
+
+bool Vector2d::isNull()
+{
+    return (*this == NO_VECTOR);
 }
 
 double Vector2d::getDistance(Vector2d b)
@@ -46,6 +58,11 @@ void Vector2d::operator/=(double n)
 {
     x/=n;
     y/=n;
+}
+
+bool Vector2d::operator==(const Vector2d& v)
+{
+    return (x==v.x && y==v.y);
 }
 
 Vector2d Vector2d::operator+(const Vector2d& v)

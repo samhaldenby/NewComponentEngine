@@ -28,7 +28,7 @@ typedef std::list<Vector2d> Path;
 typedef std::pair<int,int> GridLocation;
 typedef std::multimap<GridLocation,std::vector<ObjectId> > CollisionHash;
 
-
+const Vector2d NO_VECTOR(-18021982,-27041977);
 const int MIN_DIST = 4;
 const int MAX_OBJECT_DIMENSION = 50;
 const int MAX_CONCURRENT_SOUNDS = 16;
